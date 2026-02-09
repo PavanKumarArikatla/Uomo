@@ -1,0 +1,627 @@
+{
+  "data": {
+    "mensStyles": [
+      {
+        "id": 1,
+        "image": "./MensPage/Shirts.webp",
+        "images": [
+          "./MensPage/Shirts.webp",
+          "./MensPage/Shirts.webp",
+          "./MensPage/Shirts.webp",
+          "./MensPage/Shirts.webp",
+          "./MensPage/Shirts.webp",
+          "./MensPage/Shirts.webp",
+          "./MensPage/Shirts.webp"
+        ],
+        "style": "Shirts",
+        "price": "58.99",
+        "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 2,
+        "image": "./MensPage/Monochrome.webp",
+        "images": [
+          "./MensPage/Monochrome.webp",
+          "./MensPage/Monochrome.webp",
+          "./MensPage/Monochrome.webp",
+          "./MensPage/Monochrome.webp",
+          "./MensPage/Monochrome.webp",
+          "./MensPage/Monochrome.webp",
+          "./MensPage/Monochrome.webp"
+        ],
+        "style": "Monochrome",
+        "price": "75.99",
+        "type": "Men Comfort Relaxed Fit Cotton Casual Shirt",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 3,
+        "image": "./MensPage/Polos.webp",
+        "images": [
+          "./MensPage/Polos.webp",
+          "./MensPage/Polos.webp",
+          "./MensPage/Polos.webp",
+          "./MensPage/Polos.webp",
+          "./MensPage/Polos.webp",
+          "./MensPage/Polos.webp",
+          "./MensPage/Polos.webp"
+        ],
+        "style": "Polos",
+        "price": "50.99",
+        "type": "Men Classic Cutaway Slim Fit Casual Shirt",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 4,
+        "image": "./MensPage/Hoodies.webp",
+        "images": [
+          "./MensPage/Hoodies.webp",
+          "./MensPage/Hoodies.webp",
+          "./MensPage/Hoodies.webp",
+          "./MensPage/Hoodies.webp",
+          "./MensPage/Hoodies.webp",
+          "./MensPage/Hoodies.webp",
+          "./MensPage/Hoodies.webp"
+        ],
+        "style": "Hoodies",
+        "price": "45.99",
+        "type": "The Lifestyle Co Pure Cotton Casual Shirts",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 5,
+        "image": "./MensPage/Snitch.webp",
+        "images": [
+          "./MensPage/Snitch.webp",
+          "./MensPage/Snitch.webp",
+          "./MensPage/Snitch.webp",
+          "./MensPage/Snitch.webp",
+          "./MensPage/Snitch.webp",
+          "./MensPage/Snitch.webp",
+          "./MensPage/Snitch.webp"
+        ],
+        "style": "Snitch",
+        "price": "38.99",
+        "type": "Men Crinkle Ls Regular Fit Opaque Shirt",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 6,
+        "image": "./MensPage/Sweatshirts.webp",
+        "images": [
+          "./MensPage/Sweatshirts.webp",
+          "./MensPage/Sweatshirts.webp",
+          "./MensPage/Sweatshirts.webp",
+          "./MensPage/Sweatshirts.webp",
+          "./MensPage/Sweatshirts.webp",
+          "./MensPage/Sweatshirts.webp",
+          "./MensPage/Sweatshirts.webp"
+        ],
+        "style": "Sweatshirts",
+        "price": "25.99",
+        "type": "Men Standard Opaque Cotton Casual Shirt",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 7,
+        "image": "./MensPage/Suits.webp",
+        "images": [
+          "./MensPage/Suits.webp",
+          "./MensPage/Suits.webp",
+          "./MensPage/Suits.webp",
+          "./MensPage/Suits.webp",
+          "./MensPage/Suits.webp",
+          "./MensPage/Suits.webp",
+          "./MensPage/Suits.webp"
+        ],
+        "style": "Suits",
+        "price": "88.99",
+        "type": "Men Olive Green Solid Fit Casual Shirt",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 8,
+        "image": "./MensPage/Summer.webp",
+        "images": [
+          "./MensPage/Summer.webp",
+          "./MensPage/Summer.webp",
+          "./MensPage/Summer.webp",
+          "./MensPage/Summer.webp",
+          "./MensPage/Summer.webp",
+          "./MensPage/Summer.webp"
+        ],
+        "style": "Summer",
+        "price": "8.99",
+        "type": "Men Blue & White Slim Fit Striped Casual Shirt",
+        "brand": "Bear Brown",
+        "discount": "20"
+      }
+    ],
+    "womenStyles": [
+      {
+        "id": 9,
+        "image": "./WomensPage/Autumn Wear.jpg",
+        "images": [
+          "./WomensPage/Autumn Wear.jpg",
+          "./WomensPage/Autumn Wear.jpg",
+          "./WomensPage/Autumn Wear.jpg",
+          "./WomensPage/Autumn Wear.jpg",
+          "./WomensPage/Autumn Wear.jpg",
+          "./WomensPage/Autumn Wear.jpg",
+          "./WomensPage/Autumn Wear.jpg"
+        ],
+        "style": "Autumn Wear",
+        "price": "58.99",
+        "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 10,
+        "image": "./WomensPage/Minimalist.jpg",
+        "images": [
+          "./WomensPage/Minimalist.jpg",
+          "./WomensPage/Minimalist.jpg",
+          "./WomensPage/Minimalist.jpg",
+          "./WomensPage/Minimalist.jpg",
+          "./WomensPage/Minimalist.jpg",
+          "./WomensPage/Minimalist.jpg",
+          "./WomensPage/Minimalist.jpg"
+        ],
+        "style": "Minimalist",
+        "price": "65.99",
+        "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 11,
+        "image": "./WomensPage/Shirts.jpg",
+        "images": [
+          "./WomensPage/Shirts.jpg",
+          "./WomensPage/Shirts.jpg",
+          "./WomensPage/Shirts.jpg",
+          "./WomensPage/Shirts.jpg",
+          "./WomensPage/Shirts.jpg",
+          "./WomensPage/Shirts.jpg",
+          "./WomensPage/Shirts.jpg"
+        ],
+        "style": "Women Shirts",
+        "price": "78.99",
+        "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 12,
+        "image": "./WomensPage/Street Wear.jpg",
+        "images": [
+          "./WomensPage/Street Wear.jpg",
+          "./WomensPage/Street Wear.jpg",
+          "./WomensPage/Street Wear.jpg",
+          "./WomensPage/Street Wear.jpg",
+          "./WomensPage/Street Wear.jpg",
+          "./WomensPage/Street Wear.jpg",
+          "./WomensPage/Street Wear.jpg"
+        ],
+        "style": "Street Wear",
+        "price": "38.99",
+        "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 13,
+        "image": "./WomensPage/Stylish.jpg",
+        "images": [
+          "./WomensPage/Stylish.jpg",
+          "./WomensPage/Stylish.jpg",
+          "./WomensPage/Stylish.jpg",
+          "./WomensPage/Stylish.jpg",
+          "./WomensPage/Stylish.jpg",
+          "./WomensPage/Stylish.jpg",
+          "./WomensPage/Stylish.jpg"
+        ],
+        "style": "Stylish",
+        "price": "50.99",
+        "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 14,
+        "image": "./WomensPage/Traditional.jpg",
+        "images": [
+          "./WomensPage/Traditional.jpg",
+          "./WomensPage/Traditional.jpg",
+          "./WomensPage/Traditional.jpg",
+          "./WomensPage/Traditional.jpg",
+          "./WomensPage/Traditional.jpg",
+          "./WomensPage/Traditional.jpg",
+          "./WomensPage/Traditional.jpg"
+        ],
+        "style": "Traditional",
+        "price": "58.99",
+        "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 15,
+        "image": "./WomensPage/Vacation.jpg",
+        "images": [
+          "./WomensPage/Vacation.jpg",
+          "./WomensPage/Vacation.jpg",
+          "./WomensPage/Vacation.jpg",
+          "./WomensPage/Vacation.jpg",
+          "./WomensPage/Vacation.jpg",
+          "./WomensPage/Vacation.jpg",
+          "./WomensPage/Vacation.jpg"
+        ],
+        "style": "Vacation",
+        "price": "28.39",
+        "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 16,
+        "image": "./WomensPage/Office Attire.jpg",
+        "images": [
+          "./WomensPage/Office Attire.jpg",
+          "./WomensPage/Office Attire.jpg",
+          "./WomensPage/Office Attire.jpg",
+          "./WomensPage/Office Attire.jpg",
+          "./WomensPage/Office Attire.jpg",
+          "./WomensPage/Office Attire.jpg",
+          "./WomensPage/Office Attire.jpg"
+        ],
+        "style": "Office Attire",
+        "price": "99.99",
+        "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "discount": "20"
+      }
+    ],
+    "trendyProducts": [
+      {
+        "id": 17,
+        "image": "./TrendyProducts/Tshirts.jpg",
+        "images": [
+          "./TrendyProducts/Tshirts.jpg",
+          "./TrendyProducts/Tshirts.jpg",
+          "./TrendyProducts/Tshirts.jpg",
+          "./TrendyProducts/Tshirts.jpg",
+          "./TrendyProducts/Tshirts.jpg",
+          "./TrendyProducts/Tshirts.jpg",
+          "./TrendyProducts/Tshirts.jpg"
+        ],
+        "style": "T-shirts",
+        "price": "39.99",
+        "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 18,
+        "image": "./TrendyProducts/Jeans.png",
+        "images": [
+          "./TrendyProducts/Jeans.png",
+          "./TrendyProducts/Jeans.png",
+          "./TrendyProducts/Jeans.png",
+          "./TrendyProducts/Jeans.png",
+          "./TrendyProducts/Jeans.png",
+          "./TrendyProducts/Jeans.png",
+          "./TrendyProducts/Jeans.png"
+        ],
+        "style": "Jeans",
+        "price": "59.99",
+        "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 19,
+        "image": "./TrendyProducts/Trousers.jpg",
+        "images": [
+          "./TrendyProducts/Trousers.jpg",
+          "./TrendyProducts/Trousers.jpg",
+          "./TrendyProducts/Trousers.jpg",
+          "./TrendyProducts/Trousers.jpg",
+          "./TrendyProducts/Trousers.jpg",
+          "./TrendyProducts/Trousers.jpg",
+          "./TrendyProducts/Trousers.jpg"
+        ],
+        "style": "Trousers",
+        "price": "49.99",
+        "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 20,
+        "image": "./TrendyProducts/Kurtas.png",
+        "images": [
+          "./TrendyProducts/Kurtas.png",
+          "./TrendyProducts/Kurtas.png",
+          "./TrendyProducts/Kurtas.png",
+          "./TrendyProducts/Kurtas.png",
+          "./TrendyProducts/Kurtas.png",
+          "./TrendyProducts/Kurtas.png",
+          "./TrendyProducts/Kurtas.png"
+        ],
+        "style": "Kurtas",
+        "price": "45.99",
+        "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 21,
+        "image": "./TrendyProducts/Ethnic Wear.jpg",
+        "images": [
+          "./TrendyProducts/Ethnic Wear.jpg",
+          "./TrendyProducts/Ethnic Wear.jpg",
+          "./TrendyProducts/Ethnic Wear.jpg",
+          "./TrendyProducts/Ethnic Wear.jpg",
+          "./TrendyProducts/Ethnic Wear.jpg",
+          "./TrendyProducts/Ethnic Wear.jpg",
+          "./TrendyProducts/Ethnic Wear.jpg"
+        ],
+        "style": "Ethnic Wear",
+        "price": "75.99",
+        "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 22,
+        "image": "./TrendyProducts/Gen Z.jpg",
+        "images": [
+          "./TrendyProducts/Gen Z.jpg",
+          "./TrendyProducts/Gen Z.jpg",
+          "./TrendyProducts/Gen Z.jpg",
+          "./TrendyProducts/Gen Z.jpg",
+          "./TrendyProducts/Gen Z.jpg",
+          "./TrendyProducts/Gen Z.jpg",
+          "./TrendyProducts/Gen Z.jpg"
+        ],
+        "style": "Gen Z",
+        "price": "39.99",
+        "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 23,
+        "image": "./TrendyProducts/Jackets.jpg",
+        "images": [
+          "./TrendyProducts/Jackets.jpg",
+          "./TrendyProducts/Jackets.jpg",
+          "./TrendyProducts/Jackets.jpg",
+          "./TrendyProducts/Jackets.jpg",
+          "./TrendyProducts/Jackets.jpg",
+          "./TrendyProducts/Jackets.jpg",
+          "./TrendyProducts/Jackets.jpg"
+        ],
+        "style": "Jackets",
+        "price": "69.99",
+        "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 24,
+        "image": "./TrendyProducts/Kids wear.jpg",
+        "images": [
+          "./TrendyProducts/Kids wear.jpg",
+          "./TrendyProducts/Kids wear.jpg",
+          "./TrendyProducts/Kids wear.jpg",
+          "./TrendyProducts/Kids wear.jpg",
+          "./TrendyProducts/Kids wear.jpg",
+          "./TrendyProducts/Kids wear.jpg",
+          "./TrendyProducts/Kids wear.jpg"
+        ],
+        "style": "Kids wear",
+        "price": "39.99",
+        "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "discount": "20"
+      }
+    ],
+    "limitedEditionProducts": [
+      {
+        "id": 25,
+        "image": "./LimitedEdition/Sunglasses.png",
+        "images": [
+          "./LimitedEdition/Sunglasses.png",
+          "./LimitedEdition/Sunglasses.png",
+          "./LimitedEdition/Sunglasses.png",
+          "./LimitedEdition/Sunglasses.png",
+          "./LimitedEdition/Sunglasses.png",
+          "./LimitedEdition/Sunglasses.png",
+          "./LimitedEdition/Sunglasses.png"
+        ],
+        "style": "Sunglasses",
+        "price": "10.99",
+        "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 26,
+        "image": "./LimitedEdition/Watches.png",
+        "images": [
+          "./LimitedEdition/Watches.png",
+          "./LimitedEdition/Watches.png",
+          "./LimitedEdition/Watches.png",
+          "./LimitedEdition/Watches.png",
+          "./LimitedEdition/Watches.png",
+          "./LimitedEdition/Watches.png",
+          "./LimitedEdition/Watches.png"
+        ],
+        "style": "Watches",
+        "price": "15.99",
+        "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 27,
+        "image": "./LimitedEdition/Caps.png",
+        "images": [
+          "./LimitedEdition/Caps.png",
+          "./LimitedEdition/Caps.png",
+          "./LimitedEdition/Caps.png",
+          "./LimitedEdition/Caps.png",
+          "./LimitedEdition/Caps.png",
+          "./LimitedEdition/Caps.png",
+          "./LimitedEdition/Caps.png"
+        ],
+        "style": "Caps",
+        "price": "9.99",
+        "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "discount": "20"
+      },
+      {
+        "id": 28,
+        "image": "./LimitedEdition/Handbags.png",
+        "images": [
+          "./LimitedEdition/Handbags.png",
+          "./LimitedEdition/Handbags.png",
+          "./LimitedEdition/Handbags.png",
+          "./LimitedEdition/Handbags.png",
+          "./LimitedEdition/Handbags.png",
+          "./LimitedEdition/Handbags.png",
+          "./LimitedEdition/Handbags.png"
+        ],
+        "style": "Handbags",
+        "price": "19.99",
+        "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "discount": "20"
+      }
+    ],
+    "eastsideProducts": [
+      {
+        "id": 29,
+        "image": "./EastsideProducts/Uomo1.png",
+        "style": "Uomo1"
+      },
+      {
+        "id": 30,
+        "image": "./EastsideProducts/Uomo2.png",
+        "style": "Uomo2"
+      },
+      {
+        "id": 31,
+        "image": "./EastsideProducts/Uomo3.png",
+        "style": "Uomo3"
+      },
+      {
+        "id": 32,
+        "image": "./EastsideProducts/Uomo4.png",
+        "style": "Uomo4"
+      },
+      {
+        "id": 33,
+        "image": "./EastsideProducts/Uomo5.png",
+        "style": "Uomo5"
+      },
+      {
+        "id": 34,
+        "image": "./EastsideProducts/Uomo6.png",
+        "style": "Uomo6"
+      },
+      {
+        "id": 35,
+        "image": "./EastsideProducts/Uomo7.png",
+        "style": "Uomo7"
+      },
+      {
+        "id": 36,
+        "image": "./EastsideProducts/Uomo8.png",
+        "style": "Uomo8"
+      },
+      {
+        "id": 37,
+        "image": "./EastsideProducts/Uomo9.png",
+        "style": "Uomo9"
+      },
+      {
+        "id": 38,
+        "image": "./EastsideProducts/Uomo10.png",
+        "style": "Uomo10"
+      },
+      {
+        "id": 39,
+        "image": "./EastsideProducts/Uomo11.png",
+        "style": "Uomo11"
+      },
+      {
+        "id": 40,
+        "image": "./EastsideProducts/Uomo12.png",
+        "style": "Uomo12"
+      }
+    ],
+    "categories": [
+      {
+        "id": 41,
+        "image": "./WomensPage/Traditional.jpg",
+        "style": "Traditional Wear",
+        "path": "fashion",
+        "category" : "WOMEN"
+      },
+      {
+        "id": 42,
+        "image": "./SummerStyles/Summerstyle1.jpg",
+        "style": "Accessories",
+        "path": "watches",
+        "category" : "SUNGLASSES"
+      },
+      {
+        "id": 43,
+        "image": "./SummerStyles/Summerstyle2.jpg",
+        "style": "Jeans",
+        "path": "cosmetics",
+        "category" : "DENIM"
+      },
+      {
+        "id": 44,
+        "image": "./SummerStyles/Summerstyle3.jpg",
+        "style": "Night Wear",
+        "path": "babystore",
+        "category" : "THE CLASSICS"
+      }
+    ],
+    "winterstyles": [
+      {
+        "id": 44,
+        "image": "./WinterStyles/WinterStyles1.jpg",
+        "style": "WinterStyles1",
+        "path": "winter"
+      },
+      {
+        "id": 45,
+        "image": "./WinterStyles/WinterStyles2.jpg",
+        "style": "WinterStyles2",
+        "path": "winter"
+      },
+      {
+        "id": 46,
+        "image": "./WinterStyles/WinterStyles3.jpg",
+        "style": "WinterStyles3",
+        "path": "winter"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+.gridcontainer {
+  width: 90%;
+  flex-wrap: wrap;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 1250px) {
+  .gridcontainer {
+    grid-template-columns: auto auto auto auto;
+  }
+}
+
+@media (max-width: 1100px) {
+  .gridcontainer {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .gridcontainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}

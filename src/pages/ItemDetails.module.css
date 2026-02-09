@@ -1,0 +1,111 @@
+.item {
+  margin: 2rem auto;
+  width: 90%;
+  font-size: 1.5rem;
+  display: flex;
+  font-family: sans-serif;
+}
+
+.images {
+  width: 60%;
+  display: grid;
+  grid-template-columns: 45% 45%;
+  gap: 1rem;
+}
+
+.images img {
+  width: 100%;
+}
+
+.details {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.list {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.list li {
+  border-radius: 25%;
+  width: 2.5rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+
+.price {
+  font-size: 1rem;
+}
+
+.buttons {
+  margin: 2rem auto;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.buttons * {
+  width: 45%;
+}
+
+@media (max-width: 1050px) {
+  .buttons {
+    margin: 1rem auto;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .buttons * {
+    width: 100%;
+  }
+}
+
+@media (max-width: 970px) {
+  .item {
+    font-size: 1.2rem;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 820px) {
+  .images {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 25rem;
+    object-fit: fill;
+    overflow: scroll;
+    scrollbar-width: none;
+  }
+}
+
+@media (max-width: 570px) {
+  .item {
+    font-size: 1rem;
+  }
+  .list li {
+    border: none;
+    background-color: rgb(240, 239, 239);
+    height: 1.5rem;
+  }
+  .images {
+    height: 20rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .item {
+    font-size: 0.7rem;
+    gap: 1rem;
+  }
+  .images {
+    height: 15rem;
+  }
+}

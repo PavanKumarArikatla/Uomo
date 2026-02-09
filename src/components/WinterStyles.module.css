@@ -1,0 +1,74 @@
+.fifth {
+  margin: 5rem auto;
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 18rem;
+  gap: 5rem;
+}
+
+.fifth div {
+  width: 45%;
+  height: 100%;
+  margin: auto;
+  text-align: center;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.fifth div .text {
+  position: absolute;
+  bottom: 20%;
+  left: 25%;
+  text-align: left;
+  transform: translateX(-50%);
+}
+
+.fifth img {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgb(217, 203, 203);
+  border-radius: 5px;
+}
+
+.fifth div:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 1300px) {
+  .fifth {
+    height: 15rem;
+  }
+  .fifth div {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .fifth {
+    height: 15rem;
+  }
+  .fifth div {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .fifth {
+    height: 12rem;
+  }
+  .fifth div {
+    width: 50%;
+  }
+}
+
+@media (max-width: 850px) {
+  .fifth {
+    height: auto;
+    gap: 0.5rem;
+    flex-direction: column;
+  }
+  .fifth div {
+    width: 70%;
+  }
+}

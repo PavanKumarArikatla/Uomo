@@ -1,0 +1,38 @@
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #ddd;
+  border-top-color: #3498db;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.socialMedia {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.page {
+  width: 100%;
+}
+
+.centerWrapper {
+  position: relative;
+  width: calc(90% + 10%);
+  margin: 0 auto;
+}
+
+.firstSeason {
+  position: relative;
+}

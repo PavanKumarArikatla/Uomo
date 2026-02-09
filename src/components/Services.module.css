@@ -1,0 +1,29 @@
+.services{
+    height: 30vh;
+    width: 80%;
+    margin: 5rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+.service-item{
+    width: 30%;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.service-item p{
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #8b8888;
+}
+
+.service-item i{
+    margin-bottom: 1.5rem;
+    font-size: 3rem;
+    color: #333;
+}
