@@ -2,7 +2,7 @@ import styles from "./Footer.module.css";
 
 function Footer() {
   return (
-    <footer style={{backgroundColor: '#cfcdc6', margin: '0'}}>
+    <footer style={{backgroundColor: '#cfcdc6'}}>
       <div className={styles.footer}>
       <div>
         <img src="logo.svg" alt="Eastside" />
@@ -86,16 +86,22 @@ function Footer() {
         </div>
       </div>
       </div>
-      <hr></hr>
-      {/* <div className={styles.copyright}>
-        <p>2020 Uomo</p>
-        <div className={styles.line}>
-          <p className="text-gray-400">Language</p>
-          <p>United Kingdom | English</p> 
-          <p className="text-gray-400">Currency</p>
-          <p>$ USD</p>
-        </div>
-      </div> */}
+      <hr/>
+
+
+      <div className={styles.bottomRow}>
+              <p className={styles.copy}>@2020 Uomo</p>
+              <div className={styles.localeRow}>
+                <span className={styles.label}>Language</span>
+                <button type="button" className={styles.inlineSelect}>
+                  United Kingdom | English
+                </button>
+                <span className={styles.label}>Currency</span>
+                <button type="button" className={styles.inlineSelect}>
+                  $ USD
+                </button>
+              </div>
+            </div>
     </footer>
   );
 }

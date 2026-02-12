@@ -115,7 +115,7 @@ export default function SearchResults() {
       ) : (
         <div className="text-center py-5">
           <p>No item found named <b className="text-red-600">"{search}"</b></p>
-          <p>You might also like above styles</p>  
+          <p>You might also like above styles</p>
         </div>
       )}
 
