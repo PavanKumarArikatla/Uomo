@@ -4,8 +4,8 @@ import styles from "./WinterStyles.module.css";
 export default function WinterStyles() {
   return (
     <div className={styles.fifth} id="root">
-      <div>
-          <img src={null} alt="Jackets" />
+      <div className="bg-red-700">
+          <p className="bg-black opacity-50"><img src={"../../image.jpg"} alt="Jackets"/></p>
           <span className={styles.text}>
             <p>STARTING AT $19</p>
             <b>Jackets</b>
@@ -14,7 +14,7 @@ export default function WinterStyles() {
       </div>
 
       <div>
-          <img src={null} alt="Hoodie" />
+          <img src={"../../image.jpg"} alt="Hoodie" />
           <span className={styles.text}>
             <p>STARTING AT $39</p>
             <b>Hoodies</b>

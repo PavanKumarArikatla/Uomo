@@ -25,7 +25,9 @@
 }
 
 .fifth img {
-  width: 100%;
+  width: 60%;
+  position: absolute;
+  left: 40%;
   height: 100%;
   border: 1px solid rgb(217, 203, 203);
   border-radius: 5px;

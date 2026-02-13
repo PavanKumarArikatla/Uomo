@@ -35,7 +35,9 @@ export default function TrendyLimited({ style, products }) {
             key={card.style}
           />
         ))}
+
       </div>
+        <small className={styles.seeAll}>{style == "trendyProducts" ? <Link to="/products" className="text-xs"><b>SEE ALL PRODUCTS</b> <hr></hr></Link> : ""}</small>
     </div>
   );
 }

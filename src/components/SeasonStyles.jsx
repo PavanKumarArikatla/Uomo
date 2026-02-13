@@ -125,9 +125,7 @@ export default function SeasonStyles({ season }) {
       className={`${styles.slider} ${season !== "Summer" ? styles.small  : ""} `}
       onKeyDown={handleKey}
       tabIndex={0}
-      style={season === "Summer" ? { backgroundImage: `${""}`, backgroundSize: 'cover' } : {}}
     >
-
       <div
         ref={sliderRef}
         className={styles.sliderInner}
@@ -151,7 +149,10 @@ export default function SeasonStyles({ season }) {
       <div className={styles.season}>
         {season === "Summer" ? (
           <>
-          <p className="text-xs text-red-700 underline"> NEW TREND</p>
+          <div className={styles.seasonLabel}>
+            <hr className={styles.seasonDivider} />
+            <span>NEW TREND</span>
+          </div>
             <p>{`${extendedSlides[actualIndex+1].style || ""}`}</p>
               <strong>{`${extendedSlides[actualIndex+1]?.category || ""}`}</strong>
               <br></br>
@@ -161,7 +162,11 @@ export default function SeasonStyles({ season }) {
           </>
         ) : (
           <>
-            <p className="text-xs text-red-700">DEAL OF THE WEEK</p>
+            <div className={styles.seasonLabel}>
+              <hr className={styles.seasonDivider} />
+              <span>DEAL OF THE WEEK</span>
+            </div>
+
             <p>
               <b>SPRING</b> COLLECTION
             </p>
@@ -194,3 +199,5 @@ export default function SeasonStyles({ season }) {
 
   return content;
 }
+
+

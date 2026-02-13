@@ -4,14 +4,12 @@
 }
 
 .thirdblock{
-    width: 70%;
+    width: 90%;
     margin: 2rem 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: center;
     place-items: center;
-    column-gap: 0.5rem;
-    row-gap: 0.5rem;
 }
 
 .maintitle{
@@ -26,6 +24,13 @@
     margin-top: 1rem;
     text-decoration: underline;
     font-weight: 400;
+}
+
+.seeAll{
+    margin-left: 8%;
+    margin-bottom: 5rem;
+    transform: translateX(-50%);
+    text-align: center;
 }
 
 @media (max-width: 750px){

@@ -3,34 +3,33 @@
     "mensStyles": [
       {
         "id": 1,
-        "image": "./MensPage/Shirts.webp",
+        "image": "./image.jpg",
         "images": [
-          "./MensPage/Shirts.webp",
-          "./MensPage/Monochrome.webp",
-          "./MensPage/Polos.webp",
-          "./MensPage/Hoodies.webp",
-          "./MensPage/Snitch.webp",
-          "./MensPage/Sweatshirts.webp",
-          "./MensPage/Suits.webp"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Shirt",
         "price": "58.99",
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
-        "discount": "10",
         "rating": 4
       },
       {
         "id": 2,
-        "image": "./MensPage/Monochrome.webp",
+        "image": "./image.jpg",
         "images": [
-          "./MensPage/Monochrome.webp",
-          "./MensPage/Monochrome.webp",
-          "./MensPage/Monochrome.webp",
-          "./MensPage/Monochrome.webp",
-          "./MensPage/Monochrome.webp",
-          "./MensPage/Monochrome.webp",
-          "./MensPage/Monochrome.webp"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Monochrome",
         "price": "75.99",
@@ -41,15 +40,15 @@
       },
       {
         "id": 3,
-        "image": "./MensPage/Polos.webp",
+        "image": "./image.jpg",
         "images": [
-          "./MensPage/Polos.webp",
-          "./MensPage/Polos.webp",
-          "./MensPage/Polos.webp",
-          "./MensPage/Polos.webp",
-          "./MensPage/Polos.webp",
-          "./MensPage/Polos.webp",
-          "./MensPage/Polos.webp"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Polos",
         "price": "50.99",
@@ -60,15 +59,15 @@
       },
       {
         "id": 4,
-        "image": "./MensPage/Hoodies.webp",
+        "image": "./image.jpg",
         "images": [
-          "./MensPage/Hoodies.webp",
-          "./MensPage/Hoodies.webp",
-          "./MensPage/Hoodies.webp",
-          "./MensPage/Hoodies.webp",
-          "./MensPage/Hoodies.webp",
-          "./MensPage/Hoodies.webp",
-          "./MensPage/Hoodies.webp"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Hoodies",
         "price": "45.99",
@@ -79,15 +78,15 @@
       },
       {
         "id": 5,
-        "image": "./MensPage/Snitch.webp",
+        "image": "./image.jpg",
         "images": [
-          "./MensPage/Snitch.webp",
-          "./MensPage/Snitch.webp",
-          "./MensPage/Snitch.webp",
-          "./MensPage/Snitch.webp",
-          "./MensPage/Snitch.webp",
-          "./MensPage/Snitch.webp",
-          "./MensPage/Snitch.webp"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Snitch",
         "price": "38.99",
@@ -98,15 +97,15 @@
       },
       {
         "id": 6,
-        "image": "./MensPage/Sweatshirts.webp",
+        "image": "./image.jpg",
         "images": [
-          "./MensPage/Sweatshirts.webp",
-          "./MensPage/Sweatshirts.webp",
-          "./MensPage/Sweatshirts.webp",
-          "./MensPage/Sweatshirts.webp",
-          "./MensPage/Sweatshirts.webp",
-          "./MensPage/Sweatshirts.webp",
-          "./MensPage/Sweatshirts.webp"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Sweatshirts",
         "price": "25.99",
@@ -117,15 +116,15 @@
       },
       {
         "id": 7,
-        "image": "./MensPage/Suits.webp",
+        "image": "./image.jpg",
         "images": [
-          "./MensPage/Suits.webp",
-          "./MensPage/Suits.webp",
-          "./MensPage/Suits.webp",
-          "./MensPage/Suits.webp",
-          "./MensPage/Suits.webp",
-          "./MensPage/Suits.webp",
-          "./MensPage/Suits.webp"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Suits",
         "price": "88.99",
@@ -136,14 +135,15 @@
       },
       {
         "id": 8,
-        "image": "./MensPage/Summer.webp",
+        "image": "./image.jpg",
         "images": [
-          "./MensPage/Summer.webp",
-          "./MensPage/Summer.webp",
-          "./MensPage/Summer.webp",
-          "./MensPage/Summer.webp",
-          "./MensPage/Summer.webp",
-          "./MensPage/Summer.webp"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Summer",
         "price": "8.99",
@@ -156,15 +156,15 @@
     "womenStyles": [
       {
         "id": 9,
-        "image": "./WomensPage/Autumn Wear.jpg",
+        "image": "./image.jpg",
         "images": [
-          "./WomensPage/Autumn Wear.jpg",
-          "./WomensPage/Autumn Wear.jpg",
-          "./WomensPage/Autumn Wear.jpg",
-          "./WomensPage/Autumn Wear.jpg",
-          "./WomensPage/Autumn Wear.jpg",
-          "./WomensPage/Autumn Wear.jpg",
-          "./WomensPage/Autumn Wear.jpg"
+         "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Autumn Wear",
         "price": "58.99",
@@ -175,15 +175,15 @@
       },
       {
         "id": 10,
-        "image": "./WomensPage/Minimalist.jpg",
+        "image": "./image.jpg",
         "images": [
-          "./WomensPage/Minimalist.jpg",
-          "./WomensPage/Minimalist.jpg",
-          "./WomensPage/Minimalist.jpg",
-          "./WomensPage/Minimalist.jpg",
-          "./WomensPage/Minimalist.jpg",
-          "./WomensPage/Minimalist.jpg",
-          "./WomensPage/Minimalist.jpg"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Minimalist",
         "price": "65.99",
@@ -194,15 +194,15 @@
       },
       {
         "id": 11,
-        "image": "./WomensPage/Shirts.jpg",
+        "image": "./image.jpg",
         "images": [
-          "./WomensPage/Shirts.jpg",
-          "./WomensPage/Shirts.jpg",
-          "./WomensPage/Shirts.jpg",
-          "./WomensPage/Shirts.jpg",
-          "./WomensPage/Shirts.jpg",
-          "./WomensPage/Shirts.jpg",
-          "./WomensPage/Shirts.jpg"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Women Shirts",
         "price": "78.99",
@@ -213,15 +213,15 @@
       },
       {
         "id": 12,
-        "image": "./WomensPage/Street Wear.jpg",
+        "image": "./image.jpg",
         "images": [
-          "./WomensPage/Street Wear.jpg",
-          "./WomensPage/Street Wear.jpg",
-          "./WomensPage/Street Wear.jpg",
-          "./WomensPage/Street Wear.jpg",
-          "./WomensPage/Street Wear.jpg",
-          "./WomensPage/Street Wear.jpg",
-          "./WomensPage/Street Wear.jpg"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Street Wear",
         "price": "38.99",
@@ -232,15 +232,15 @@
       },
       {
         "id": 13,
-        "image": "./WomensPage/Stylish.jpg",
+        "image": "./image.jpg",
         "images": [
-          "./WomensPage/Stylish.jpg",
-          "./WomensPage/Stylish.jpg",
-          "./WomensPage/Stylish.jpg",
-          "./WomensPage/Stylish.jpg",
-          "./WomensPage/Stylish.jpg",
-          "./WomensPage/Stylish.jpg",
-          "./WomensPage/Stylish.jpg"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Stylish",
         "price": "50.99",
@@ -251,15 +251,15 @@
       },
       {
         "id": 14,
-        "image": "./WomensPage/Traditional.jpg",
+        "image": "./image.jpg",
         "images": [
-          "./WomensPage/Traditional.jpg",
-          "./WomensPage/Traditional.jpg",
-          "./WomensPage/Traditional.jpg",
-          "./WomensPage/Traditional.jpg",
-          "./WomensPage/Traditional.jpg",
-          "./WomensPage/Traditional.jpg",
-          "./WomensPage/Traditional.jpg"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Traditional",
         "price": "58.99",
@@ -270,15 +270,15 @@
       },
       {
         "id": 15,
-        "image": "./WomensPage/Vacation.jpg",
+        "image": "./image.jpg",
         "images": [
-          "./WomensPage/Vacation.jpg",
-          "./WomensPage/Vacation.jpg",
-          "./WomensPage/Vacation.jpg",
-          "./WomensPage/Vacation.jpg",
-          "./WomensPage/Vacation.jpg",
-          "./WomensPage/Vacation.jpg",
-          "./WomensPage/Vacation.jpg"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Vacation",
         "price": "28.39",
@@ -289,15 +289,15 @@
       },
       {
         "id": 16,
-        "image": "./WomensPage/Office Attire.jpg",
+        "image": "./image.jpg",
         "images": [
-          "./WomensPage/Office Attire.jpg",
-          "./WomensPage/Office Attire.jpg",
-          "./WomensPage/Office Attire.jpg",
-          "./WomensPage/Office Attire.jpg",
-          "./WomensPage/Office Attire.jpg",
-          "./WomensPage/Office Attire.jpg",
-          "./WomensPage/Office Attire.jpg"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Office Attire",
         "price": "99.99",
@@ -310,53 +310,51 @@
     "trendyProducts": [
       {
         "id": 17,
-        "image": "./TrendyProducts/Tshirts.jpg",
+        "image": "./image.jpg",
         "images": [
-          "./TrendyProducts/Tshirts.jpg",
-          "./TrendyProducts/Tshirts.jpg",
-          "./TrendyProducts/Tshirts.jpg",
-          "./TrendyProducts/Tshirts.jpg",
-          "./TrendyProducts/Tshirts.jpg",
-          "./TrendyProducts/Tshirts.jpg",
-          "./TrendyProducts/Tshirts.jpg"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "T-shirts",
         "price": "39.99",
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
-        "discount": 10,
         "rating": 5
       },
       {
         "id": 18,
-        "image": "./TrendyProducts/Jeans.png",
+        "image": "./image.jpg",
         "images": [
-          "./TrendyProducts/Jeans.png",
-          "./TrendyProducts/Jeans.png",
-          "./TrendyProducts/Jeans.png",
-          "./TrendyProducts/Jeans.png",
-          "./TrendyProducts/Jeans.png",
-          "./TrendyProducts/Jeans.png",
-          "./TrendyProducts/Jeans.png"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Jeans",
         "price": "59.99",
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
-        "discount": 20,
         "rating":4
       },
       {
         "id": 19,
-        "image": "./TrendyProducts/Trousers.jpg",
+        "image": "./image.jpg",
         "images": [
-          "./TrendyProducts/Trousers.jpg",
-          "./TrendyProducts/Trousers.jpg",
-          "./TrendyProducts/Trousers.jpg",
-          "./TrendyProducts/Trousers.jpg",
-          "./TrendyProducts/Trousers.jpg",
-          "./TrendyProducts/Trousers.jpg",
-          "./TrendyProducts/Trousers.jpg"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Trousers",
         "price": "49.99",
@@ -367,72 +365,69 @@
       },
       {
         "id": 20,
-        "image": "./TrendyProducts/Kurtas.png",
+        "image": "./image.jpg",
         "images": [
-          "./TrendyProducts/Kurtas.png",
-          "./TrendyProducts/Kurtas.png",
-          "./TrendyProducts/Kurtas.png",
-          "./TrendyProducts/Kurtas.png",
-          "./TrendyProducts/Kurtas.png",
-          "./TrendyProducts/Kurtas.png",
-          "./TrendyProducts/Kurtas.png"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Kurtas",
         "price": "45.99",
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
-        "discount": 20,
         "rating":4
       },
       {
         "id": 21,
-        "image": "./TrendyProducts/Ethnic Wear.jpg",
+        "image": "./image.jpg",
         "images": [
-          "./TrendyProducts/Ethnic Wear.jpg",
-          "./TrendyProducts/Ethnic Wear.jpg",
-          "./TrendyProducts/Ethnic Wear.jpg",
-          "./TrendyProducts/Ethnic Wear.jpg",
-          "./TrendyProducts/Ethnic Wear.jpg",
-          "./TrendyProducts/Ethnic Wear.jpg",
-          "./TrendyProducts/Ethnic Wear.jpg"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Ethnic Wear",
         "price": "75.99",
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
-        "discount": 30,
         "rating":5
       },
       {
         "id": 22,
-        "image": "./TrendyProducts/Gen Z.jpg",
+        "image": "./image.jpg",
         "images": [
-          "./TrendyProducts/Gen Z.jpg",
-          "./TrendyProducts/Gen Z.jpg",
-          "./TrendyProducts/Gen Z.jpg",
-          "./TrendyProducts/Gen Z.jpg",
-          "./TrendyProducts/Gen Z.jpg",
-          "./TrendyProducts/Gen Z.jpg",
-          "./TrendyProducts/Gen Z.jpg"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Gen Z",
         "price": "39.99",
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
-        "discount": 35,
         "rating":5
       },
       {
         "id": 23,
-        "image": "./TrendyProducts/Jackets.jpg",
+        "image": "./image.jpg",
         "images": [
-          "./TrendyProducts/Jackets.jpg",
-          "./TrendyProducts/Jackets.jpg",
-          "./TrendyProducts/Jackets.jpg",
-          "./TrendyProducts/Jackets.jpg",
-          "./TrendyProducts/Jackets.jpg",
-          "./TrendyProducts/Jackets.jpg",
-          "./TrendyProducts/Jackets.jpg"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Jackets",
         "price": "69.99",
@@ -443,15 +438,15 @@
       },
       {
         "id": 24,
-        "image": "./TrendyProducts/Kids wear.jpg",
+        "image": "./image.jpg",
         "images": [
-          "./TrendyProducts/Kids wear.jpg",
-          "./TrendyProducts/Kids wear.jpg",
-          "./TrendyProducts/Kids wear.jpg",
-          "./TrendyProducts/Kids wear.jpg",
-          "./TrendyProducts/Kids wear.jpg",
-          "./TrendyProducts/Kids wear.jpg",
-          "./TrendyProducts/Kids wear.jpg"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Kids wear",
         "price": "39.99",
@@ -464,15 +459,15 @@
     "limitedEditionProducts": [
       {
         "id": 25,
-        "image": "./LimitedEdition/Sunglasses.png",
+        "image": "./image.jpg",
         "images": [
-          "./LimitedEdition/Sunglasses.png",
-          "./LimitedEdition/Sunglasses.png",
-          "./LimitedEdition/Sunglasses.png",
-          "./LimitedEdition/Sunglasses.png",
-          "./LimitedEdition/Sunglasses.png",
-          "./LimitedEdition/Sunglasses.png",
-          "./LimitedEdition/Sunglasses.png"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Sunglasses",
         "price": "10.99",
@@ -483,15 +478,15 @@
       },
       {
         "id": 26,
-        "image": "./LimitedEdition/Watches.png",
+        "image": "./image.jpg",
         "images": [
-          "./LimitedEdition/Watches.png",
-          "./LimitedEdition/Watches.png",
-          "./LimitedEdition/Watches.png",
-          "./LimitedEdition/Watches.png",
-          "./LimitedEdition/Watches.png",
-          "./LimitedEdition/Watches.png",
-          "./LimitedEdition/Watches.png"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Watches",
         "price": "15.99",
@@ -502,15 +497,15 @@
       },
       {
         "id": 27,
-        "image": "./LimitedEdition/Caps.png",
+        "image": "./image.jpg",
         "images": [
-          "./LimitedEdition/Caps.png",
-          "./LimitedEdition/Caps.png",
-          "./LimitedEdition/Caps.png",
-          "./LimitedEdition/Caps.png",
-          "./LimitedEdition/Caps.png",
-          "./LimitedEdition/Caps.png",
-          "./LimitedEdition/Caps.png"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Caps",
         "price": "9.99",
@@ -521,15 +516,15 @@
       },
       {
         "id": 28,
-        "image": "./LimitedEdition/Handbags.png",
+        "image": "./image.jpg",
         "images": [
-          "./LimitedEdition/Handbags.png",
-          "./LimitedEdition/Handbags.png",
-          "./LimitedEdition/Handbags.png",
-          "./LimitedEdition/Handbags.png",
-          "./LimitedEdition/Handbags.png",
-          "./LimitedEdition/Handbags.png",
-          "./LimitedEdition/Handbags.png"
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg",
+          "./image.jpg"
         ],
         "style": "Handbags",
         "price": "19.99",
@@ -542,90 +537,90 @@
     "eastsideProducts": [
       {
         "id": 29,
-        "image": "./EastsideProducts/Uomo1.png",
+        "image": "./image.jpg",
         "style": "Uomo1"
       },
       {
         "id": 30,
-        "image": "./EastsideProducts/Uomo2.png",
+        "image": "./image.jpg",
         "style": "Uomo2"
       },
       {
         "id": 31,
-        "image": "./EastsideProducts/Uomo3.png",
+        "image": "./image.jpg",
         "style": "Uomo3"
       },
       {
         "id": 32,
-        "image": "./EastsideProducts/Uomo4.png",
+        "image": "./image.jpg",
         "style": "Uomo4"
       },
       {
         "id": 33,
-        "image": "./EastsideProducts/Uomo5.png",
+        "image": "./image.jpg",
         "style": "Uomo5"
       },
       {
         "id": 34,
-        "image": "./EastsideProducts/Uomo6.png",
+        "image": "./image.jpg",
         "style": "Uomo6"
       },
       {
         "id": 35,
-        "image": "./EastsideProducts/Uomo7.png",
+        "image": "./image.jpg",
         "style": "Uomo7"
       },
       {
         "id": 36,
-        "image": "./EastsideProducts/Uomo8.png",
+        "image": "./image.jpg",
         "style": "Uomo8"
       },
       {
         "id": 37,
-        "image": "./EastsideProducts/Uomo9.png",
+        "image": "./image.jpg",
         "style": "Uomo9"
       },
       {
         "id": 38,
-        "image": "./EastsideProducts/Uomo10.png",
+        "image": "./image.jpg",
         "style": "Uomo10"
       },
       {
         "id": 39,
-        "image": "./EastsideProducts/Uomo11.png",
+        "image": "./image.jpg",
         "style": "Uomo11"
       },
       {
         "id": 40,
-        "image": "./EastsideProducts/Uomo12.png",
+        "image": "./image.jpg",
         "style": "Uomo12"
       }
     ],
     "categories": [
       {
         "id": 41,
-        "image": "./WomensPage/Traditional.jpg",
+        "image": "./image.jpg",
         "style": "Traditional Wear",
         "path": "fashion",
         "category" : "WOMEN"
       },
       {
         "id": 42,
-        "image": "./SummerStyles/Summerstyle1.jpg",
+        "image": "./image.jpg",
         "style": "Accessories",
         "path": "watches",
         "category" : "SUNGLASSES"
       },
       {
         "id": 43,
-        "image": "./SummerStyles/Summerstyle2.jpg",
+        "image": "./image.jpg",
         "style": "Jeans",
         "path": "cosmetics",
         "category" : "DENIM"
       },
       {
         "id": 44,
-        "image": "./SummerStyles/Summerstyle3.jpg",
+        "image": "./image.jpg",
         "style": "Night Wear",
         "path": "babystore",
         "category" : "THE CLASSICS"
@@ -634,19 +629,19 @@
     "winterstyles": [
       {
         "id": 44,
-        "image": "./WinterStyles/WinterStyles1.jpg",
+        "image": "./image.jpg",
         "style": "WinterStyles1",
         "path": "winter"
       },
       {
         "id": 45,
-        "image": "./WinterStyles/WinterStyles2.jpg",
+        "image": "./image.jpg",
         "style": "WinterStyles2",
         "path": "winter"
       },
       {
         "id": 46,
-        "image": "./WinterStyles/WinterStyles3.jpg",
+        "image": "./image.jpg",
         "style": "WinterStyles3",
         "path": "winter"
       }
