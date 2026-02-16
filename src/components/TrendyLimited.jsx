@@ -21,7 +21,7 @@ export default function TrendyLimited({ style, products }) {
             </div>
           </>
         ) : (
-          <b>LIMITED EDITION</b>
+          <p>LIMITED <b>EDITION</b></p>
         )}
       </div>
       <div className={styles.thirdblock}>

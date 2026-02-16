@@ -17,13 +17,13 @@
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .sixth img {
   width: 100%;
   border: 1px solid black;
-  height: 100%;
+  height: 70%;
   cursor: pointer;
   transition: transform 0.3s ease-out;
 }

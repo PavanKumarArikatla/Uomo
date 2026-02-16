@@ -51,6 +51,10 @@
 .button {
   font-size: 1rem;
   cursor: pointer;
+  text-decoration: underline;
+  position: absolute;
+  top: 95%;
+  left: 1%;
 }
 
 .slider strong {

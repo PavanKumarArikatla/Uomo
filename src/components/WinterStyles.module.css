@@ -1,17 +1,16 @@
 .fifth {
-  margin: 2rem auto;
+  margin: 5rem auto;
   display: flex;
   justify-content: center;
-  width: 80%;
+  width: 90%;
   height: 18rem;
-  gap: 5rem;
+  overflow: hidden;
 }
 
 .fifth div {
   width: 45%;
   height: 100%;
   margin: auto;
-  text-align: center;
   transition: transform 0.3s ease;
   position: relative;
 }
@@ -19,18 +18,23 @@
 .fifth div .text {
   position: absolute;
   bottom: 20%;
-  left: 25%;
+  left: 17%;
   text-align: left;
   transform: translateX(-50%);
 }
 
-.fifth img {
+.img1 {
   width: 60%;
+  height: 100%;
   position: absolute;
   left: 40%;
-  height: 100%;
   border: 1px solid rgb(217, 203, 203);
-  border-radius: 5px;
+  opacity: 30%;
+}
+
+.img2{
+  width: 150%;
+  height: 220%;
 }
 
 .fifth div:hover {

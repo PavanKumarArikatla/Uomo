@@ -39,7 +39,7 @@ function CollectionStyles() {
               
                 <span className={styles.span}>
                   <strong>Beauty</strong>& More
-                  <p className="text-xs">Surprise someone with the gift.</p>
+                  <p className="text-xs">Surprise someone with the gift they really want.</p>
                   <Link to="/beauty"><p className="text-xs underline">DISCOVER MORE</p></Link>
                 </span>
             </div>

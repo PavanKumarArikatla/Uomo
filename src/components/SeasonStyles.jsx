@@ -157,7 +157,7 @@ export default function SeasonStyles({ season }) {
               <strong>{`${extendedSlides[actualIndex+1]?.category || ""}`}</strong>
               <br></br>
               <Link to={`${extendedSlides[actualIndex+1].path || ""}`}>
-                <button className={styles.button}>Explore Now</button>
+                <button className={styles.button}>DISCOVER MORE</button>
               </Link>
           </>
         ) : (

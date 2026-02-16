@@ -16,7 +16,7 @@
 .firstimage {
   background-color: #eff0f2;
   background-repeat: no-repeat;
-  background-size: 70% 100%;
+  background-size: 65% 100%;
   background-position-x: right;
   position: relative;
   transition: transform 0.3s ease;
@@ -64,9 +64,10 @@
 .thirdimage {
   background-color: #e5e2db;
   background-repeat: no-repeat;
-  background-size: 80% 100%;
+  background-size: 72% 90%;
   object-fit: cover;
   background-position-x: right;
+  background-position-y: bottom;
   position: relative;
   transition: transform 0.3s ease;
   border-radius: 5px;
@@ -92,6 +93,7 @@
   position: absolute;
   bottom: 10%;
   left: 10%;
+  line-height: 2rem;
 }
 
 .some {

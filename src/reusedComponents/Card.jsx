@@ -14,8 +14,8 @@ export default function Card({ card, addItems }) {
           Add to cart
         </button>        
       </div>
-      <p className="absolute left-6 bottom-11 opacity-50 text-xs">Dresses</p>
-      <b>{card.style}</b>
+      <article className="absolute left-6 bottom-11 opacity-50 text-xs">Dresses</article>
+      <p>{card.style}</p>
       <pre>{card.discount ? <p className="flex gap-3"> <h6 className="line-through opacity-70">${card.price}</h6> <h6 className="text-red-600">${price}</h6> </p> :`$${card.price}`  }</pre>
     </div>
   );
