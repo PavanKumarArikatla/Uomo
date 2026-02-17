@@ -4,8 +4,7 @@ import SeasonStyles from "../components/SeasonStyles";
 import CollectionStyles from "../components/CollectionStyles";
 import TrendyLimited from "../components/TrendyLimited";
 import WinterStyles from "../components/WinterStyles";
-import Eastside from "../components/Eastside";
-import Footer from "../components/Footer";
+import Uomo from "../components/Uomo";
 import SocialMedia from "./SocialMedia";
 import styles from "./Home.module.css";
 import Services from "../components/Services";
@@ -32,13 +31,11 @@ export default function Home() {
 
           <TrendyLimited products={limitedEditionProducts} />
 
-          <Eastside products={eastsideProducts} />
+          <Uomo products={eastsideProducts} />
 
           <Services />
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }

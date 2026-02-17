@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import styles from "./Eastside.module.css";
+﻿import { Link } from "react-router-dom";
+import styles from "./Uomo.module.css";
 
-export default function Eastside({ products}) {
+export default function Uomo({ products}) {
   return (
     <div className={styles.sixthblock}>
       <b className={styles.text}>UOMO</b>

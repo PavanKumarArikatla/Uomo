@@ -276,8 +276,6 @@ export default function ItemDetails() {
               </div>
             </section>
           </main>
-
-          <Footer />
         </div>
   );
 }

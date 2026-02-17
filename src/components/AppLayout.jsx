@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import AppNavigation from "../reusedComponents/AppNavigation";
+import Footer from "./Footer";
 
 export default function AppLayout() {
   return (
@@ -7,6 +8,8 @@ export default function AppLayout() {
       <AppNavigation />
 
       <Outlet />
+
+      <Footer />
     </div>
   );
 }
