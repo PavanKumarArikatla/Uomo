@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { StylesContext } from "../../../contexts/StylesContext";
 import Card from "../../../reusedComponents/Card";
 import Shopping from "../../../reusedComponents/Shopping";
-import Footer from "../../../components/Footer";
 import styles from "./SearchResults.module.css";
 
 export default function SearchResults() {
@@ -118,10 +117,6 @@ export default function SearchResults() {
           <p>You might also like above styles</p>
         </div>
       )}
-
-      <br />
-      <br />
-      <Footer />
     </div>
   );
 }

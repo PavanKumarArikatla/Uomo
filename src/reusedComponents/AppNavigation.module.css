@@ -7,10 +7,11 @@
   gap: 2rem;
   justify-content: space-between;
   align-items: center;
-  margin: 0.5rem auto;
+  margin: 1.3rem auto;
   height: 4rem;
   width: 100%;
   padding: 0 15%;
+  top: 0;
   position: sticky;
   background-color: rgb(249, 247, 245);
   border-radius: 10px;
@@ -38,6 +39,8 @@
 .nav img {
   width: 4rem;
   height: 3rem;
+  min-width: 3rem;
+  flex-shrink: 0;
   border-radius: 0.7rem;
   transition: transform 0.3s ease;
 }

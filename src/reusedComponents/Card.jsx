@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import styles from "./Card.module.css";
 
-export default function Card({ card, addItems, smallImage }) {
+export default function Card({ card, addItems }) {
   const discount = card.price*(card.discount/100);
   const price = (card.price - discount).toFixed(2);
-  console.log(smallImage)
   return (
     <div className={styles.card}>
       <div className={styles.imageWrapper}>
