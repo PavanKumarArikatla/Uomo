@@ -6,11 +6,14 @@ import styles from "./AppNavigation.module.css";
 export default function AppNavigation() {
   const navigate = useNavigate();
   const { count, search, handleChange } = useContext(StylesContext);
+  const {handleLogin} = useContext(StylesContext)
 
   function handleSubmit(e) {
     e.preventDefault();
     if (search) navigate("/search");
   }
+
+
   return (
     <div className={styles.nav}>
       <NavLink to="/">
@@ -40,24 +43,24 @@ export default function AppNavigation() {
           onChange={handleChange}
         />
       </form>
-      <NavLink to="/login">
+      <button onClick={handleLogin}>
         <li>
           <i className="fa-regular fa-user"></i>
         </li>
-      </NavLink>
+      </button>
 
-      <NavLink to="/wishlist">
+      <button>
         <li>
           <i className="fa-regular fa-heart"></i>
         </li>
-      </NavLink>
+      </button>
 
-      <NavLink to="/cart">
+      <button>
         <li className={styles.cartWrapper}>
           <i className="fa-solid fa-cart-shopping"></i>
           {count > 0 && <span className={styles.badge}>{count}</span>}
         </li>
-      </NavLink>
+      </button>
 
       <NavLink to=""><i className="fa-solid fa-bars"></i></NavLink>
 

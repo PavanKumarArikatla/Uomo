@@ -40,42 +40,42 @@ export default function SearchResults() {
 
         <div className={styles.beforeSearch}>
           <div>
-            <img src="" />
+            <img src={null} />
             <p>Women</p>
             <p>Tops</p>
           </div>
           <div>
-            <img src="" />
+            <img src={null} />
             <p>Mens</p>
             <p>Jeans</p>
           </div>
           <div>
-            <img src="" />
+            <img src={null} />
             <p>Women</p>
             <p>Caps</p>
           </div>
           <div>
-            <img src="" />
+            <img src={null} />
             <p>Kids</p>
             <p>Tops</p>
           </div>
           <div>
-            <img src=""/>
+            <img src={null}/>
             <p>Formal</p>
             <p>Shoes</p>
           </div>
           <div>
-            <img src=""/>
+            <img src={null}/>
             <p>Traditional</p>
             <p>Wear</p>
           </div>
           <div>
-            <img src=""/>
+            <img src={null}/>
             <p>Women</p>
             <p>Tops</p>
           </div>
           <div>
-            <img src=""/>
+            <img src={null}/>
             <p>Kids</p>
             <p>shoes</p>
           </div>

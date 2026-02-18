@@ -9,6 +9,9 @@ export default function CardProvider({ children }) {
   const [allStyles, setAllStyles] = useState([]);
   const [wishlist, setWishlist] = useState([]);
   const [cartItems, setCartItems] = useState([]);
+  const [login, setLogin] = useState(false)
+
+  
   const count = cartItems.length;
   const {
     mensStyles,
@@ -38,34 +41,6 @@ export default function CardProvider({ children }) {
 
   const allData = getAllData();
 
-  // const allData = () => {if (
-  //     mensStyles ||
-  //     womenStyles ||
-  //     trendyProducts ||
-  //     limitedEditionProducts ||
-  //     eastsideProducts
-  //   )
-  //     return [
-  //       ...mensStyles,
-  //       ...womenStyles,
-  //       ...trendyProducts,
-  //       ...limitedEditionProducts,
-  //       ...eastsideProducts,
-  //     ];}
-
-  // searching item by all the values of the item
-
-  // function filterProducts(products) {
-  //   return products.filter((item) =>
-  //     Object.values(item)
-  //       .toString()
-  //       .toLocaleLowerCase()
-  //       .includes(search.toString().toLocaleLowerCase())
-  //   );
-  // }
-
-  // Searching by style value of the item
-
   function filterProducts(products) {
     return products.filter((item) =>
       item.style
@@ -75,21 +50,11 @@ export default function CardProvider({ children }) {
     );
   }
 
+  function handleLogin(){
+    setLogin((login) => !login)
+  }
+
   const searchResults = allData && filterProducts(allData);
-
-  // const mens = search && mensStyles && filterProducts(mensStyles);
-  // const women = search && womenStyles && filterProducts(womenStyles);
-  // const trendy = search && trendyProducts && filterProducts(trendyProducts);
-  // const limitedEdition = search && limitedEditionProducts && filterProducts(limitedEditionProducts);
-  // const eastside = search && eastsideProducts && filterProducts(eastsideProducts);
-
-  // const searchResults = [
-  //   ...mens,
-  //   ...women,
-  //   ...trendy,
-  //   ...limitedEdition,
-  //   ...eastside,
-  // ];
 
   function addItems(card) {
     setCartItems((cartItems) => [...cartItems, card]);
@@ -145,6 +110,8 @@ export default function CardProvider({ children }) {
         search,
         setSearch,
         handleChange,
+        login,
+        handleLogin
       }}
     >
       {children}
