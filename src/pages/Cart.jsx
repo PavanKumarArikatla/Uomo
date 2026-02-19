@@ -1,7 +1,5 @@
 import { useContext, useState } from "react";
 import { StylesContext } from "../contexts/StylesContext";
-import BackButton from "../reusedComponents/BackButton";
-import AddItemOrderButton from "../reusedComponents/AddItemOrderButton";
 import styles from "./Cart.module.css";
 import Item from "./Item";
 
@@ -24,7 +22,6 @@ export default function Cart() {
 
   return (
     <div className={styles.cart}>
-      <BackButton />
       <li className={`${styles.cartWrapper} ${styles.li}`}>
         <i className="fa-solid fa-cart-shopping"></i>
         {count > 0 && <span className={styles.badge}>{count}</span>}
@@ -76,9 +73,6 @@ export default function Cart() {
                 </div>
 
                 <br></br>
-                <AddItemOrderButton onClick={placeOrder}>
-                  Place Order
-                </AddItemOrderButton>
               </div>
             </div>
           ) : (

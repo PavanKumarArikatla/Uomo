@@ -13,7 +13,6 @@ export default function AppNavigation() {
     if (search) navigate("/search");
   }
 
-
   return (
     <div className={styles.nav}>
       <NavLink to="/">
@@ -43,19 +42,19 @@ export default function AppNavigation() {
           onChange={handleChange}
         />
       </form>
-      <button onClick={handleLogin}>
+      <button onClick={handleLogin} className="cursor-pointer">
         <li>
           <i className="fa-regular fa-user"></i>
         </li>
       </button>
 
-      <button>
+      <button className="cursor-pointer">
         <li>
           <i className="fa-regular fa-heart"></i>
         </li>
       </button>
 
-      <button>
+      <button className="cursor-pointer">
         <li className={styles.cartWrapper}>
           <i className="fa-solid fa-cart-shopping"></i>
           {count > 0 && <span className={styles.badge}>{count}</span>}

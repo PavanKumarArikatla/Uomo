@@ -1,5 +1,4 @@
 import styles from "./Login.module.css";
-import BackButton from "../reusedComponents/BackButton";
 
 export default function Login() {
   function handleSubmit(e) {
@@ -7,7 +6,6 @@ export default function Login() {
   }
   return (
     <div className="homecontainer">
-      <BackButton />
       <form onSubmit={handleSubmit} className={styles.login}>
         {/* <img src="Login1.jpg" alt="Login image" /> */}
         <b className="text-2xl text-fuchsia-900">Create an account</b>

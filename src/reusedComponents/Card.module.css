@@ -6,7 +6,6 @@
 
 .imageWrapper {
   position: relative;
-  overflow: hidden;
 }
 
 .cartButton {
@@ -50,7 +49,7 @@
 
 .image {
   width: 100%;
-  height: 25rem;
+  height: 26rem;
   padding: 1rem;
   border-radius: 5px;
   cursor: pointer;
