@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
-import AppNavigation from "../reusedComponents/AppNavigation";
-import Footer from "./Footer";
-import Login from "./Login";
 import { useContext } from "react";
 import { StylesContext } from "../contexts/StylesContext";
-import Register from "./Register";
+import AppNavigation from "../reusedComponents/AppNavigation";
+import Footer from "./homeComponents/Footer";
+import Login from "../components/navigationComponents/Login";
+import Register from "../components/navigationComponents/Register";
 
 export default function AppLayout() {
   const { login, register } = useContext(StylesContext)

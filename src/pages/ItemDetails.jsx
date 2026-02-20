@@ -1,6 +1,5 @@
 import { useLocation } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
-import Footer from "../components/Footer";
 import styles from "./ItemDetails.module.css";
 
 const detailsRows = [

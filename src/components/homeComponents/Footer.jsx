@@ -64,15 +64,15 @@ function Footer() {
         <p>promotions and more!</p>
         <br></br>
         <form className="flex items-center justify-around gap-2 bg-white h-14 w-80">
-  <input
-    type="text"
-    placeholder="Enter your email"
-    className="h-10 rounded-md text-black"
-  />
-  <button className="h-10 px-4 text-black ">
-    Join
-  </button>
-</form>
+          <input
+            type="text"
+            placeholder="Enter your email"
+            className="h-10 rounded-md text-black focus:outline-none"
+          />
+          <button className="h-10 px-4 text-black ">
+            Join
+          </button>
+        </form>
 
         <br></br>
         <br></br>

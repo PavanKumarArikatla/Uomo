@@ -1,6 +1,6 @@
 import { useContext } from "react"
-import { StylesContext } from "../contexts/StylesContext"
-import BlackButton from "../reusedComponents/BlackButton"
+import { StylesContext } from "../../contexts/StylesContext"
+import BlackButton from "../../reusedComponents/BlackButton"
 import styles from "./LoginRegister.module.css"
 
 export default function Login(){

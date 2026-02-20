@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { StylesContext } from "../contexts/StylesContext";
-import SeasonStyles from "../components/SeasonStyles";
-import CollectionStyles from "../components/CollectionStyles";
-import TrendyLimited from "../components/TrendyLimited";
-import WinterStyles from "../components/WinterStyles";
-import Uomo from "../components/Uomo";
+import SeasonStyles from "../components/homeComponents/SeasonStyles";
+import CollectionStyles from "../components/homeComponents/CollectionStyles";
+import TrendyLimited from "../components/homeComponents/TrendyLimited";
+import WinterStyles from "../components/homeComponents/WinterStyles";
+import Uomo from "../components/homeComponents/Uomo";
+import Services from "../components/homeComponents/Services";
 import SocialMedia from "./SocialMedia";
 import styles from "./Home.module.css";
-import Services from "../components/Services";
 
 export default function Home() {
   const { trendyProducts, limitedEditionProducts, eastsideProducts } =

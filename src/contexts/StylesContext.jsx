@@ -12,6 +12,7 @@ export default function CardProvider({ children }) {
   const [login, setLogin] = useState(false)
   const [register, setRegister] = useState(false)
 
+
   
   const count = cartItems.length;
   const {
@@ -55,7 +56,6 @@ export default function CardProvider({ children }) {
     setLogin((login) => !login)
   }
   function handleRegister(){
-    setLogin((login) => !login)
     setRegister((register) => !register)
   }
   function closeLoginRegister(){

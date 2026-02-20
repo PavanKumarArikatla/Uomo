@@ -17,7 +17,8 @@
         "price": "58.99",
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
-        "rating": 4
+        "rating": 4,
+        "color":"Black"
       },
       {
         "id": 2,
@@ -36,8 +37,8 @@
         "type": "Men Comfort Relaxed Fit Cotton Casual Shirt",
         "brand": "Bear Brown",
         "discount": "12",
-        "rating":4
-      },
+        "rating":4,
+        "color":"Cadet Blue"      },
       {
         "id": 3,
         "image": "./image.jpg",
@@ -55,8 +56,8 @@
         "type": "Men Classic Cutaway Slim Fit Casual Shirt",
         "brand": "Bear Brown",
         "discount": "20",
-        "rating":3
-      },
+        "rating":3,
+        "color":"Navy Blue"      },
       {
         "id": 4,
         "image": "./image.jpg",
@@ -74,8 +75,8 @@
         "type": "The Lifestyle Co Pure Cotton Casual Shirts",
         "brand": "Bear Brown",
         "discount": "5",
-        "rating":5
-      },
+        "rating":5,
+        "color":"Sky Blue"      },
       {
         "id": 5,
         "image": "./image.jpg",
@@ -93,8 +94,8 @@
         "type": "Men Crinkle Ls Regular Fit Opaque Shirt",
         "brand": "Bear Brown",
         "discount": "8",
-        "rating":4
-      },
+        "rating":4,
+        "color":"Red"      },
       {
         "id": 6,
         "image": "./image.jpg",
@@ -112,8 +113,8 @@
         "type": "Men Standard Opaque Cotton Casual Shirt",
         "brand": "Bear Brown",
         "discount": "17",
-        "rating":2
-      },
+        "rating":2,
+        "color":"Green"      },
       {
         "id": 7,
         "image": "./image.jpg",
@@ -131,8 +132,8 @@
         "type": "Men Olive Green Solid Fit Casual Shirt",
         "brand": "Bear Brown",
         "discount":0,
-        "rating":1
-      },
+        "rating":1,
+        "color":"Wheat"      },
       {
         "id": 8,
         "image": "./image.jpg",
@@ -150,8 +151,8 @@
         "type": "Men Blue & White Slim Fit Striped Casual Shirt",
         "brand": "Bear Brown",
         "discount": 18,
-        "rating":3
-      }
+        "rating":3,
+        "color":"Brown"      }
     ],
     "womenStyles": [
       {
@@ -171,8 +172,8 @@
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
         "discount": 15,
-        "rating":5
-      },
+        "rating":5,
+        "color":"Off White"      },
       {
         "id": 10,
         "image": "./image.jpg",
@@ -190,8 +191,8 @@
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
         "discount": 20,
-        "rating":4
-      },
+        "rating":4,
+        "color":"Grey"      },
       {
         "id": 11,
         "image": "./image.jpg",
@@ -209,8 +210,8 @@
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
         "discount": 13,
-        "rating":5
-      },
+        "rating":5,
+        "color":"Marron"      },
       {
         "id": 12,
         "image": "./image.jpg",
@@ -228,8 +229,8 @@
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
         "discount": 15,
-        "rating":5
-      },
+        "rating":5,
+        "color":"Black"      },
       {
         "id": 13,
         "image": "./image.jpg",
@@ -247,8 +248,8 @@
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
         "discount": 10,
-        "rating":5
-      },
+        "rating":5,
+        "color":"Green"      },
       {
         "id": 14,
         "image": "./image.jpg",
@@ -266,8 +267,8 @@
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
         "discount": 18,
-        "rating":4
-      },
+        "rating":4,
+        "color":"Orange"      },
       {
         "id": 15,
         "image": "./image.jpg",
@@ -285,8 +286,8 @@
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
         "discount": 10,
-        "rating":5
-      },
+        "rating":5,
+        "color":"Pink"      },
       {
         "id": 16,
         "image": "./image.jpg",
@@ -304,8 +305,8 @@
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
         "discount": 20,
-        "rating":3
-      }
+        "rating":3,
+        "color":"Red"      }
     ],
     "trendyProducts": [
       {
@@ -324,7 +325,8 @@
         "price": "39.99",
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
-        "rating": 5
+        "rating": 5,
+        "color":"White"
       },
       {
         "id": 18,
@@ -342,8 +344,8 @@
         "price": "59.99",
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
-        "rating":4
-      },
+        "rating":4,
+        "color":"Blue"      },
       {
         "id": 19,
         "image": "./image.jpg",
@@ -361,8 +363,8 @@
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
         "discount": 12,
-        "rating":5
-      },
+        "rating":5,
+        "color":"Red"      },
       {
         "id": 20,
         "image": "./image.jpg",
@@ -379,8 +381,8 @@
         "price": "45.99",
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
-        "rating":4
-      },
+        "rating":4,
+        "color":"Green"      },
       {
         "id": 21,
         "image": "./image.jpg",
@@ -397,8 +399,8 @@
         "price": "75.99",
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
-        "rating":5
-      },
+        "rating":5,
+        "color":"Red"      },
       {
         "id": 22,
         "image": "./image.jpg",
@@ -415,8 +417,8 @@
         "price": "39.99",
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
-        "rating":5
-      },
+        "rating":5, 
+        "color":"Yellow"      },
       {
         "id": 23,
         "image": "./image.jpg",
@@ -434,8 +436,8 @@
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
         "discount": 50,
-        "rating":5
-      },
+        "rating":5,
+        "color":"Green"      },
       {
         "id": 24,
         "image": "./image.jpg",
@@ -453,8 +455,8 @@
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
         "discount": 25,
-        "rating":4
-      }
+        "rating":4,
+        "color":"Purple"      }
     ],
     "limitedEditionProducts": [
       {
@@ -474,8 +476,8 @@
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
         "discount": 20,
-        "rating":3
-      },
+        "rating":3,
+        "color":"Orange"      },
       {
         "id": 26,
         "image": "./image.jpg",
@@ -493,8 +495,8 @@
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
         "discount": 15,
-        "rating":4
-      },
+        "rating":4,
+        "color":"Black"      },
       {
         "id": 27,
         "image": "./image.jpg",
@@ -512,8 +514,8 @@
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
         "discount": 10,
-        "rating":5
-      },
+        "rating":5,
+        "color":"Pink"      },
       {
         "id": 28,
         "image": "./image.jpg",
@@ -531,8 +533,8 @@
         "type": "BULLMER Trendy Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
         "discount": 35,
-        "rating":5
-      }
+        "rating":5,
+        "color":"Blue"      }
     ],
     "eastsideProducts": [
       {

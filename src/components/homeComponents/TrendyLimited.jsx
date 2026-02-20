@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import Card from "../reusedComponents/Card";
+import Card from "../../reusedComponents/Card";
 import styles from "./TrendyLimited.module.css";
-import { StylesContext } from "../contexts/StylesContext";
+import { StylesContext } from "../../contexts/StylesContext";
 import { Link } from "react-router-dom";
 
 export default function TrendyLimited({ style, products }) {

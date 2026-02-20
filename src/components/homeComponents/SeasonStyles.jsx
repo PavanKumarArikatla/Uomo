@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./SeasonStyles.module.css";
 import { useContext, useEffect, useRef, useState } from "react";
-import { StylesContext } from "../contexts/StylesContext";
+import { StylesContext } from "../../contexts/StylesContext";
 
 export default function SeasonStyles({ season }) {
   const { categories, winterstyles } = useContext(StylesContext);
