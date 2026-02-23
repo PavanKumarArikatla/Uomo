@@ -11,8 +11,6 @@ export default function CardProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
   const [login, setLogin] = useState(false)
   const [register, setRegister] = useState(false)
-
-
   
   const count = cartItems.length;
   const {

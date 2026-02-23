@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { StylesContext } from "../../contexts/StylesContext"
 import BlackButton from "../../reusedComponents/BlackButton"
-import styles from "./LoginRegister.module.css"
+import styles from "./Navigation.module.css"
 
 export default function Register(){
     const { closeLoginRegister } = useContext(StylesContext)
