@@ -5,9 +5,10 @@ import AppNavigation from "../reusedComponents/AppNavigation";
 import Footer from "./homeComponents/Footer";
 import Login from "../components/navigationComponents/Login";
 import Register from "../components/navigationComponents/Register";
+import HomeCart from "./navigationComponents/HomeCart";
 
 export default function AppLayout() {
-  const { login, register } = useContext(StylesContext)
+  const { login, register, isCartOpen } = useContext(StylesContext)
   return (
     <>
       <div>
@@ -18,6 +19,7 @@ export default function AppLayout() {
 
       {login && <Login />}
       {register && <Register />}
+      {isCartOpen && <HomeCart />}
     </>
   );
 }

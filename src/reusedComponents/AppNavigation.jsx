@@ -5,8 +5,7 @@ import styles from "./AppNavigation.module.css";
 
 export default function AppNavigation() {
   const navigate = useNavigate();
-  const { count, search, handleChange } = useContext(StylesContext);
-  const {handleLogin} = useContext(StylesContext)
+  const { count, search, handleChange, handleLogin, handleCart } = useContext(StylesContext);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -54,7 +53,7 @@ export default function AppNavigation() {
         </li>
       </button>
 
-      <button className="cursor-pointer">
+      <button className="cursor-pointer" onClick={handleCart}>
         <li className={styles.cartWrapper}>
           <i className="fa-solid fa-cart-shopping"></i>
           {count > 0 && <span className={styles.badge}>{count}</span>}

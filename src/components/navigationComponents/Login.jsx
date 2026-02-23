@@ -4,13 +4,13 @@ import BlackButton from "../../reusedComponents/BlackButton"
 import styles from "./Navigation.module.css"
 
 export default function Login(){
-    const { handleRegister, closeLoginRegister } = useContext(StylesContext)
+    const { handleRegister, closeButton } = useContext(StylesContext)
     return (
         <div className={styles.overlay}>
             <div className={styles.modal}>
                 <div className={styles.head}>
                 <p>LOGIN</p>
-                <button onClick={closeLoginRegister} className="cursor-pointer">&#x1D5B7;</button>
+                <button onClick={closeButton} className="cursor-pointer">&#x1D5B7;</button>
                 </div>
 
                 <div className={styles.form}>

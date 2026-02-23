@@ -11,6 +11,7 @@ export default function CardProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
   const [login, setLogin] = useState(false)
   const [register, setRegister] = useState(false)
+  const [isCartOpen, setIsCartOpen] = useState(false)
   
   const count = cartItems.length;
   const {
@@ -56,10 +57,15 @@ export default function CardProvider({ children }) {
   function handleRegister(){
     setRegister((register) => !register)
   }
-  function closeLoginRegister(){
+  function handleCart(){
+    setIsCartOpen((isCartOpen) => !isCartOpen)
+  }
+  function closeButton(){
     setLogin(false)
     setRegister(false)
+    setIsCartOpen(false)
   }
+
 
   const searchResults = allData && filterProducts(allData);
 
@@ -121,7 +127,9 @@ export default function CardProvider({ children }) {
         handleLogin,
         register,
         handleRegister,
-        closeLoginRegister
+        closeButton,
+        isCartOpen,
+        handleCart
       }}
     >
       {children}
