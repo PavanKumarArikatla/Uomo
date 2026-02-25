@@ -12,6 +12,7 @@ export default function CardProvider({ children }) {
   const [login, setLogin] = useState(false)
   const [register, setRegister] = useState(false)
   const [isCartOpen, setIsCartOpen] = useState(false)
+  const [isSearchOpened, setIsSearchOpened] = useState(false)
   
   const count = cartItems.length;
   const {
@@ -60,12 +61,18 @@ export default function CardProvider({ children }) {
   function handleCart(){
     setIsCartOpen((isCartOpen) => !isCartOpen)
   }
+  function handleChange(e) {
+    setSearch(e.target.value);
+  }
+  function handleSearch(){
+    setIsSearchOpened((isSearchOpened) => !isSearchOpened)
+  }
+  
   function closeButton(){
     setLogin(false)
     setRegister(false)
     setIsCartOpen(false)
   }
-
 
   const searchResults = allData && filterProducts(allData);
 
@@ -96,10 +103,6 @@ export default function CardProvider({ children }) {
     getAllStyles();
   }, []);
 
-  function handleChange(e) {
-    setSearch(e.target.value);
-  }
-
   return (
     <StylesContext.Provider
       value={{
@@ -129,7 +132,9 @@ export default function CardProvider({ children }) {
         handleRegister,
         closeButton,
         isCartOpen,
-        handleCart
+        handleCart,
+        isSearchOpened,
+        handleSearch
       }}
     >
       {children}

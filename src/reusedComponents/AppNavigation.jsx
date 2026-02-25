@@ -1,66 +1,64 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { StylesContext } from "../contexts/StylesContext";
 import styles from "./AppNavigation.module.css";
 
 export default function AppNavigation() {
-  const navigate = useNavigate();
-  const { count, search, handleChange, handleLogin, handleCart } = useContext(StylesContext);
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    if (search) navigate("/search");
-  }
+  const { count, isSearchOpened, handleSearch, handleLogin, handleCart } = useContext(StylesContext);
 
   return (
     <div className={styles.nav}>
+      <div className="flex items-center gap-6">
       <NavLink to="/">
-        <img src="logo.svg" alt="UOMO" />
+        <img src="logo.svg" alt="UOMO"  />
       </NavLink>
       <p className={styles.type}>
-        <NavLink to="/men">Men</NavLink>
+        <NavLink to="/men">HOME</NavLink>
       </p>
       <p className={styles.type}>
-        <NavLink to="/women">Women</NavLink>
+        <NavLink to="/women">SHOP</NavLink>
       </p>
       <p className={styles.type}>
-        <NavLink to="/kids">Kids</NavLink>
+        <NavLink to="/kids">COLLECTION</NavLink>
       </p>
       <p className={styles.type}>
-        <NavLink to="/beauty">Beauty</NavLink>
+        <NavLink to="/beauty">JOURNAL</NavLink>
       </p>
       <p className={styles.type}>
-        <NavLink to="/more">More</NavLink>
+        <NavLink to="/more">LOOKBOOK</NavLink>
       </p>
+      <p className={styles.type}>
+        <NavLink to="/pages">PAGES</NavLink>
+      </p>
+      </div>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Search"
-          value={search}
-          onChange={handleChange}
-        />
-      </form>
-      <button onClick={handleLogin} className="cursor-pointer">
-        <li>
-          <i className="fa-regular fa-user"></i>
-        </li>
-      </button>
+      <div className="flex gap-8">
+        <button onClick={handleSearch} className="curosr-pointer">
+          <li>
+            {!isSearchOpened ? <i className="fa-brands fa-sistrix"></i> : "X"}
+          </li>
+        </button>
+        <button onClick={handleLogin} className="cursor-pointer">
+          <li>
+            <i className="fa-regular fa-user"></i>
+          </li>
+        </button>
 
-      <button className="cursor-pointer">
-        <li>
-          <i className="fa-regular fa-heart"></i>
-        </li>
-      </button>
+        <button className="cursor-pointer">
+          <li>
+            <i className="fa-regular fa-heart"></i>
+          </li>
+        </button>
 
-      <button className="cursor-pointer" onClick={handleCart}>
-        <li className={styles.cartWrapper}>
-          <i className="fa-solid fa-cart-shopping"></i>
-          {count > 0 && <span className={styles.badge}>{count}</span>}
-        </li>
-      </button>
+        <button className="cursor-pointer" onClick={handleCart}>
+          <li className={styles.cartWrapper}>
+            <i className="fa-solid fa-bag-shopping"></i>
+            {count > 0 && <span className={styles.badge}>{count}</span>}
+          </li>
+        </button>
 
-      <NavLink to=""><i className="fa-solid fa-bars"></i></NavLink>
+        <NavLink to=""><i className="fa-solid fa-bars"></i></NavLink>
+      </div>
 
     </div>
   );

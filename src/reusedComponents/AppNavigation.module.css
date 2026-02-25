@@ -13,9 +13,9 @@
   padding: 0 15%;
   top: 0;
   position: sticky;
-  background-color: rgb(249, 247, 245);
   border-radius: 10px;
   z-index: 100;
+  background-color: white;
 }
 
 .type {
@@ -37,16 +37,17 @@
 }
 
 .nav img {
-  width: 4rem;
-  height: 3rem;
-  min-width: 3rem;
+  width: 7rem;
+  height: 5rem;
+  min-width: 5rem;
+  margin-right: 5rem;
   flex-shrink: 0;
   border-radius: 0.7rem;
   transition: transform 0.3s ease;
 }
 
 .nav img:hover {
-  transform: scale(1.02);
+  transform: scale(1.05);
 }
 
 .nav input {

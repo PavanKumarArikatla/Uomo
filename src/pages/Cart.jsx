@@ -6,7 +6,7 @@ import Item from "./Item";
 export default function Cart() {
   const [isOrdered, setIsOrdered] = useState(false);
 
-  const { cartItems, setCartItems, count } = useContext(StylesContext);
+  const { cartItems, setCartItems } = useContext(StylesContext);
   const totalMRP = cartItems.reduce((mrp, item) => mrp + Number(item.price), 0);
   const totalDiscount = cartItems.reduce(
     (discount, item) =>
@@ -22,10 +22,6 @@ export default function Cart() {
 
   return (
     <div className={styles.cart}>
-      <li className={`${styles.cartWrapper} ${styles.li}`}>
-        <i className="fa-solid fa-cart-shopping"></i>
-        {count > 0 && <span className={styles.badge}>{count}</span>}
-      </li>
       {isOrdered === false ? (
         <>
           {cartItems.length > 0 ? (

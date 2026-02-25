@@ -29,12 +29,12 @@ export default function App() {
         { path: "fashion", element: <SearchResults /> },
         { path: "watches", element: <SearchResults /> },
         { path: "cosmetics", element: <SearchResults /> },
-        { path: "babystore", element: <SearchResults /> }
+        { path: "babystore", element: <SearchResults /> },
+        { path: "wishlist", element: <Wishlist /> },
+        { path: "cart", element: <Cart /> },
       ],
     },
-    { path: "login", element: <Login /> },
-    { path: "wishlist", element: <Wishlist /> },
-    { path: "cart", element: <Cart /> },
+    { path: "login", element: <Login /> }
   ]);
 
   return (

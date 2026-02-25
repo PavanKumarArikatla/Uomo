@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { useContext } from "react"
 import { StylesContext } from "../../contexts/StylesContext"
 import BlackButton from "../../reusedComponents/BlackButton"
@@ -32,8 +33,8 @@ export default function HomeCart(){
                         </div>
                         <br></br>
 
-                        <GreyButton>VIEW CART</GreyButton>
-                        <BlackButton>CHECKOUT</BlackButton>
+                        <NavLink to="/cart"><GreyButton onClick={closeButton}>VIEW CART</GreyButton></NavLink>
+                        <NavLink to="/cart"><BlackButton onClick={closeButton}>CHECKOUT</BlackButton></NavLink>
                     </div>
                 </div>
             </div>

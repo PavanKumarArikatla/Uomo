@@ -1,7 +1,7 @@
 import styles from "./GreyButton.module.css"
 
-export default function GreyButton({children}){
+export default function GreyButton({children, onClick}){
     return(
-        <button className={styles.button} type="submit">{children}</button>
+        <button className={styles.button} onClick={onClick}>{children}</button>
     )
 }
