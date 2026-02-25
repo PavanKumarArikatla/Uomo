@@ -5,7 +5,7 @@ import AppNavigation from "../reusedComponents/AppNavigation";
 import Footer from "./homeComponents/Footer";
 import Login from "../components/navigationComponents/Login";
 import Register from "../components/navigationComponents/Register";
-import HomeCart from "./navigationComponents/HomeCart";
+import HomeCart from "./navigationComponents/MiniCart";
 import Search from "./navigationComponents/Search";
 
 export default function AppLayout() {

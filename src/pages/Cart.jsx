@@ -1,18 +1,27 @@
 import { useContext, useState } from "react";
 import { StylesContext } from "../contexts/StylesContext";
 import styles from "./Cart.module.css";
-import Item from "./Item";
+import ItemsQuantity from "../reusedComponents/ItemsQuantity";
 
 export default function Cart() {
   const [isOrdered, setIsOrdered] = useState(false);
 
-  const { cartItems, setCartItems } = useContext(StylesContext);
-  const totalMRP = cartItems.reduce((mrp, item) => mrp + Number(item.price), 0);
-  const totalDiscount = cartItems.reduce(
-    (discount, item) =>
-      Number((discount + item.price * (item.discount / 100)).toFixed(2)),
-    0
-  );
+  const { cartItems, setCartItems, deleteItem } = useContext(StylesContext);
+  const totals = cartItems.reduce(
+  (acc, item) => {
+    const price = Number(item.price);
+    const discountAmount = price * (item.discount / 100);
+
+    acc.totalMRP += price;
+    acc.totalDiscount += discountAmount;
+
+    return acc;
+  },
+  { totalMRP: 0, totalDiscount: 0 }
+);
+
+  const totalMRP = Number(totals.totalMRP.toFixed(2));
+  const totalDiscount = Number(totals.totalDiscount.toFixed(2));
   const platformFee = 1.99;
 
   function placeOrder() {
@@ -22,65 +31,55 @@ export default function Cart() {
 
   return (
     <div className={styles.cart}>
-      {isOrdered === false ? (
-        <>
-          {cartItems.length > 0 ? (
-            <div className={styles.cartItems}>
-              <div className={styles.items}>
-                {cartItems.map((item) => (
-                  <Item item={item} key={item.id} type="cart" />
-                ))}
+      <b>CART</b>
+      <br></br>
+      <br></br>
+      <section className="flex justify-between">
+        <button>
+          <b>01 SHOPPING BAG</b>
+          <p className="text-xs text-gray-500">Manage Your Items List</p>
+        </button>
+        <button>
+          <b>02 SHIPPING AND CHECKOUT</b>
+          <p className="text-xs text-gray-500">Checkout Your Items List</p>
+        </button>
+        <button>
+          <b>03 CONFIRMATION</b>
+          <p className="text-xs text-gray-500">Review And Submit Your Order</p>
+        </button>
+      </section>
+      <br></br>
+      <hr className="text-gray-500"></hr>
+
+      <br></br>
+      <div>
+        <div className={styles.titles}>
+          <p>PRODUCT</p>
+          <div className="flex justify-between w-[50%]">
+            <p>PRICE</p>
+            <p>QUANTITY</p>
+            <p>SUBTOTAL</p>
+          </div>
+        </div>
+        <br></br>
+
+          {cartItems.map((item) => 
+          <div className={styles.item}>
+            <div className={styles.titles}>
+              <div className="flex items-center gap-4">
+                <img src={item.image} alt={item.style} />
+                <p>{item.style}</p>
               </div>
-
-              <div className={styles.priceDetails}>
-                <strong className={styles.span}>
-                  Price Details ({cartItems.length} items)
-                </strong>
-
-                <div>
-                  <span>Total MRP</span>
-                  <p className={styles.amount}>${totalMRP}</p>
-                </div>
-
-                <div>
-                  <span>Total Discount</span>
-                  <p className={styles.amount}>
-                    <em className={styles.discount}>${totalDiscount}</em>
-                  </p>
-                </div>
-
-                <div>
-                  <span>Platform fee</span>
-                  <p className={styles.amount}>${platformFee}</p>
-                </div>
-                <br></br>
-                <hr></hr>
-
-                <div>
-                  <strong>Total Amount</strong>
-                  <p className={styles.amount}>
-                    $
-                    {(
-                      Number(totalMRP) -
-                      Number(totalDiscount) +
-                      Number(platformFee)
-                    ).toFixed(2)}
-                  </p>
-                </div>
-
-                <br></br>
+              <div className="flex justify-between w-[50%] items-center">
+                <p>${item.price}</p>
+                <ItemsQuantity />
+                <p>${item.price}</p>
               </div>
             </div>
-          ) : (
-            <div className={styles.emptyCart}>
-              <h4>Your cart is empty</h4>
-              <h5>Add items to the cart to continue shopping</h5>
-            </div>
-          )}
-        </>
-      ) : (
-        <div className="text-center">Woohoo!! Order placed</div>
-      )}
+            <button onClick={(() => deleteItem(item.id))} className="cursor-pointer">&#x1D5B7;</button>
+          </div>)}
+      </div>
+
     </div>
   );
 }

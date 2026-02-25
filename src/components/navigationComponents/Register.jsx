@@ -15,13 +15,13 @@ export default function Register(){
 
                 <div className={styles.form}>
                 <form>
-                    <input type="text" className={styles.input} placeholder="Username" required /><br />
-                    <input type="text" className={styles.input} placeholder="Email address *" required /><br />
+                    <input type="text" className={styles.input2} placeholder="Username" required /><br></br><br></br>
+                    <input type="text" className={styles.input2} placeholder="Email address *" required /><br></br><br></br>
                     <fieldset className={styles.fieldset}>
                     <legend className={styles.legend}>Password *</legend>
                     <input
                         type="password"
-                        className={styles.input2}
+                        className={styles.passwordInput}
                         placeholder="********"
                         required
                     />

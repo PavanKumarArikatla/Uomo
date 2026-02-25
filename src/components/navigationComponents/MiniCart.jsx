@@ -8,12 +8,21 @@ import GreyButton from "../../reusedComponents/GreyButton"
 
 export default function HomeCart(){
     const { closeButton, cartItems } = useContext(StylesContext)
-    const totalMRP = cartItems.reduce((mrp, item) => mrp + Number(item.price), 0);
-    const totalDiscount = cartItems.reduce(
-        (discount, item) =>
-        Number((discount + item.price * (item.discount / 100)).toFixed(2)),
-        0
-    );
+    const totals = cartItems.reduce(
+  (acc, item) => {
+    const price = Number(item.price) || 0;
+    const discountAmount = price * (item.discount / 100) || 0;
+
+    acc.totalMRP += price;
+    acc.totalDiscount += discountAmount;
+
+    return acc;
+  },
+  { totalMRP: 0, totalDiscount: 0 }
+);
+
+  const totalMRP = Number(totals.totalMRP.toFixed(2));
+  const totalDiscount = Number(totals.totalDiscount.toFixed(2));
     return(
         <div className={styles.overlay}>
             <div className={styles.modal}>
@@ -29,7 +38,7 @@ export default function HomeCart(){
                         <br></br>
                         <div className="flex justify-between text-xs">
                             <b>SUBTOTAL:</b>
-                            <b>${(totalMRP-totalDiscount).toFixed(2)}</b>
+                            <b>${Number((totalMRP - totalDiscount).toFixed(2))}</b>
                         </div>
                         <br></br>
 

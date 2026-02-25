@@ -15,12 +15,12 @@ export default function Login(){
 
                 <div className={styles.form}>
                 <form>
-                    <input type="text" className={styles.input} placeholder="Username or email address *" required /><br />
+                    <input type="text" className={styles.input2} placeholder="Username or email address *" required /><br /><br></br>
                     <fieldset className={styles.fieldset}>
                     <legend className={styles.legend}>Password *</legend>
                     <input
                         type="password"
-                        className={styles.input2}
+                        className={styles.passwordInput}
                         placeholder="********"
                         required
                     />

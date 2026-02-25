@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import styles from "./CartItem.module.css"
 import { StylesContext } from "../../contexts/StylesContext"
+import ItemsQuantity from "../../reusedComponents/ItemsQuantity"
 
 export default function CartItem({item}){
     const {deleteItem} = useContext(StylesContext)
@@ -11,11 +12,7 @@ export default function CartItem({item}){
                 <h2><b>{item.style}</b></h2>
                 <h4>Color : {item.color}</h4>
                 <h4>Size : L</h4>
-                <h4 className="flex gap-5">
-                    <button>-</button>
-                    3
-                    <button>+</button>
-                </h4>
+                <ItemsQuantity />
             </div>
             <div className={styles.delete}>
                 <button 

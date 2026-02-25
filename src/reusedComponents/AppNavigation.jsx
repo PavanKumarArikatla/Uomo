@@ -35,7 +35,7 @@ export default function AppNavigation() {
       <div className="flex gap-8">
         <button onClick={handleSearch} className="curosr-pointer">
           <li>
-            {!isSearchOpened ? <i className="fa-brands fa-sistrix"></i> : "X"}
+            {!isSearchOpened ? <i className="fa-brands fa-sistrix"></i> : <>&#x1D5B7;</>}
           </li>
         </button>
         <button onClick={handleLogin} className="cursor-pointer">
