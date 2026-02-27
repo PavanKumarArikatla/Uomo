@@ -3,7 +3,7 @@ import Home from "./pages/Home";
 
 import Login from "./pages/Login";
 import Wishlist from "./pages/Wishlist";
-import Cart from "./pages/Cart";
+import Cart from "./pages/cart/Cart";
 import ItemDetails from "./pages/ItemDetails";
 import Men from "./pages/categories/fashion/Men";
 import Women from "./pages/categories/fashion/Women";

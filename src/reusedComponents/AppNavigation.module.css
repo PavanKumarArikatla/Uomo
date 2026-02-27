@@ -9,9 +9,10 @@
   align-items: center;
   margin: 1.3rem auto;
   height: 4rem;
+  font-size: 0.9rem;
+  font-weight: 500;
   width: 100%;
   padding: 0 15%;
-  top: 0;
   position: sticky;
   border-radius: 10px;
   z-index: 100;
@@ -40,6 +41,7 @@
   width: 7rem;
   height: 5rem;
   min-width: 5rem;
+  margin-top: -2rem;
   margin-right: 5rem;
   flex-shrink: 0;
   border-radius: 0.7rem;

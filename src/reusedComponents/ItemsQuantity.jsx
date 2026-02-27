@@ -4,7 +4,7 @@ export default function ItemsQuantity(){
     return(
         <div className="flex gap-5">
             <button>-</button>
-            1
+            <p>1</p>
             <button>+</button>
         </div>
     )

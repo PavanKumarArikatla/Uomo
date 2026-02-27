@@ -1,0 +1,51 @@
+.titles{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titles img{
+  width: 7rem;
+  aspect-ratio: 1/1;
+}
+
+.item{
+  width: 97%;
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem
+}
+
+.deleteButton{
+  max-width: 2%;
+  margin-left: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.coupon{
+  margin: 1.5rem 0;
+  height: 3rem;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cartAmount{
+  width: 25%;
+  max-height: 30rem;  
+}
+
+.subtotal{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid gray;
+}
+
+.divider{
+  display: flex;
+  width: 100%;
+}
