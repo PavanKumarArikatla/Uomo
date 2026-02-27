@@ -4,7 +4,7 @@
   padding: 1rem;
 }
 
-.cart button{
+.cart > section button{
   width:33%;
   text-align: left;
 }

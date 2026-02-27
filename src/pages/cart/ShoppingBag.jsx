@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { StylesContext } from "../../contexts/StylesContext";
 import ItemsQuantity from "../../reusedComponents/ItemsQuantity";
-import BlackButton from "../../reusedComponents/BlackButton"
+import BlackButton from "../../reusedComponents/BlackButton";
+import GreyButton from "../../reusedComponents/GreyButton"
 import styles from "./ShoppingBag.module.css"
 
 export default function ShoppingBag(){
@@ -53,11 +54,11 @@ export default function ShoppingBag(){
             )}
 
             <div className={styles.coupon}>
-            <form className="border-1 border-gray-100 w-[50%]">
+            <form className="border-3 border-gray-200 h-12 w-[40%] flex align-center justify-around">
                 <input type="text" placeholder="Coupon Code" className="outline-none" />
                 <button>APPLY COUPON</button>
             </form>
-            <button className="w-[10%]">UPDATE CART</button>
+            <div className="w-[30%]"><GreyButton>UPDATE CART</GreyButton></div>
             </div>
 
         </div>
