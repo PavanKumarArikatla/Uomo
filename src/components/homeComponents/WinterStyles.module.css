@@ -78,3 +78,12 @@
     width: 70%;
   }
 }
+
+@media (max-width: 460px) {
+  .fifth div:nth-child(2) {
+    display: none;
+  }
+  .fifth div:first-child {
+    width: 90%;
+  }
+}

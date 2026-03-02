@@ -11,8 +11,8 @@
   height: 4rem;
   font-size: 0.9rem;
   font-weight: 500;
-  width: 100%;
-  padding: 0 15%;
+  width: 90%;
+  padding: 0 clamp(0.75rem, 4vw, 15%);
   position: sticky;
   border-radius: 10px;
   z-index: 100;
@@ -23,9 +23,145 @@
   transition: transform 0.2s ease;
 }
 
+.homeItem {
+  position: relative;
+}
+
+.shopItem {
+  position: relative;
+}
+
+.homeTrigger {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.shopTrigger {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.navLeft,
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 2rem);
+  min-width: 0;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 5vw, 2rem);
+}
+
+.menuToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .nav a,
 .type:hover {
   transform: scale(1.1);
+}
+
+.homeDropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.9rem);
+  left: -8rem;
+  width: min(72rem, 88vw);
+  background: #f2f2f2;
+  border: 1px solid #d6d6d6;
+  padding: 1.25rem;
+  z-index: 200;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  grid-template-columns: 1fr 1fr 1fr 1.2fr;
+  gap: 1.25rem;
+}
+
+.homeDropdownOpen {
+  display: grid;
+}
+
+.shopDropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.9rem);
+  left: calc(100% + 0.6rem);
+  width: min(39rem, 46vw);
+  background: #f2f2f2;
+  border: 1px solid #d6d6d6;
+  padding: 1.25rem;
+  z-index: 200;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.shopDropdownOpen {
+  display: grid;
+}
+
+.dropdownHeading {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  color: #4a4a4a;
+  transform: none !important;
+}
+
+.dropdownLink {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 400;
+  margin: 0.5rem 0;
+  color: #222;
+  transform: none !important;
+}
+
+.dropdownPromo {
+  background-color: #e3e3e3;
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.1)
+    ),
+    url("/Mountains.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 18rem;
+  gap: 0.55rem;
+}
+
+.dropdownPromo strong {
+  font-size: 1.6rem;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+}
+
+.dropdownPromo button {
+  width: fit-content;
+  border: none;
+  background: transparent;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.82rem;
+  color: #fff;
 }
 
 .nav li {
@@ -53,7 +189,7 @@
 }
 
 .nav input {
-  width: 25rem;
+  width: clamp(8rem, 28vw, 25rem);
   height: 2.3rem;
   font-size: 0.8rem;
   border-radius: 5px;
@@ -86,22 +222,15 @@
   text-align: center;
 }
 
-
-@media (max-width: 1250px) {
-  .nav input {
-    width: 20rem;
-  }
-}
-
 @media (max-width: 1170px) {
   .nav input {
-    width: 18rem;
+    width: clamp(8rem, 24vw, 18rem);
   }
 }
 
 @media (max-width: 1081px) {
   .nav {
-    margin: auto;
+    margin: 1rem auto;
   }
   .nav input {
     width: 15rem;
@@ -109,30 +238,85 @@
 }
 
 @media (max-width: 1010px) {
-  .nav p {
-    display: none;
+  .nav {
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  .navLeft,
+  .navRight {
+    gap: 1rem;
   }
   .nav input {
-    width: 20rem;
+    width: clamp(7rem, 38vw, 20rem);
+  }
+}
+
+@media (max-width: 930px) {
+  .homeDropdown,
+  .homeDropdownOpen,
+  .shopDropdown,
+  .shopDropdownOpen {
+    display: none !important;
+  }
+  .navLinks {
+    display: none;
+  }
+  .menuOpen .navLinks {
+    display: flex;
+    position: absolute;
+    top: calc(100% + 0.4rem);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+  .menuOpen .navLinks p {
+    display: block;
+    margin: 0;
   }
 }
 
 @media (max-width: 622px) {
+  .nav {
+    height: auto;
+    min-height: 3.5rem;
+  }
+  .navLeft,
+  .navRight {
+    gap: 0.7rem;
+  }
+  .nav img {
+    width: clamp(4rem, 20vw, 6rem);
+    height: auto;
+    margin-top: 0;
+    margin-right: 0;
+  }
   .nav input {
-    width: 10rem;
+    width: clamp(6rem, 32vw, 10rem);
+    height: 2rem;
   }
 }
 
 @media (max-width: 516px) {
   .nav {
-    line-height: 10px;
-    gap: 1rem;
+    line-height: 1;
+    gap: 0.6rem;
+    padding: 0 0.6rem;
+  }
+  .navLeft,
+  .navRight {
+    gap: 0.5rem;
   }
   .nav input {
-    width: 5rem;
+    width: clamp(4.5rem, 28vw, 7rem);
+    text-indent: 0.5rem;
   }
 }
-
 @media (max-width: 356px) {
   .nav img {
     width: 3rem;

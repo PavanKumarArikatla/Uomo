@@ -49,3 +49,124 @@
   display: flex;
   width: 100%;
 }
+
+/* Large tablets / small desktops */
+@media (max-width: 1200px) {
+  .titles img{
+    width: 6rem;
+  }
+
+  .item{
+    width: 100%;
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .cartAmount{
+    width: 30%;
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .titles{
+    gap: 1rem;
+  }
+
+  .titles img{
+    width: 5.5rem;
+  }
+
+  .item{
+    gap: 1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .deleteButton{
+    max-width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .coupon{
+    width: 100%;
+  }
+
+  .cartAmount{
+    width: 35%;
+  }
+}
+
+/* Portrait tablets / large phones */
+@media (max-width: 768px) {
+  .titles{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .titles img{
+    width: 5rem;
+  }
+
+  .item{
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .deleteButton{
+    max-width: 3rem;
+    height: 3rem;
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .coupon{
+    height: auto;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .cartAmount{
+    width: 100%;
+    max-height: none;
+    margin-top: 1rem;
+  }
+
+  .subtotal{
+    font-size: 0.95rem;
+  }
+
+  .divider{
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .titles img{
+    width: 4.5rem;
+  }
+
+  .item{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .deleteButton{
+    max-width: 2rem;
+    height: 2rem;
+  }
+
+  .coupon{
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .subtotal{
+    font-size: 0.9rem;
+  }
+}

@@ -4,11 +4,50 @@
   padding: 1rem;
 }
 
-.cart > section button{
-  width:33%;
+.cart > section button {
+  width: 33%;
   text-align: left;
 }
 
+/* Medium screens */
+@media (max-width: 1024px) {
+  .cart {
+    width: 85%;
+    padding: 0.9rem;
+  }
+
+  .cart > section button {
+    width: 50%;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .cart {
+    width: 95%;
+    margin: 0.75rem auto;
+    padding: 0.75rem;
+  }
+
+  .cart > section button {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .cart {
+    width: 100%;
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+  }
+
+  .cart > section button {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+}
 
 
 
