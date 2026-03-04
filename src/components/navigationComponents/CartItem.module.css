@@ -5,18 +5,22 @@
     width: 90%;
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.6rem;
     font-size: 0.8rem;
     line-height: 1.5rem;
 }
 
 .image{
-    width: 40%;
+    width: 34%;
     aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 4px;
 }
 
 .details{
-    width: 40%;
-    margin-left: -10%;
+    width: 52%;
+    margin-left: 0;
 }
 
 .details h4{
@@ -35,4 +39,21 @@
     position: absolute;
     bottom: 17%;
     right: 2%;
+}
+
+@media (max-width: 500px){
+    .main{
+        width: 94%;
+        padding: 0.8rem 0;
+        font-size: 0.72rem;
+        line-height: 1.3rem;
+    }
+
+    .image{
+        width: 32%;
+    }
+
+    .details{
+        width: 54%;
+    }
 }

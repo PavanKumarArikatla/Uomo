@@ -26,9 +26,7 @@
 }
 
 .seeAll{
-    margin-left: 8%;
-    margin-bottom: 5rem;
-    transform: translateX(-50%);
+    margin: 0 auto 3rem;
     text-align: center;
 }
 

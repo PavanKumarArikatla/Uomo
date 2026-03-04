@@ -52,6 +52,11 @@
   font-size: 1rem;
   cursor: pointer;
   text-decoration: underline;
+  white-space: nowrap;
+  width: max-content;
+  background: transparent;
+  border: none;
+  padding: 0;
   position: absolute;
   top: 95%;
   left: 1%;
@@ -123,6 +128,8 @@
 
 @media (max-width: 940px) {
   .slider {
+    width: 90%;
+    margin: 0 auto;
     font-size: 2rem;
     height: 18rem;
   }
@@ -160,8 +167,6 @@
     height: 12rem;
   }
   .button {
-    width: 7rem;
-    height: 1.7rem;
     font-size: 0.7rem;
   }
   .secondblock {
@@ -173,13 +178,11 @@
 
 @media (max-width: 427px) {
   .slider {
-    margin: auto;
+    margin: 0 auto 2rem;
     font-size: 0.8rem;
     background-size: fill;
   }
   .button {
-    width: 6rem;
-    height: 1.5rem;
     font-size: 0.5rem;
   }
   .secondblock {

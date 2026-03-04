@@ -1,7 +1,7 @@
 .socialbar {
   position: absolute;
   top: 50%;
-  left: -40px;
+  left: -30px;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -27,16 +27,25 @@
 .icons a {
   text-decoration: none;
   color: #555;
-  font-size: 18px;
+  font-size: 15px;
   transition: color 0.3s ease;
 }
 
 .icons a:hover {
-  color: #3498db;
+  cursor: pointer;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 940px) {
   .socialbar {
+    left: 0;
+  }
+  .icons{
+    gap: 5px;
+  }
+}
+
+@media (max-width: 640px){
+  .socialbar{
     display: none;
   }
 }

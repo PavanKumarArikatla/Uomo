@@ -2,25 +2,28 @@
   margin: 2rem auto;
   display: flex;
   justify-content: center;
-  width: 92.7%;
-  height: 25rem;
+  width: min(92.7%, 1280px);
+  height: clamp(16rem, 26vw, 25rem);
   overflow: hidden;
+  gap: 1rem;
 }
 
 .fifth div {
-  width: 45%;
+  width: 48%;
   height: 100%;
   margin: auto;
   transition: transform 0.3s ease;
   position: relative;
+  overflow: hidden;
 }
 
 .fifth div .text {
   position: absolute;
-  bottom: 20%;
-  left: 17%;
+  bottom: 18%;
+  left: 20%;
   text-align: left;
   transform: translateX(-50%);
+  z-index: 2;
 }
 
 .img1 {
@@ -41,49 +44,88 @@
   transform: scale(1.02);
 }
 
-@media (max-width: 1300px) {
-  .fifth {
-    height: 15rem;
-  }
-  .fifth div {
-    width: 50%;
-  }
-}
-
 @media (max-width: 1200px) {
   .fifth {
-    height: 15rem;
+    height: clamp(14rem, 24vw, 19rem);
   }
+
   .fifth div {
     width: 50%;
   }
+
+  .fifth div .text {
+    left: 22%;
+  }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 992px) {
   .fifth {
-    height: 12rem;
+    height: clamp(13rem, 30vw, 17rem);
   }
+
   .fifth div {
     width: 50%;
   }
+
+  .fifth div .text {
+    left: 24%;
+    bottom: 14%;
+  }
+
+  .img1 {
+    width: 64%;
+    left: 36%;
+  }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 560px) {
   .fifth {
     height: auto;
-    gap: 0.5rem;
+    gap: 0.75rem;
     flex-direction: column;
   }
+
   .fifth div {
-    width: 70%;
+    width: min(100%, 560px);
+    height: 14rem;
+  }
+
+  .fifth div .text {
+    left: 18%;
+    bottom: 12%;
+  }
+
+  .img2 {
+    width: 130%;
+    height: 200%;
   }
 }
 
-@media (max-width: 460px) {
-  .fifth div:nth-child(2) {
-    display: none;
+@media (max-width: 480px) {
+  .fifth {
+    width: 94%;
+    margin: 1.5rem auto;
+    gap: 0.6rem;
   }
-  .fifth div:first-child {
-    width: 90%;
+
+  .fifth div {
+    width: 100%;
+    height: 12rem;
+  }
+
+  .fifth div .text {
+    left: 20%;
+    bottom: 10%;
+    font-size: 0.85rem;
+  }
+
+  .img1 {
+    width: 66%;
+    left: 34%;
+  }
+
+  .img2{
+    width: 125%;
+    height: 180%;
   }
 }

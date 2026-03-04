@@ -7,16 +7,18 @@
   gap: 2rem;
   justify-content: space-between;
   align-items: center;
-  margin: 1.3rem auto;
-  height: 4rem;
+  margin: 0 auto 1rem;
+  min-height: 4rem;
   font-size: 0.9rem;
   font-weight: 500;
-  width: 90%;
-  padding: 0 clamp(0.75rem, 4vw, 15%);
+  width: 100%;
+  padding: 0 clamp(8rem, 2vw, 1.8rem);
   position: sticky;
+  top: 0;
   border-radius: 10px;
   z-index: 100;
   background-color: white;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
 }
 
 .type {
@@ -60,7 +62,7 @@
 }
 
 .menuToggle {
-  display: inline-flex;
+  display: none;
   align-items: center;
   justify-content: center;
   background: transparent;
@@ -174,11 +176,11 @@
 }
 
 .nav img {
-  width: 7rem;
-  height: 5rem;
+  width: clamp(5rem, 8vw, 7rem);
+  height: auto;
   min-width: 5rem;
-  margin-top: -2rem;
-  margin-right: 5rem;
+  margin-top: 0;
+  margin-right: clamp(0.4rem, 2vw, 2rem);
   flex-shrink: 0;
   border-radius: 0.7rem;
   transition: transform 0.3s ease;
@@ -228,39 +230,36 @@
   }
 }
 
-@media (max-width: 1081px) {
-  .nav {
-    margin: 1rem auto;
-  }
-  .nav input {
-    width: 15rem;
-  }
-}
-
 @media (max-width: 1010px) {
   .nav {
     gap: 1rem;
-    padding: 0 1rem;
   }
   .navLeft,
   .navRight {
-    gap: 1rem;
+    gap: 0.7rem;
   }
-  .nav input {
-    width: clamp(7rem, 38vw, 20rem);
+  .navLinks {
+    gap: 1rem;
   }
 }
 
 @media (max-width: 930px) {
+  .menuToggle {
+    display: inline-flex;
+    font-size: 1.05rem;
+  }
+
   .homeDropdown,
   .homeDropdownOpen,
   .shopDropdown,
   .shopDropdownOpen {
     display: none !important;
   }
+
   .navLinks {
     display: none;
   }
+
   .menuOpen .navLinks {
     display: flex;
     position: absolute;
@@ -269,12 +268,23 @@
     right: 0;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.7rem;
-    padding: 0.8rem 1rem;
+    gap: 1rem;
+    max-height: min(70vh, 26rem);
+    overflow-y: auto;
+    padding: 0.8rem 1rem 1rem;
     border-radius: 8px;
     background-color: white;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   }
+
+  .menuOpen .navLinks .type,
+  .menuOpen .navLinks .homeTrigger,
+  .menuOpen .navLinks .shopTrigger {
+    width: 100%;
+    text-align: left;
+    padding: 0.3rem 0;
+  }
+
   .menuOpen .navLinks p {
     display: block;
     margin: 0;
@@ -291,7 +301,7 @@
     gap: 0.7rem;
   }
   .nav img {
-    width: clamp(4rem, 20vw, 6rem);
+    width: clamp(4rem, 21vw, 5.4rem);
     height: auto;
     margin-top: 0;
     margin-right: 0;
@@ -307,6 +317,8 @@
     line-height: 1;
     gap: 0.6rem;
     padding: 0 0.6rem;
+    width: 90%;
+    margin: 0 auto;
   }
   .navLeft,
   .navRight {
@@ -320,6 +332,10 @@
 @media (max-width: 356px) {
   .nav img {
     width: 3rem;
-    height: 3rem;
+    height: auto;
+  }
+
+  .badge {
+    right: -7px;
   }
 }

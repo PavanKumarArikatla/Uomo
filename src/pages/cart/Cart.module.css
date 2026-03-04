@@ -4,6 +4,13 @@
   padding: 1rem;
 }
 
+.cart > section {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
 .cart > section button {
   width: 33%;
   text-align: left;
@@ -32,6 +39,10 @@
   .cart > section button {
     width: 100%;
     font-size: 0.95rem;
+  }
+
+  .cart > section {
+    flex-direction: column;
   }
 }
 

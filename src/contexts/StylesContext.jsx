@@ -9,10 +9,7 @@ export default function CardProvider({ children }) {
   const [allStyles, setAllStyles] = useState([]);
   const [wishlist, setWishlist] = useState([]);
   const [cartItems, setCartItems] = useState([]);
-  const [login, setLogin] = useState(false)
-  const [register, setRegister] = useState(false)
-  const [isCartOpen, setIsCartOpen] = useState(false)
-  const [isSearchOpened, setIsSearchOpened] = useState(false)
+  const [activeNavPanel, setActiveNavPanel] = useState(null)
   
   const count = cartItems.length;
   const {
@@ -52,26 +49,39 @@ export default function CardProvider({ children }) {
     );
   }
 
+  function toggleNavPanel(panelName) {
+    setActiveNavPanel((currentPanel) =>
+      currentPanel === panelName ? null : panelName
+    );
+  }
+
+  const login = activeNavPanel === "login";
+  const register = activeNavPanel === "register";
+  const isCartOpen = activeNavPanel === "cart";
+  const isSearchOpened = activeNavPanel === "search";
+  const isWishlistOpen = activeNavPanel === "wishlist";
+
   function handleLogin(){
-    setLogin((login) => !login)
+    toggleNavPanel("login");
   }
   function handleRegister(){
-    setRegister((register) => !register)
+    toggleNavPanel("register");
   }
   function handleCart(){
-    setIsCartOpen((isCartOpen) => !isCartOpen)
+    toggleNavPanel("cart");
   }
   function handleChange(e) {
     setSearch(e.target.value);
   }
   function handleSearch(){
-    setIsSearchOpened((isSearchOpened) => !isSearchOpened)
+    toggleNavPanel("search");
+  }
+  function handleWishlist() {
+    toggleNavPanel("wishlist");
   }
   
   function closeButton(){
-    setLogin(false)
-    setRegister(false)
-    setIsCartOpen(false)
+    setActiveNavPanel(null);
   }
 
   const searchResults = allData && filterProducts(allData);
@@ -134,7 +144,10 @@ export default function CardProvider({ children }) {
         isCartOpen,
         handleCart,
         isSearchOpened,
-        handleSearch
+        handleSearch,
+        isWishlistOpen,
+        handleWishlist,
+        activeNavPanel
       }}
     >
       {children}

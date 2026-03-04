@@ -1,19 +1,26 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useRef, useState } from "react";
 import { StylesContext } from "../contexts/StylesContext";
 import styles from "./AppNavigation.module.css";
 
 export default function AppNavigation() {
-  const { count, isSearchOpened, handleSearch, handleLogin, handleCart } = useContext(StylesContext);
+  const { count, isSearchOpened, handleSearch, handleLogin, handleCart, handleWishlist } = useContext(StylesContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHomeDropdownOpen, setIsHomeDropdownOpen] = useState(false);
   const [isShopDropdownOpen, setIsShopDropdownOpen] = useState(false);
   const navRef = useRef(null);
+  const navigate = useNavigate();
 
   function closeMenu() {
     setIsMenuOpen(false);
     setIsHomeDropdownOpen(false);
     setIsShopDropdownOpen(false);
+  }
+
+  function handleWishlistClick() {
+    handleWishlist();
+    navigate("/wishlist");
+    closeMenu();
   }
 
   useEffect(() => {
@@ -56,7 +63,7 @@ export default function AppNavigation() {
     <div ref={navRef} className={`${styles.nav} ${isMenuOpen ? styles.menuOpen : ""}`}>
       <div className={styles.navLeft}>
         <NavLink to="/" onClick={closeMenu}>
-          <img src="logo.svg" alt="UOMO"  />
+          <img src="/logo.svg" alt="UOMO"  />
         </NavLink>
         <div className={styles.navLinks}>
           <div className={styles.homeItem}>
@@ -172,7 +179,7 @@ export default function AppNavigation() {
             <NavLink to="/more" onClick={closeMenu}>LOOKBOOK</NavLink>
           </p>
           <p className={styles.type}>
-            <NavLink to="/men" onClick={closeMenu}>PAGES</NavLink>
+            <NavLink to="/dashboard" onClick={closeMenu}>PAGES</NavLink>
           </p>
         </div>
       </div>
@@ -189,7 +196,7 @@ export default function AppNavigation() {
           </li>
         </button>
 
-        <button className="cursor-pointer">
+        <button className="cursor-pointer" onClick={handleWishlistClick}>
           <li>
             <i className="fa-regular fa-heart"></i>
           </li>

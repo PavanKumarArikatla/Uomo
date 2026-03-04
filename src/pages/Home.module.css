@@ -1,10 +1,11 @@
 .page {
   margin: 0 auto;
+  width: 100%;
 }
 
 .centerWrapper {
   position: relative;
-  width: calc(90% + 10%);
+  width: 100%;
   margin: 0 auto;
 }
 

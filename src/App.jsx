@@ -12,6 +12,14 @@ import Beauty from "./pages/categories/fashion/Beauty";
 import More from "./pages/categories/fashion/More";
 import SearchResults from "./pages/categories/fashion/SearchResults";
 import AppLayout from "./components/AppLayout";
+import DashboardLayout from "./pages/dashboard/DashboardLayout";
+import DashboardHome from "./pages/dashboard/DashboardHome";
+import DashboardOrders from "./pages/dashboard/DashboardOrders";
+import DashboardAddresses from "./pages/dashboard/DashboardAddresses";
+import DashboardAccountDetails from "./pages/dashboard/DashboardAccountDetails";
+import DashboardWishlist from "./pages/dashboard/DashboardWishlist";
+import DashboardDownloads from "./pages/dashboard/DashboardDownloads";
+import DashboardLogout from "./pages/dashboard/DashboardLogout";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -32,6 +40,19 @@ export default function App() {
         { path: "babystore", element: <SearchResults /> },
         { path: "wishlist", element: <Wishlist /> },
         { path: "cart", element: <Cart /> },
+        {
+          path: "dashboard",
+          element: <DashboardLayout />,
+          children: [
+            { index: true, element: <DashboardHome /> },
+            { path: "orders", element: <DashboardOrders /> },
+            { path: "downloads", element: <DashboardDownloads /> },
+            { path: "addresses", element: <DashboardAddresses /> },
+            { path: "account-details", element: <DashboardAccountDetails /> },
+            { path: "wishlist", element: <DashboardWishlist /> },
+            { path: "logout", element: <DashboardLogout /> },
+          ],
+        },
       ],
     },
     { path: "login", element: <Login /> }
