@@ -22,19 +22,12 @@ export default function CardProvider({ children }) {
     winterstyles,
   } = allStyles;
   function getAllData() {
-    if (
-      mensStyles ||
-      womenStyles ||
-      trendyProducts ||
-      limitedEditionProducts ||
-      eastsideProducts
-    )
       return [
-        ...mensStyles,
-        ...womenStyles,
-        ...trendyProducts,
-        ...limitedEditionProducts,
-        ...eastsideProducts,
+        ...mensStyles || [],
+        ...womenStyles || [],
+        ...trendyProducts || [],
+        ...limitedEditionProducts || [],
+        ...eastsideProducts || [],
       ];
   }
 
