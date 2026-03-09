@@ -10,7 +10,7 @@ import Women from "./pages/categories/fashion/Women";
 import Kids from "./pages/categories/fashion/Kids";
 import Beauty from "./pages/categories/fashion/Beauty";
 import More from "./pages/categories/fashion/More";
-import SearchResults from "./pages/categories/fashion/SearchResults";
+import SearchResults from "./pages/SearchResults";
 import AppLayout from "./components/AppLayout";
 import DashboardLayout from "./pages/dashboard/DashboardLayout";
 import DashboardHome from "./pages/dashboard/DashboardHome";

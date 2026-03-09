@@ -9,7 +9,7 @@ export default function CardProvider({ children }) {
   const [allStyles, setAllStyles] = useState([]);
   const [wishlist, setWishlist] = useState([]);
   const [cartItems, setCartItems] = useState([]);
-  const [activeNavPanel, setActiveNavPanel] = useState(null)
+  const [activePanel, setActivePanel] = useState(null);
   
   const count = cartItems.length;
   const {
@@ -42,59 +42,29 @@ export default function CardProvider({ children }) {
     );
   }
 
-  function toggleNavPanel(panelName) {
-    setActiveNavPanel((currentPanel) =>
-      currentPanel === panelName ? null : panelName
-    );
-  }
-
-  const login = activeNavPanel === "login";
-  const register = activeNavPanel === "register";
-  const isCartOpen = activeNavPanel === "cart";
-  const isSearchOpened = activeNavPanel === "search";
-  const isWishlistOpen = activeNavPanel === "wishlist";
-
-  function handleLogin(){
-    toggleNavPanel("login");
-  }
-  function handleRegister(){
-    toggleNavPanel("register");
-  }
-  function handleCart(){
-    toggleNavPanel("cart");
-  }
+  const searchResults = allData && filterProducts(allData);
+  
   function handleChange(e) {
     setSearch(e.target.value);
   }
-  function handleSearch(){
-    toggleNavPanel("search");
-  }
-  function handleWishlist() {
-    toggleNavPanel("wishlist");
-  }
   
-  function closeButton(){
-    setActiveNavPanel(null);
-  }
-
-  const searchResults = allData && filterProducts(allData);
-
+  
   function addItems(card) {
     setCartItems((cartItems) => [...cartItems, card]);
   }
-
+  
   function addItemsToWishlist(card) {
     setWishlist((wishlist) => [...wishlist, card]);
   }
-
+  
   function deleteItem(id) {
     setCartItems((cartItems) => cartItems.filter((item) => item.id !== id));
   }
-
+  
   function deleteItemFromWishlist(id) {
     setWishlist((cartItems) => cartItems.filter((item) => item.id !== id));
   }
-
+  
   useEffect(function () {
     setLoading(true);
     async function getAllStyles() {
@@ -105,6 +75,18 @@ export default function CardProvider({ children }) {
     }
     getAllStyles();
   }, []);
+  
+  function togglePanel(panelName) {
+    setActivePanel((currentPanel) =>
+      currentPanel === panelName ? null : panelName
+    );
+  }
+  function openPanel(panelName) {
+    setActivePanel(panelName);
+  }
+  function closePanel() {
+    setActivePanel(null);
+  }
 
   return (
     <StylesContext.Provider
@@ -119,6 +101,7 @@ export default function CardProvider({ children }) {
         searchResults,
         cartItems,
         wishlist,
+        allData,
         setCartItems,
         addItems,
         addItemsToWishlist,
@@ -129,18 +112,10 @@ export default function CardProvider({ children }) {
         search,
         setSearch,
         handleChange,
-        login,
-        handleLogin,
-        register,
-        handleRegister,
-        closeButton,
-        isCartOpen,
-        handleCart,
-        isSearchOpened,
-        handleSearch,
-        isWishlistOpen,
-        handleWishlist,
-        activeNavPanel
+        activePanel,
+        togglePanel,
+        openPanel,
+        closePanel
       }}
     >
       {children}

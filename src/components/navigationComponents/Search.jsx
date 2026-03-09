@@ -7,10 +7,10 @@ import styles from "./Navigation.module.css"
 
 export default function Search(){
     const navigate = useNavigate();
-    const { search, searchResults, handleChange, handleSearch, addItems } = useContext(StylesContext)
+    const { search, searchResults, handleChange, togglePanel, addItems } = useContext(StylesContext)
     function handleSubmit(e) {
     e.preventDefault();
-    handleSearch();
+    togglePanel("search");
     if (search) navigate("/search");
   }
     return (

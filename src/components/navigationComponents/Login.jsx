@@ -4,13 +4,13 @@ import BlackButton from "../../reusedComponents/BlackButton"
 import styles from "./Navigation.module.css"
 
 export default function Login(){
-    const { handleRegister, closeButton } = useContext(StylesContext)
+    const { openPanel, closePanel } = useContext(StylesContext)
     return (
         <div className={styles.overlay}>
             <div className={styles.modal}>
                 <div className={styles.head}>
                 <p>LOGIN</p>
-                <button onClick={closeButton} className="cursor-pointer">&#x1D5B7;</button>
+                <button onClick={closePanel} className="cursor-pointer">&#x1D5B7;</button>
                 </div>
 
                 <div className={styles.form}>
@@ -37,7 +37,7 @@ export default function Login(){
 
                 <BlackButton>LOG IN</BlackButton>
 
-                <p className="text-xs">No account yet? <button onClick={handleRegister} className="underline cursor-pointer">Create Account</button></p>
+                <p className="text-xs">No account yet? <button onClick={() => openPanel("register")} className="underline cursor-pointer">Create Account</button></p>
                 </div>
             </div>
         </div>

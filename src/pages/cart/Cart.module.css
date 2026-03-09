@@ -5,10 +5,10 @@
 }
 
 .cart > section {
+  margin-top: 2rem;
   display: flex;
   justify-content: space-between;
   gap: 0.8rem;
-  flex-wrap: wrap;
 }
 
 .cart > section button {

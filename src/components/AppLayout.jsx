@@ -7,9 +7,10 @@ import Login from "../components/navigationComponents/Login";
 import Register from "../components/navigationComponents/Register";
 import HomeCart from "./navigationComponents/MiniCart";
 import Search from "./navigationComponents/Search";
+import Filters from "../features/Filters";
 
 export default function AppLayout() {
-  const { login, register, isCartOpen, isSearchOpened } = useContext(StylesContext)
+  const { activePanel } = useContext(StylesContext);
   return (
     <>
       <div>
@@ -18,10 +19,11 @@ export default function AppLayout() {
         <Footer />
       </div>
 
-      {login && <Login />}
-      {register && <Register />}
-      {isCartOpen && <HomeCart />}
-      {isSearchOpened && <Search />}
+      {activePanel === "login" && <Login />}
+      {activePanel === "register" && <Register />}
+      {activePanel === "cart" && <HomeCart />}
+      {activePanel === "search" && <Search />}
+      {activePanel === "filter" && <Filters />}
     </>
   );
 }

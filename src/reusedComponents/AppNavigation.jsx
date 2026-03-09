@@ -4,7 +4,7 @@ import { StylesContext } from "../contexts/StylesContext";
 import styles from "./AppNavigation.module.css";
 
 export default function AppNavigation() {
-  const { count, isSearchOpened, handleSearch, handleLogin, handleCart, handleWishlist } = useContext(StylesContext);
+  const { count, activePanel, togglePanel, openPanel } = useContext(StylesContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHomeDropdownOpen, setIsHomeDropdownOpen] = useState(false);
   const [isShopDropdownOpen, setIsShopDropdownOpen] = useState(false);
@@ -18,7 +18,7 @@ export default function AppNavigation() {
   }
 
   function handleWishlistClick() {
-    handleWishlist();
+    openPanel("wishlist");
     navigate("/wishlist");
     closeMenu();
   }
@@ -185,12 +185,12 @@ export default function AppNavigation() {
       </div>
 
       <div className={styles.navRight}>
-        <button onClick={handleSearch}>
+        <button onClick={() => togglePanel("search")}>
           <li>
-            {!isSearchOpened ? <i className="fa-brands fa-sistrix cursor-pointer"></i> : <p className="cursor-pointer">&#x1D5B7;</p>}
+            {activePanel !== "search" ? <i className="fa-brands fa-sistrix cursor-pointer"></i> : <p className="cursor-pointer">&#x1D5B7;</p>}
           </li>
         </button>
-        <button onClick={handleLogin} className="cursor-pointer">
+        <button onClick={() => togglePanel("login")} className="cursor-pointer">
           <li>
             <i className="fa-regular fa-user"></i>
           </li>
@@ -202,7 +202,7 @@ export default function AppNavigation() {
           </li>
         </button>
 
-        <button className="cursor-pointer" onClick={handleCart}>
+        <button className="cursor-pointer" onClick={() => togglePanel("cart")}>
           <li className={styles.cartWrapper}>
             <i className="fa-solid fa-bag-shopping"></i>
             {count > 0 && <span className={styles.badge}>{count}</span>}

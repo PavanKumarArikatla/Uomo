@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from "react";
-import { StylesContext } from "../../../contexts/StylesContext";
-import Card from "../../../reusedComponents/Card";
-import Shopping from "../../../reusedComponents/Shopping";
+import { StylesContext } from "../contexts/StylesContext";
+import Card from "../reusedComponents/Card";
+import Shopping from "../reusedComponents/Shopping";
 import styles from "./SearchResults.module.css";
 
 export default function SearchResults() {
-  const { search, searchResults, addItems } = useContext(StylesContext);
+  const { search, searchResults, addItems, togglePanel } = useContext(StylesContext);
   const [sort, setSort] = useState("newest");
   let [sortedResults, setSortedResults] = useState([]);
 
@@ -89,15 +89,15 @@ export default function SearchResults() {
         <div className="flex gap-4">
           <p className="w-44 px-2 border-2">
             <select value={sort} onChange={(e) => setSort(e.target.value)}>
-              <option value="newest"><b>Newest</b></option>
-              <option value="Discount"><b>Discount</b></option>
-              <option value="priceLowToHigh"><b>Price: Low to High</b></option>
-              <option value="priceHighToLow"><b>Price: High to Low</b></option>
+              <option value="newest">Newest</option>
+              <option value="Discount">Discount</option>
+              <option value="priceLowToHigh">Price: Low to High</option>
+              <option value="priceHighToLow">Price: High to Low</option>
             </select>
           </p>
           
           <p>|</p>
-          <button>Filter</button>
+          <button onClick={() => {togglePanel("filter")}} className="cursor-pointer">Filter</button>
         </div>
       </div>
 

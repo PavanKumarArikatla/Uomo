@@ -15,9 +15,8 @@ export default function Cart() {
   return (
     <div className={styles.cart}>
       <b className="text-3xl">CART</b>
-      <br></br>
-      <br></br>
-      <section className="flex justify-between">
+
+      <section>
         <button>
           <b>01 SHOPPING BAG</b>
           <p className="text-xs text-gray-500">Manage Your Items List</p>

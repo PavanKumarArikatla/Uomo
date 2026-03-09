@@ -1,0 +1,92 @@
+.filterModal{
+    height: 100vh;
+}
+
+.filters{
+    margin: 0 auto;
+    width: 82%;
+    font-size: smaller;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 1rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.filters::-webkit-scrollbar{
+    display: none;
+}
+
+.titles{
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.productCategories{
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 5rem;
+}
+
+.productCategories > section > p {
+    margin: 0.5rem 0;
+    font-size: 0.8rem;
+}
+
+.colors{
+    margin-bottom: 2rem;
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    gap: 1rem;
+}
+
+.colors > input{
+    background-color: aquamarine;
+}
+
+.sizes{
+    margin-bottom: 2rem;
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 1rem;
+}
+
+.sizes > button{
+    border: 1px solid rgb(225, 222, 222);
+    cursor: pointer;
+}
+
+.searchInput{
+    height: 2.5rem;
+    outline: none;
+}
+
+.searchBrand{
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid rgb(225, 222, 222);
+}
+
+.brandsList{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 8rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.brandsList::-webkit-scrollbar{
+    display: none;
+}
