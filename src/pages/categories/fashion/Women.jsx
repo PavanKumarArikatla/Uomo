@@ -12,7 +12,7 @@ export default function Women() {
         {loading
           ? "Loading..."
           : womenStyles?.map((card) => (
-              <Card card={card} addItems={addItems} key={card.style} />
+              <Card card={card} addItems={addItems} key={card.id} />
             ))}
       </Shopping>
     </div>

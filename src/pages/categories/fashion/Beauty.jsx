@@ -13,7 +13,7 @@ export default function Beauty() {
           <div className="text-center">Loading...</div>
         ) : (
           limitedEditionProducts?.map((card) => (
-            <Card card={card} addItems={addItems} key={card.style} />
+            <Card card={card} addItems={addItems} key={card.id} />
           ))
         )}
       </Shopping>

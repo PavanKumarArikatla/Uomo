@@ -31,15 +31,6 @@
   text-align: center;
 }
 
-.filters {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 3rem;
-  gap: 1rem;
-  padding: 0 clamp(0.5rem, 3vw, 4rem);
-}
-
 select:focus {
   outline: none;
   box-shadow: none;

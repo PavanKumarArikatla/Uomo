@@ -20,39 +20,68 @@
 }
 
 .titles{
-    margin: 1rem 0;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .productCategories{
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     display: flex;
     gap: 5rem;
 }
 
 .productCategories > section > p {
-    margin: 0.5rem 0;
     font-size: 0.8rem;
 }
 
 .colors{
     margin-bottom: 2rem;
+    padding: 0.5rem;
     width: 60%;
     display: grid;
     grid-template-columns: repeat(6, auto);
     gap: 1rem;
 }
 
-.colors > input{
-    background-color: aquamarine;
+.color{
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
 }
 
-.colorOption{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+input:checked + .color{
+    outline: 1px solid black;
+    outline-offset: 2px;
 }
+
+.blue{
+  background: blue;
+}
+.yellow{
+  background: rgb(192, 192, 71);
+}
+.orange{
+  background: orange;
+}
+.skyblue{
+  background: skyblue;
+}
+.brown{
+  background: brown;
+}
+.darkkhaki{
+  background: darkkhaki;
+}
+.tomato{
+  background: tomato;
+}
+.darkseagreen{
+  background: darkseagreen;
+}
+
 
 .sizes{
     margin-bottom: 2rem;
@@ -62,7 +91,12 @@
     gap: 1rem;
 }
 
-.sizes > button{
+.selectedSize{
+    background-color: rgb(182, 184, 183);
+    cursor: pointer; 
+}
+
+.unselectedSize{
     border: 1px solid rgb(225, 222, 222);
     cursor: pointer;
 }
@@ -87,6 +121,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: 8rem;
+    margin-bottom: 1rem;
     overflow-y: auto;
     overflow-x: hidden;
     -ms-overflow-style: none;

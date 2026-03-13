@@ -5,6 +5,7 @@ import panelStyles from "../components/navigationComponents/Navigation.module.cs
 
 export default function Filters(){
     const { closePanel, allData } = useContext(StylesContext)
+    const [buttonClicked, setButtonClicked ] = useState([])
     const [ openFilterButton, setOpenFilterButton ] = useState({
         productCategory: true,
         sizes: true,
@@ -12,6 +13,14 @@ export default function Filters(){
         brands: true,
         price: true
     })
+
+    function clickedSize(size){
+        {setButtonClicked(prev =>
+        prev.includes(size)
+        ? prev.filter(s => s !== size)
+        : [...prev, size] )}
+    }
+
     const { minPrice, maxPrice } = useMemo(() => {
         const prices = allData.map(item => Number(item?.price)).filter(Number.isFinite)
         if (!prices.length) return { minPrice: 0, maxPrice: 0 }
@@ -49,11 +58,11 @@ export default function Filters(){
                         <button onClick={() => setOpenFilterButton(prev => ({
                             ...prev,
                             productCategory: !prev.productCategory
-                        }))}><i class="fa-solid fa-angle-up"></i></button>
+                        }))}><i className="fa-solid fa-angle-up"></i></button>
                         : <button onClick={() => setOpenFilterButton(prev => ({
                             ...prev,
                             productCategory: !prev.productCategory
-                        }))}><i class="fa-solid fa-angle-down"></i></button>}
+                        }))}><i className="fa-solid fa-angle-down"></i></button>}
                     </h1>
                     {openFilterButton.productCategory && <div className={styles.productCategories}>
                         <section>
@@ -79,42 +88,37 @@ export default function Filters(){
                         <button onClick={() => setOpenFilterButton(prev => ({
                             ...prev,
                             colors: !prev.colors
-                        }))}><i class="fa-solid fa-angle-up"></i></button>
+                        }))}><i className="fa-solid fa-angle-up"></i></button>
                         : <button onClick={() => setOpenFilterButton(prev => ({
                             ...prev,
                             colors: !prev.colors
-                        }))}><i class="fa-solid fa-angle-down"></i></button>}
+                        }))}><i className="fa-solid fa-angle-down"></i></button>}
                     </h1>
                     {openFilterButton.colors && <div className={styles.colors}>
-                        <input type="checkbox" name="color" id="blue"/>
-                        <label htmlFor="blue" hidden></label>
+                        <input type="checkbox" id="blue" hidden />
+                        <label htmlFor="blue" className={`${styles.color} ${styles.blue}`}></label>
 
-                        <input type="checkbox" name="color" id="yellow"/>
-                        <label htmlFor="yellow" hidden></label>
+                        <input type="checkbox" id="yellow" hidden />
+                        <label htmlFor="yellow" className={`${styles.color} ${styles.yellow}`}></label>
 
-                        <input type="checkbox" name="color" id="black"/>
-                        <label htmlFor="black" hidden></label>
+                        <input type="checkbox" id="skyblue" hidden />
+                        <label htmlFor="skyblue" className={`${styles.color} ${styles.skyblue}`}></label>
+                        
+                        <input type="checkbox" id="orange" hidden />
+                        <label htmlFor="orange" className={`${styles.color} ${styles.orange}`}></label>
 
-                        <input type="checkbox" name="color" id="lightblue"/>
-                        <label htmlFor="lightblue" hidden></label>
+                        <input type="checkbox" id="brown" hidden />
+                        <label htmlFor="brown" className={`${styles.color} ${styles.brown}`}></label>
 
-                        <input type="checkbox" name="color" id="brown"/>
-                        <label htmlFor="brown" hidden></label>
+                        <input type="checkbox" id="darkkhaki" hidden />
+                        <label htmlFor="darkkhaki" className={`${styles.color} ${styles.darkkhaki}`}></label>
 
-                        <input type="checkbox" name="color" id="orange"/>
-                        <label htmlFor="orange" hidden></label>
+                        <input type="checkbox" id="tomato" hidden />
+                        <label htmlFor="tomato" className={`${styles.color} ${styles.tomato}`}></label>
 
-                        <input type="checkbox" name="color" id="peach"/>
-                        <label htmlFor="peach" hidden></label>
+                        <input type="checkbox" id="darkseagreen" hidden />
+                        <label htmlFor="darkseagreen" className={`${styles.color} ${styles.darkseagreen}`}></label>
 
-                        <input type="checkbox" name="color" id="white"/>
-                        <label htmlFor="white" hidden></label>
-
-                        <input type="checkbox" name="color" id="red"/>
-                        <label htmlFor="red" hidden></label>
-
-                        <input type="checkbox" name="color" id="green"/>
-                        <label htmlFor="green" hidden></label>
                     </div>}
 
                     
@@ -124,19 +128,19 @@ export default function Filters(){
                         <button onClick={() => setOpenFilterButton(prev => ({
                             ...prev,
                             sizes: !prev.sizes
-                        }))}><i class="fa-solid fa-angle-up"></i></button>
+                        }))}><i className="fa-solid fa-angle-up"></i></button>
                         : <button onClick={() => setOpenFilterButton(prev => ({
                             ...prev,
                             sizes: !prev.sizes
-                        }))}><i class="fa-solid fa-angle-down"></i></button>}
+                        }))}><i className="fa-solid fa-angle-down"></i></button>}
                     </h1>
                     {openFilterButton.sizes && <div className={styles.sizes}>
-                        <button>XS</button>
-                        <button>S</button>
-                        <button>M</button>
-                        <button>L</button>
-                        <button>XL</button>
-                        <button>XXL</button>
+                        <button className={buttonClicked.includes("xs") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("xs")}>XS</button>
+                        <button className={buttonClicked.includes("s") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("s") }>S</button>
+                        <button className={buttonClicked.includes("m") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("m") }>M</button>
+                        <button className={buttonClicked.includes("l") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("l") }>L</button>
+                        <button className={buttonClicked.includes("xl") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("xl") }>XL</button>
+                        <button className={buttonClicked.includes("xxl") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("xxl") }>XXL</button>
                     </div>}
 
                     <h1 className={styles.titles}>
@@ -145,11 +149,11 @@ export default function Filters(){
                         <button onClick={() => setOpenFilterButton(prev => ({
                             ...prev,
                             brands: !prev.brands
-                        }))}><i class="fa-solid fa-angle-up"></i></button>
+                        }))}><i className="fa-solid fa-angle-up"></i></button>
                         : <button onClick={() => setOpenFilterButton(prev => ({
                             ...prev,
                             brands: !prev.brands
-                        }))}><i class="fa-solid fa-angle-down"></i></button>}
+                        }))}><i className="fa-solid fa-angle-down"></i></button>}
                     </h1>
                     {openFilterButton.brands && <>
                         <div className={styles.searchBrand}>
@@ -176,11 +180,11 @@ export default function Filters(){
                         <button onClick={() => setOpenFilterButton(prev => ({
                             ...prev,
                             price: !prev.price
-                        }))}><i class="fa-solid fa-angle-up"></i></button>
+                        }))}><i className="fa-solid fa-angle-up"></i></button>
                         : <button onClick={() => setOpenFilterButton(prev => ({
                             ...prev,
                             price: !prev.price
-                        }))}><i class="fa-solid fa-angle-down"></i></button>}
+                        }))}><i className="fa-solid fa-angle-down"></i></button>}
                     </h1>
                     {openFilterButton.price && (
                         <div className={styles.priceSection}>

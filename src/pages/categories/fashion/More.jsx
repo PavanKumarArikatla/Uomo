@@ -11,7 +11,7 @@ export default function More() {
         {loading
           ? "Loading..."
           : mensStyles?.map((card) => (
-              <Card card={card} addItems={addItems} key={card.style} />
+              <Card card={card} addItems={addItems} key={card.id} />
             ))}
       </Shopping>
     </div>

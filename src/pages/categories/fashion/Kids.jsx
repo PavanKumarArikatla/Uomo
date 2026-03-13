@@ -11,7 +11,7 @@ export default function Kids() {
         {loading
           ? "Loading..."
           : trendyProducts?.map((card) => (
-              <Card card={card} addItems={addItems} key={card.style} />
+              <Card card={card} addItems={addItems} key={card.id} />
             ))}
       </Shopping>
     </div>

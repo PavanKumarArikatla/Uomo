@@ -3,12 +3,12 @@ import { StylesContext } from "../contexts/StylesContext";
 import Card from "../reusedComponents/Card";
 import Shopping from "../reusedComponents/Shopping";
 import styles from "./SearchResults.module.css";
+import FilterSort from "../features/FiltersSort";
 
 export default function SearchResults() {
-  const { search, searchResults, addItems, togglePanel } = useContext(StylesContext);
-  const [sort, setSort] = useState("newest");
+  const { sort, setSort, search, searchResults, addItems } = useContext(StylesContext);
+  
   let [sortedResults, setSortedResults] = useState([]);
-
 
   useEffect(() => {
     if (searchResults) {
@@ -82,30 +82,13 @@ export default function SearchResults() {
         </div>
       </div>
 
-      <div className={styles.filters}>
-        <div>
-          <h1>HOME / THE SHOP</h1>
-        </div>
-        <div className="flex gap-4">
-          <p className="w-44 px-2 border-2">
-            <select value={sort} onChange={(e) => setSort(e.target.value)}>
-              <option value="newest">Newest</option>
-              <option value="Discount">Discount</option>
-              <option value="priceLowToHigh">Price: Low to High</option>
-              <option value="priceHighToLow">Price: High to Low</option>
-            </select>
-          </p>
-          
-          <p>|</p>
-          <button onClick={() => {togglePanel("filter")}} className="cursor-pointer">Filter</button>
-        </div>
-      </div>
+      <FilterSort sort={sort} setSort={setSort} />
 
       {sortedResults.length ? (
         <Shopping>
           {sortedResults.map((card) => (
             <Card
-              key={card._id || card.style}
+              key={card.id}
               card={card}
               addItems={addItems}
             />

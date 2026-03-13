@@ -10,6 +10,7 @@ export default function CardProvider({ children }) {
   const [wishlist, setWishlist] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const [activePanel, setActivePanel] = useState(null);
+  const [sort, setSort] = useState("newest");
   
   const count = cartItems.length;
   const {
@@ -47,7 +48,6 @@ export default function CardProvider({ children }) {
   function handleChange(e) {
     setSearch(e.target.value);
   }
-  
   
   function addItems(card) {
     setCartItems((cartItems) => [...cartItems, card]);
@@ -115,7 +115,9 @@ export default function CardProvider({ children }) {
         activePanel,
         togglePanel,
         openPanel,
-        closePanel
+        closePanel,
+        sort,
+        setSort
       }}
     >
       {children}
