@@ -58,7 +58,7 @@ export default function AppNavigation() {
           </li>
         </button>
 
-        <button className="cursor-pointer" onClick={handleWishlistClick}>
+        <button className="cursor-pointer" onClick={() => togglePanel("wishlist")}>
           <li>
             <i className="fa-regular fa-heart"></i>
           </li>

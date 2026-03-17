@@ -1,12 +1,14 @@
 import { useContext, useEffect, useMemo, useState } from "react"
+import { useSearchParams } from "react-router-dom";
 import { StylesContext } from "../contexts/StylesContext"
 import styles from "./Filters.module.css"
 import panelStyles from "../components/navigationComponents/Navigation.module.css"
 
 export default function Filters(){
+    const [ searchParams, setSearchParams ] = useSearchParams({})
     const { closePanel, allData } = useContext(StylesContext)
-    const [buttonClicked, setButtonClicked ] = useState([])
-    const [ openFilterButton, setOpenFilterButton ] = useState({
+    const [ selectedSizes, setSelectedSizes ] = useState([])
+    const [ isFilterButtonOpen, setIsFilterButtonOpen ] = useState({
         productCategory: true,
         sizes: true,
         colors: true,
@@ -14,11 +16,11 @@ export default function Filters(){
         price: true
     })
 
-    function clickedSize(size){
-        {setButtonClicked(prev =>
-        prev.includes(size)
+    function clickedSize(selectSize){
+        {setSelectedSizes(prev =>
+        prev.includes(selectSize)
         ? prev.filter(s => s !== size)
-        : [...prev, size] )}
+        : setSearchParams({size: selectSize}) )}
     }
 
     const { minPrice, maxPrice } = useMemo(() => {
@@ -54,17 +56,17 @@ export default function Filters(){
                     
                     <h1 className={styles.titles}>
                         <b>PRODUCT CATEGORIES</b>
-                        {openFilterButton.productCategory ? 
-                        <button onClick={() => setOpenFilterButton(prev => ({
+                        {isFilterButtonOpen.productCategory ? 
+                        <button className="cursor-pointer" onClick={() => setIsFilterButtonOpen(prev => ({
                             ...prev,
                             productCategory: !prev.productCategory
                         }))}><i className="fa-solid fa-angle-up"></i></button>
-                        : <button onClick={() => setOpenFilterButton(prev => ({
+                        : <button className="cursor-pointer" onClick={() => setIsFilterButtonOpen(prev => ({
                             ...prev,
                             productCategory: !prev.productCategory
                         }))}><i className="fa-solid fa-angle-down"></i></button>}
                     </h1>
-                    {openFilterButton.productCategory && <div className={styles.productCategories}>
+                    {isFilterButtonOpen.productCategory && <div className={styles.productCategories}>
                         <section>
                             <p>Dresses</p>
                             <p>Sweatshirts</p>
@@ -84,17 +86,17 @@ export default function Filters(){
 
                     <h1 className={styles.titles}>
                         <b>COLORS</b>
-                        {openFilterButton.colors ? 
-                        <button onClick={() => setOpenFilterButton(prev => ({
+                        {isFilterButtonOpen.colors ? 
+                        <button className="cursor-pointer" onClick={() => setIsFilterButtonOpen(prev => ({
                             ...prev,
                             colors: !prev.colors
                         }))}><i className="fa-solid fa-angle-up"></i></button>
-                        : <button onClick={() => setOpenFilterButton(prev => ({
+                        : <button className="cursor-pointer" onClick={() => setIsFilterButtonOpen(prev => ({
                             ...prev,
                             colors: !prev.colors
                         }))}><i className="fa-solid fa-angle-down"></i></button>}
                     </h1>
-                    {openFilterButton.colors && <div className={styles.colors}>
+                    {isFilterButtonOpen.colors && <div className={styles.colors}>
                         <input type="checkbox" id="blue" hidden />
                         <label htmlFor="blue" className={`${styles.color} ${styles.blue}`}></label>
 
@@ -124,38 +126,38 @@ export default function Filters(){
                     
                     <h1 className={styles.titles}>
                         <b>SIZES</b>
-                        {openFilterButton.sizes ? 
-                        <button onClick={() => setOpenFilterButton(prev => ({
+                        {isFilterButtonOpen.sizes ? 
+                        <button className="cursor-pointer" onClick={() => setIsFilterButtonOpen(prev => ({
                             ...prev,
                             sizes: !prev.sizes
                         }))}><i className="fa-solid fa-angle-up"></i></button>
-                        : <button onClick={() => setOpenFilterButton(prev => ({
+                        : <button className="cursor-pointer" onClick={() => setIsFilterButtonOpen(prev => ({
                             ...prev,
                             sizes: !prev.sizes
                         }))}><i className="fa-solid fa-angle-down"></i></button>}
                     </h1>
-                    {openFilterButton.sizes && <div className={styles.sizes}>
-                        <button className={buttonClicked.includes("xs") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("xs")}>XS</button>
-                        <button className={buttonClicked.includes("s") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("s") }>S</button>
-                        <button className={buttonClicked.includes("m") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("m") }>M</button>
-                        <button className={buttonClicked.includes("l") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("l") }>L</button>
-                        <button className={buttonClicked.includes("xl") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("xl") }>XL</button>
-                        <button className={buttonClicked.includes("xxl") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("xxl") }>XXL</button>
+                    {isFilterButtonOpen.sizes && <div className={styles.sizes}>
+                        <button className={selectedSizes.includes("xs") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("xs")}>XS</button>
+                        <button className={selectedSizes.includes("s") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("s") }>S</button>
+                        <button className={selectedSizes.includes("m") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("m") }>M</button>
+                        <button className={selectedSizes.includes("l") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("l") }>L</button>
+                        <button className={selectedSizes.includes("xl") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("xl") }>XL</button>
+                        <button className={selectedSizes.includes("xxl") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("xxl") }>XXL</button>
                     </div>}
 
                     <h1 className={styles.titles}>
                         <b>BRANDS</b>
-                        {openFilterButton.brands ? 
-                        <button onClick={() => setOpenFilterButton(prev => ({
+                        {isFilterButtonOpen.brands ? 
+                        <button className="cursor-pointer" onClick={() => setIsFilterButtonOpen(prev => ({
                             ...prev,
                             brands: !prev.brands
                         }))}><i className="fa-solid fa-angle-up"></i></button>
-                        : <button onClick={() => setOpenFilterButton(prev => ({
+                        : <button className="cursor-pointer" onClick={() => setIsFilterButtonOpen(prev => ({
                             ...prev,
                             brands: !prev.brands
                         }))}><i className="fa-solid fa-angle-down"></i></button>}
                     </h1>
-                    {openFilterButton.brands && <>
+                    {isFilterButtonOpen.brands && <>
                         <div className={styles.searchBrand}>
                             <input type="text" placeholder="Search" className={styles.searchInput} />
                             <i className="fa-brands fa-sistrix cursor-pointer"></i>
@@ -176,17 +178,17 @@ export default function Filters(){
 
                     <h1 className={styles.titles}>
                         <b>PRICE</b>
-                        {openFilterButton.price ? 
-                        <button onClick={() => setOpenFilterButton(prev => ({
+                        {isFilterButtonOpen.price ? 
+                        <button className="cursor-pointer" onClick={() => setIsFilterButtonOpen(prev => ({
                             ...prev,
                             price: !prev.price
                         }))}><i className="fa-solid fa-angle-up"></i></button>
-                        : <button onClick={() => setOpenFilterButton(prev => ({
+                        : <button className="cursor-pointer" onClick={() => setIsFilterButtonOpen(prev => ({
                             ...prev,
                             price: !prev.price
                         }))}><i className="fa-solid fa-angle-down"></i></button>}
                     </h1>
-                    {openFilterButton.price && (
+                    {isFilterButtonOpen.price && (
                         <div className={styles.priceSection}>
                             <div className={styles.rangeWrap}>
                                 <div className={styles.sliderTrack}></div>

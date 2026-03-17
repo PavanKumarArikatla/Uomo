@@ -6,7 +6,7 @@ import styles from "./Navigation.module.css"
 import CartItem from "./CartItem"
 import GreyButton from "../../reusedComponents/GreyButton"
 
-export default function HomeCart(){
+export default function MiniCart(){
     const { closePanel, cartItems } = useContext(StylesContext)
     const totals = cartItems.reduce((acc, item) => {
     const price = Number(item.price) || 0;

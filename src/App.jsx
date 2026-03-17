@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 
-import Login from "./pages/Login";
 import Wishlist from "./pages/Wishlist";
 import Cart from "./pages/cart/Cart";
 import ItemDetails from "./pages/ItemDetails";
@@ -55,7 +54,6 @@ export default function App() {
         },
       ],
     },
-    { path: "login", element: <Login /> }
   ]);
 
   return (

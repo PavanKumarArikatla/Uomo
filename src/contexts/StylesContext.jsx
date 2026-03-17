@@ -11,6 +11,7 @@ export default function CardProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
   const [activePanel, setActivePanel] = useState(null);
   const [sort, setSort] = useState("newest");
+  const [ cartState, setCartState ] = useState("shopping")
   
   const count = cartItems.length;
   const {
@@ -117,7 +118,9 @@ export default function CardProvider({ children }) {
         openPanel,
         closePanel,
         sort,
-        setSort
+        setSort,
+        cartState,
+        setCartState
       }}
     >
       {children}
