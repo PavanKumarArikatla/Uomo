@@ -7,20 +7,39 @@ import panelStyles from "../components/navigationComponents/Navigation.module.cs
 export default function Filters(){
     const [ searchParams, setSearchParams ] = useSearchParams({})
     const { closePanel, allData } = useContext(StylesContext)
-    const [ selectedSizes, setSelectedSizes ] = useState([])
+    const [ filters, setFilters ] = useState({sizes: [], brands: [], color: [], })
     const [ isFilterButtonOpen, setIsFilterButtonOpen ] = useState({
         productCategory: true,
         sizes: true,
-        colors: true,
+        colors: true, //here no "s"
         brands: true,
         price: true
     })
 
-    function clickedSize(selectSize){
-        {setSelectedSizes(prev =>
-        prev.includes(selectSize)
-        ? prev.filter(s => s !== size)
-        : setSearchParams({size: selectSize}) )}
+    useEffect(() => {
+        const params = new URLSearchParams();
+
+        if (filters.sizes.length > 0) {
+            params.set("size", filters.sizes.join(","));
+        }
+        if (filters.color.length > 0) {
+            params.set("color", filters.color.join(",")); //here no "s"
+        }
+
+        setSearchParams(params);
+        }, [filters]);
+
+    function selectedFilter(filterType, selectedFilterType) {
+    setFilters((prev) => {
+        const updatedFilters = prev[filterType].includes(selectedFilterType)
+        ? prev[filterType].filter((s) => s !== selectedFilterType)
+        : [...prev[filterType], selectedFilterType];
+
+        return {
+        ...prev,
+        [filterType]: updatedFilters,
+        };
+    });
     }
 
     const { minPrice, maxPrice } = useMemo(() => {
@@ -97,28 +116,28 @@ export default function Filters(){
                         }))}><i className="fa-solid fa-angle-down"></i></button>}
                     </h1>
                     {isFilterButtonOpen.colors && <div className={styles.colors}>
-                        <input type="checkbox" id="blue" hidden />
+                        <input type="checkbox" id="blue" hidden checked={filters.color.includes("blue")} onChange={() => selectedFilter("color", "blue")} />
                         <label htmlFor="blue" className={`${styles.color} ${styles.blue}`}></label>
 
-                        <input type="checkbox" id="yellow" hidden />
+                        <input type="checkbox" id="yellow" hidden checked={filters.color.includes("yellow")} onChange={() => selectedFilter("color", "yellow")} />
                         <label htmlFor="yellow" className={`${styles.color} ${styles.yellow}`}></label>
 
-                        <input type="checkbox" id="skyblue" hidden />
+                        <input type="checkbox" id="skyblue" hidden checked={filters.color.includes("skyblue")} onChange={() => selectedFilter("color", "skyblue")} />
                         <label htmlFor="skyblue" className={`${styles.color} ${styles.skyblue}`}></label>
                         
-                        <input type="checkbox" id="orange" hidden />
+                        <input type="checkbox" id="orange" hidden checked={filters.color.includes("orange")} onChange={() => selectedFilter("color", "orange")} />
                         <label htmlFor="orange" className={`${styles.color} ${styles.orange}`}></label>
 
-                        <input type="checkbox" id="brown" hidden />
+                        <input type="checkbox" id="brown" hidden checked={filters.color.includes("brown")} onChange={() => selectedFilter("color", "brown")} />
                         <label htmlFor="brown" className={`${styles.color} ${styles.brown}`}></label>
 
-                        <input type="checkbox" id="darkkhaki" hidden />
+                        <input type="checkbox" id="darkkhaki" hidden checked={filters.color.includes("darkkhaki")} onChange={() => selectedFilter("color", "darkkhaki")} />
                         <label htmlFor="darkkhaki" className={`${styles.color} ${styles.darkkhaki}`}></label>
 
-                        <input type="checkbox" id="tomato" hidden />
+                        <input type="checkbox" id="tomato" hidden checked={filters.color.includes("tomato")} onChange={() => selectedFilter("color", "tomato")} />
                         <label htmlFor="tomato" className={`${styles.color} ${styles.tomato}`}></label>
 
-                        <input type="checkbox" id="darkseagreen" hidden />
+                        <input type="checkbox" id="darkseagreen" hidden checked={filters.color.includes("darkseagreen")} onChange={() => selectedFilter("color", "darkseagreen")} />
                         <label htmlFor="darkseagreen" className={`${styles.color} ${styles.darkseagreen}`}></label>
 
                     </div>}
@@ -137,12 +156,12 @@ export default function Filters(){
                         }))}><i className="fa-solid fa-angle-down"></i></button>}
                     </h1>
                     {isFilterButtonOpen.sizes && <div className={styles.sizes}>
-                        <button className={selectedSizes.includes("xs") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("xs")}>XS</button>
-                        <button className={selectedSizes.includes("s") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("s") }>S</button>
-                        <button className={selectedSizes.includes("m") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("m") }>M</button>
-                        <button className={selectedSizes.includes("l") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("l") }>L</button>
-                        <button className={selectedSizes.includes("xl") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("xl") }>XL</button>
-                        <button className={selectedSizes.includes("xxl") ? styles.selectedSize : styles.unselectedSize} onClick={()=> clickedSize("xxl") }>XXL</button>
+                        <button className={filters.sizes.includes("xs") ? styles.selectedSize : styles.unselectedSize} onClick={()=> selectedFilter("sizes" ,"xs")}>XS</button>
+                        <button className={filters.sizes.includes("s") ? styles.selectedSize : styles.unselectedSize} onClick={()=> selectedFilter("sizes" ,"s") }>S</button>
+                        <button className={filters.sizes.includes("m") ? styles.selectedSize : styles.unselectedSize} onClick={()=> selectedFilter("sizes" ,"m") }>M</button>
+                        <button className={filters.sizes.includes("l") ? styles.selectedSize : styles.unselectedSize} onClick={()=> selectedFilter("sizes" ,"l") }>L</button>
+                        <button className={filters.sizes.includes("xl") ? styles.selectedSize : styles.unselectedSize} onClick={()=> selectedFilter("sizes" ,"xl") }>XL</button>
+                        <button className={filters.sizes.includes("xxl") ? styles.selectedSize : styles.unselectedSize} onClick={()=> selectedFilter("sizes" ,"xxl") }>XXL</button>
                     </div>}
 
                     <h1 className={styles.titles}>
@@ -159,7 +178,7 @@ export default function Filters(){
                     </h1>
                     {isFilterButtonOpen.brands && <>
                         <div className={styles.searchBrand}>
-                            <input type="text" placeholder="Search" className={styles.searchInput} />
+                            <input type="text" placeholder="Search" className={styles.searchInput}/>
                             <i className="fa-brands fa-sistrix cursor-pointer"></i>
                         </div>
                         
