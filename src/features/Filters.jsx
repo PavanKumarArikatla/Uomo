@@ -1,33 +1,21 @@
 import { useContext, useEffect, useMemo, useState } from "react"
 import { useSearchParams } from "react-router-dom";
 import { StylesContext } from "../contexts/StylesContext"
+import BlackButton from "../reusedComponents/BlackButton"
 import styles from "./Filters.module.css"
 import panelStyles from "../components/navigationComponents/Navigation.module.css"
 
 export default function Filters(){
     const [ searchParams, setSearchParams ] = useSearchParams({})
     const { closePanel, allData } = useContext(StylesContext)
-    const [ filters, setFilters ] = useState({sizes: [], brands: [], color: [], })
+    const [ filters, setFilters ] = useState({sizes: [], brands: [], color: [], min: 0, max: 0 })
     const [ isFilterButtonOpen, setIsFilterButtonOpen ] = useState({
         productCategory: true,
         sizes: true,
-        colors: true, //here no "s"
+        colors: true,
         brands: true,
         price: true
     })
-
-    useEffect(() => {
-        const params = new URLSearchParams();
-
-        if (filters.sizes.length > 0) {
-            params.set("size", filters.sizes.join(","));
-        }
-        if (filters.color.length > 0) {
-            params.set("color", filters.color.join(",")); //here no "s"
-        }
-
-        setSearchParams(params);
-        }, [filters]);
 
     function selectedFilter(filterType, selectedFilterType) {
     setFilters((prev) => {
@@ -56,6 +44,18 @@ export default function Filters(){
     const rangeSpan = Math.max(maxPrice - minPrice, 1)
     const minPercent = ((priceMin - minPrice) / rangeSpan) * 100
     const maxPercent = ((priceMax - minPrice) / rangeSpan) * 100
+
+    function applyFilters() {
+    const params = new URLSearchParams();
+
+    if (filters.sizes.length > 0) {params.set("size", filters.sizes.join(","));}
+    if (filters.color.length > 0) {params.set("color", filters.color.join(","));}
+    if (filters.brands.length > 0) {params.set("brand", filters.brands.join(","));}
+    if (priceMin > minPrice) {params.set("minPrice", priceMin);}
+    if (priceMax < maxPrice) {params.set("maxPrice", priceMax);}
+
+    setSearchParams(params);
+}
     
     const brandCounts = Object.entries(
     allData.reduce((acc, { brand }) => {
@@ -71,8 +71,7 @@ export default function Filters(){
                     <button onClick={closePanel} className="cursor-pointer">&#x1D5B7;</button>
                 </div>
 
-                <div className={styles.filters}>
-                    
+                <div className={styles.filters}>   
                     <h1 className={styles.titles}>
                         <b>PRODUCT CATEGORIES</b>
                         {isFilterButtonOpen.productCategory ? 
@@ -181,12 +180,11 @@ export default function Filters(){
                             <input type="text" placeholder="Search" className={styles.searchInput}/>
                             <i className="fa-brands fa-sistrix cursor-pointer"></i>
                         </div>
-                        
                         <div className={styles.brandsList}>
                             {brandCounts.map(([brand, count]) => (
                                 <div key={brand} className="flex justify-between w-[99%]">
                                     <nav className="flex gap-1 items-center">
-                                        <input type="checkbox" id={brand} name="brand" />
+                                        <input type="checkbox" id={brand} name="brand" checked={filters.brands.includes(brand)} onChange={() => selectedFilter("brands", brand)} />
                                         <label htmlFor={brand}>{brand}</label>
                                     </nav>
                                     <p>{count}</p>
@@ -220,9 +218,9 @@ export default function Filters(){
                                 <span>Max Price: ${priceMax}</span>
                             </div>
                         </div>
-                    )}
-                    
+                    )}  
 
+                    <BlackButton onClick={applyFilters()}>Apply Filters</BlackButton>
                 </div>
 
 

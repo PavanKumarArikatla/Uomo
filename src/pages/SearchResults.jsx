@@ -3,10 +3,9 @@ import { StylesContext } from "../contexts/StylesContext";
 import Card from "../reusedComponents/Card";
 import Shopping from "../reusedComponents/Shopping";
 import styles from "./SearchResults.module.css";
-import FilterSort from "../features/FiltersSort";
 
 export default function SearchResults() {
-  const { sort, setSort, search, searchResults, addItems } = useContext(StylesContext);
+  const { sort,  search, searchResults, addItems } = useContext(StylesContext);
   
   let [sortedResults, setSortedResults] = useState([]);
 
@@ -81,8 +80,6 @@ export default function SearchResults() {
           </div>
         </div>
       </div>
-
-      <FilterSort sort={sort} setSort={setSort} />
 
       {sortedResults.length ? (
         <Shopping>
