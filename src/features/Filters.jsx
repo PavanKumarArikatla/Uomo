@@ -1,14 +1,13 @@
 import { useContext, useEffect, useMemo, useState } from "react"
 import { useSearchParams } from "react-router-dom";
-import { StylesContext } from "../contexts/StylesContext"
+import { createDefaultFilters, StylesContext } from "../contexts/StylesContext"
 import BlackButton from "../reusedComponents/BlackButton"
 import styles from "./Filters.module.css"
 import panelStyles from "../components/navigationComponents/Navigation.module.css"
 
 export default function Filters(){
-    const [ searchParams, setSearchParams ] = useSearchParams({})
-    const { closePanel, allData } = useContext(StylesContext)
-    const [ filters, setFilters ] = useState({sizes: [], brands: [], color: [], min: 0, max: 0 })
+    const [searchParams, setSearchParams] = useSearchParams()
+    const { closePanel, allData, filters, setFilters } = useContext(StylesContext)
     const [ isFilterButtonOpen, setIsFilterButtonOpen ] = useState({
         productCategory: true,
         sizes: true,
@@ -16,6 +15,7 @@ export default function Filters(){
         brands: true,
         price: true
     })
+    const [serachBrand, setSearchBrand] = useState("")
 
     function selectedFilter(filterType, selectedFilterType) {
     setFilters((prev) => {
@@ -38,16 +38,25 @@ export default function Filters(){
     const [priceMin, setPriceMin] = useState(minPrice)
     const [priceMax, setPriceMax] = useState(maxPrice)
     useEffect(() => {
-        setPriceMin(minPrice)
-        setPriceMax(maxPrice)
-    }, [minPrice, maxPrice])
+        setPriceMin(filters.minPrice ?? minPrice)
+        setPriceMax(filters.maxPrice ?? maxPrice)
+    }, [filters.minPrice, filters.maxPrice, minPrice, maxPrice])
     const rangeSpan = Math.max(maxPrice - minPrice, 1)
     const minPercent = ((priceMin - minPrice) / rangeSpan) * 100
     const maxPercent = ((priceMax - minPrice) / rangeSpan) * 100
 
+    useEffect(() => {
+        setFilters((prev) => ({
+            ...prev,
+            minPrice: priceMin <= minPrice ? null : priceMin,
+            maxPrice: priceMax >= maxPrice ? null : priceMax,
+        }));
+    }, [maxPrice, minPrice, priceMax, priceMin, setFilters]);
+
     function applyFilters() {
     const params = new URLSearchParams();
 
+    if (filters.categories.length > 0) {params.set("category", filters.categories.join(","));}
     if (filters.sizes.length > 0) {params.set("size", filters.sizes.join(","));}
     if (filters.color.length > 0) {params.set("color", filters.color.join(","));}
     if (filters.brands.length > 0) {params.set("brand", filters.brands.join(","));}
@@ -55,7 +64,17 @@ export default function Filters(){
     if (priceMax < maxPrice) {params.set("maxPrice", priceMax);}
 
     setSearchParams(params);
+
+    closePanel();
 }
+
+    function clearFilters() {
+        setFilters(createDefaultFilters());
+        setPriceMin(minPrice);
+        setPriceMax(maxPrice);
+        setSearchParams(new URLSearchParams());
+        closePanel();
+    }
     
     const brandCounts = Object.entries(
     allData.reduce((acc, { brand }) => {
@@ -63,6 +82,10 @@ export default function Filters(){
         return acc;
     }, {})
     ).sort((a, b) => a[0].localeCompare(b[0]));
+
+    const filteredBrandCounts = brandCounts.filter(([brand]) =>
+        brand.toLowerCase().includes(serachBrand.toLowerCase()),
+    );
     return(
         <div className={panelStyles.overlay}>
             <div className={`${panelStyles.modal} ${styles.filterModal}`}>
@@ -177,11 +200,17 @@ export default function Filters(){
                     </h1>
                     {isFilterButtonOpen.brands && <>
                         <div className={styles.searchBrand}>
-                            <input type="text" placeholder="Search" className={styles.searchInput}/>
+                            <input
+                                type="text"
+                                placeholder="Search"
+                                className={styles.searchInput}
+                                value={serachBrand}
+                                onChange={(event) => setSearchBrand(event.target.value)}
+                            />
                             <i className="fa-brands fa-sistrix cursor-pointer"></i>
                         </div>
                         <div className={styles.brandsList}>
-                            {brandCounts.map(([brand, count]) => (
+                            {filteredBrandCounts.map(([brand, count]) => (
                                 <div key={brand} className="flex justify-between w-[99%]">
                                     <nav className="flex gap-1 items-center">
                                         <input type="checkbox" id={brand} name="brand" checked={filters.brands.includes(brand)} onChange={() => selectedFilter("brands", brand)} />
@@ -220,7 +249,10 @@ export default function Filters(){
                         </div>
                     )}  
 
-                    <BlackButton onClick={applyFilters()}>Apply Filters</BlackButton>
+                    <div className={styles.actions}>
+                        <button onClick={clearFilters} className={styles.resetButton}>Clear Filters</button>
+                        <BlackButton onClick={applyFilters}>Apply Filters</BlackButton>
+                    </div>
                 </div>
 
 

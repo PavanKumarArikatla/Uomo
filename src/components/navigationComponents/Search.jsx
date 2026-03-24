@@ -11,7 +11,7 @@ export default function Search(){
     function handleSubmit(e) {
     e.preventDefault();
     togglePanel("search");
-    if (search) navigate("/search");
+    if (search) navigate(search);
   }
     return (
         <div className={styles.searchBlock}>
@@ -30,27 +30,27 @@ export default function Search(){
                 <br></br>
 
                 { search && searchResults.length ? (
-                        <Shopping>
-                          {searchResults.map((card) => (
-                            <Card
-                              key={card._id || card.style}
-                              card={card}
-                              addItems={addItems}
-                            />
-                          ))}
-                        </Shopping>
-                      ) : (
-                        <div>
-                          <h4>QUICkLINKS</h4>
-                          <div className="">
-                            <Link to=""><p>New Arrivals</p></Link>
-                            <Link to=""><p>Dresses</p></Link>
-                            <Link to=""><p>Accessories</p></Link>
-                            <Link to=""><p>Footwear</p></Link>
-                            <Link to=""><p>Sweatshirt</p></Link>
-                          </div>
-                        </div>
-                      )}
+                  <Shopping>
+                    {searchResults.map((card) => (
+                      <Card
+                        key={card._id || card.style}
+                        card={card}
+                        addItems={addItems}
+                      />
+                    ))}
+                  </Shopping>
+                ) : (
+                  <div>
+                    <h4>QUICkLINKS</h4>
+                    <div className="">
+                      <Link to=""><p>New Arrivals</p></Link>
+                      <Link to=""><p>Dresses</p></Link>
+                      <Link to=""><p>Accessories</p></Link>
+                      <Link to=""><p>Footwear</p></Link>
+                      <Link to=""><p>Sweatshirt</p></Link>
+                    </div>
+                  </div>
+                )}
             </div>
         </div>
     )

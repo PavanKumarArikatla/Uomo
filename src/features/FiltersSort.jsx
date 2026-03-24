@@ -17,7 +17,6 @@ export default function FilterSort(){
                   <option value="priceHighToLow">Price: High to Low</option>
                 </select>
               </p>
-              
               <p>|</p>
               <button onClick={() => {togglePanel("filter")}} className="cursor-pointer">Filter</button>
             </div>

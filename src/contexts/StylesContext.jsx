@@ -2,6 +2,16 @@ import { createContext } from "react";
 import { useState, useEffect } from "react";
 
 export const StylesContext = createContext();
+export function createDefaultFilters() {
+  return {
+    categories: [],
+    sizes: [],
+    brands: [],
+    color: [],
+    minPrice: null,
+    maxPrice: null,
+  };
+}
 
 export default function CardProvider({ children }) {
   const [search, setSearch] = useState("");
@@ -12,6 +22,8 @@ export default function CardProvider({ children }) {
   const [activePanel, setActivePanel] = useState(null);
   const [sort, setSort] = useState("newest");
   const [ cartState, setCartState ] = useState("shopping")
+  const [filters, setFilters] = useState(createDefaultFilters);
+
   
   const count = cartItems.length;
   const {
@@ -120,7 +132,9 @@ export default function CardProvider({ children }) {
         sort,
         setSort,
         cartState,
-        setCartState
+        setCartState,
+        filters,
+        setFilters
       }}
     >
       {children}
