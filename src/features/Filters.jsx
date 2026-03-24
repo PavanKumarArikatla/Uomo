@@ -73,7 +73,6 @@ export default function Filters(){
         setPriceMin(minPrice);
         setPriceMax(maxPrice);
         setSearchParams(new URLSearchParams());
-        closePanel();
     }
     
     const brandCounts = Object.entries(

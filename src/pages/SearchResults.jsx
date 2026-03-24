@@ -1,5 +1,5 @@
 import { useContext, useEffect, useMemo } from "react";
-import { createDefaultFilters, StylesContext } from "../contexts/StylesContext";
+import { StylesContext } from "../contexts/StylesContext";
 import { useSearchParams } from "react-router-dom";
 import Card from "../reusedComponents/Card";
 import Shopping from "../reusedComponents/Shopping";
@@ -22,7 +22,7 @@ function parseFilters(searchParams) {
 
 export default function SearchResults() {
   const { sort, search, searchResults, addItems, setFilters } = useContext(StylesContext);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   const appliedFilters = useMemo(
     () => parseFilters(searchParams),
@@ -95,11 +95,11 @@ export default function SearchResults() {
   );
 
   const sortedResults = useMemo(() => {
-    const nextResults = [...filteredResults];
+    const filteredProducts = [...filteredResults];
 
     switch (sort) {
       case "newest":
-        nextResults.sort((a, b) => {
+        filteredProducts.sort((a, b) => {
           const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
           const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
 
@@ -111,17 +111,17 @@ export default function SearchResults() {
         });
         break;
       case "Discount":
-        nextResults.sort(
+        filteredProducts.sort(
           (a, b) => Number(b.discount || 0) - Number(a.discount || 0),
         );
         break;
       case "priceLowToHigh":
-        nextResults.sort(
+        filteredProducts.sort(
           (a, b) => Number(a.price || 0) - Number(b.price || 0),
         );
         break;
       case "priceHighToLow":
-        nextResults.sort(
+        filteredProducts.sort(
           (a, b) => Number(b.price || 0) - Number(a.price || 0),
         );
         break;
@@ -129,116 +129,11 @@ export default function SearchResults() {
         break;
     }
 
-    return nextResults;
+    return filteredProducts;
   }, [filteredResults, sort]);
-
-  const activeFilterChips = [
-    ...appliedFilters.categories.map((value) => ({
-      type: "categories",
-      value,
-      label: `Category: ${value}`,
-    })),
-    ...appliedFilters.color.map((value) => ({
-      type: "color",
-      value,
-      label: `Color: ${value}`,
-    })),
-    ...appliedFilters.sizes.map((value) => ({
-      type: "sizes",
-      value,
-      label: `Size: ${value.toUpperCase()}`,
-    })),
-    ...appliedFilters.brands.map((value) => ({
-      type: "brands",
-      value,
-      label: `Brand: ${value}`,
-    })),
-    ...(appliedFilters.minPrice !== null
-      ? [
-          {
-            type: "minPrice",
-            value: String(appliedFilters.minPrice),
-            label: `Min $${appliedFilters.minPrice}`,
-          },
-        ]
-      : []),
-    ...(appliedFilters.maxPrice !== null
-      ? [
-          {
-            type: "maxPrice",
-            value: String(appliedFilters.maxPrice),
-            label: `Max $${appliedFilters.maxPrice}`,
-          },
-        ]
-      : []),
-  ];
-
-  function updateSearchFilters(updateFn) {
-    const nextParams = new URLSearchParams(searchParams);
-    updateFn(nextParams);
-    setSearchParams(nextParams);
-  }
-
-  function removeFilter(type, value) {
-    if (type === "minPrice" || type === "maxPrice") {
-      updateSearchFilters((params) => {
-        params.delete(type);
-      });
-      return;
-    }
-
-    const keyByType = {
-      categories: "category",
-      sizes: "size",
-      brands: "brand",
-      color: "color",
-    };
-
-    updateSearchFilters((params) => {
-      const key = keyByType[type];
-      const nextValues =
-        params
-          .get(key)
-          ?.split(",")
-          .filter(Boolean)
-          .filter((item) => item !== value) || [];
-
-      if (nextValues.length) {
-        params.set(key, nextValues.join(","));
-        return;
-      }
-
-      params.delete(key);
-    });
-  }
-
-  function clearAllFilters() {
-    setFilters(createDefaultFilters());
-    setSearchParams(new URLSearchParams());
-  }
 
   return (
     <div className="homecontainer">
-      {activeFilterChips.length > 0 && (
-        <div className={styles.activeFilters}>
-          <div className={styles.filterChips}>
-            {activeFilterChips.map((chip) => (
-              <button
-                key={`${chip.type}-${chip.value}`}
-                className={styles.filterChip}
-                onClick={() => removeFilter(chip.type, chip.value)}
-              >
-                <span>{chip.label}</span>
-                <span className={styles.chipClose}>x</span>
-              </button>
-            ))}
-          </div>
-          <button className={styles.resetButton} onClick={clearAllFilters}>
-            Clear all
-          </button>
-        </div>
-      )}
-
       <div className={styles.beforeSearchContainer}>
         <h1 className="text-3xl font-bold text-center py-5 h-16">YOU MIGHT LIKE</h1>
 

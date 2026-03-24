@@ -19,17 +19,14 @@ import DashboardAccountDetails from "./pages/dashboard/DashboardAccountDetails";
 import DashboardWishlist from "./pages/dashboard/DashboardWishlist";
 import DashboardDownloads from "./pages/dashboard/DashboardDownloads";
 import DashboardLogout from "./pages/dashboard/DashboardLogout";
-import { useContext } from "react";
-import { StylesContext } from "./contexts/StylesContext";
 
 export default function App() {
-  const { search } = useContext(StylesContext)
   const router = createBrowserRouter([
     {
       element: <AppLayout />,
       children: [
         { path: "/", element: <Home /> },
-        { path: `/${search}`, element: <SearchResults /> },
+        { path: "/:search", element: <SearchResults /> },
         { path: "men", element: <Men /> },
         { path: "women", element: <Women /> },
         { path: "kids", element: <Kids /> },
