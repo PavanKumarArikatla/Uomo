@@ -9,10 +9,10 @@ export default function Search(){
     const navigate = useNavigate();
     const { search, searchResults, handleChange, togglePanel, addItems } = useContext(StylesContext)
     function handleSubmit(e) {
-    e.preventDefault();
-    togglePanel("search");
-    if (search) navigate(search);
-  }
+      e.preventDefault();
+      togglePanel("search");
+      if (search) navigate(search);
+    }
     return (
         <div className={styles.searchBlock}>
             <div className={styles.search}>
@@ -42,7 +42,7 @@ export default function Search(){
                 ) : (
                   <div>
                     <h4>QUICkLINKS</h4>
-                    <div className="">
+                    <div>
                       <Link to=""><p>New Arrivals</p></Link>
                       <Link to=""><p>Dresses</p></Link>
                       <Link to=""><p>Accessories</p></Link>

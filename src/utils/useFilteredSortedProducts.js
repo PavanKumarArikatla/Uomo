@@ -25,7 +25,7 @@ function parseNumberParam(searchParams, price) {
 
 function parseFilters(searchParams) {
   return {
-    categories: searchParams.get("category")?.split(",") || [],
+    categories: searchParams.get("category") || [],
     sizes: searchParams.get("size")?.split(",") || [],
     brands: searchParams.get("brand")?.split(",") || [],
     color: searchParams.get("color")?.split(",") || [],
@@ -108,11 +108,13 @@ function sortProducts(products, sort) {
         return Number(b.id || 0) - Number(a.id || 0);
       });
       break;
+
     case "Discount":
       unsortedProducts.sort(
         (a, b) => Number(b.discount || 0) - Number(a.discount || 0),
       );
       break;
+
     case "priceLowToHigh":
       unsortedProducts.sort((a, b) => getFinalPrice(a) - getFinalPrice(b));
       break;
@@ -120,6 +122,7 @@ function sortProducts(products, sort) {
     case "priceHighToLow":
       unsortedProducts.sort((a, b) => getFinalPrice(b) - getFinalPrice(a));
       break;
+      
     default:
       break;
   }

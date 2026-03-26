@@ -21,7 +21,7 @@ export default function CardProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
   const [activePanel, setActivePanel] = useState(null);
   const [sort, setSort] = useState("newest");
-  const [ cartState, setCartState ] = useState("shopping")
+  const [cartState, setCartState] = useState("shopping")
   const [filters, setFilters] = useState(defaultFilters);
 
   
@@ -78,16 +78,23 @@ export default function CardProvider({ children }) {
     setWishlist((cartItems) => cartItems.filter((item) => item.id !== id));
   }
   
-  useEffect(function () {
-    setLoading(true);
-    async function getAllStyles() {
+  useEffect(() => {
+  setLoading(true);
+
+  async function getAllStyles() {
+    try {
       const res = await fetch("http://localhost:3000/data");
-      const styles = await res.json();
-      setAllStyles(styles);
+      const data = await res.json();
+      setAllStyles(data);
+    } catch (err) {
+      console.error(err);
+    } finally {
       setLoading(false);
     }
-    getAllStyles();
-  }, []);
+  }
+
+  getAllStyles();
+}, []);
   
   function togglePanel(panelName) {
     setActivePanel((currentPanel) =>

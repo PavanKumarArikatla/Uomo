@@ -27,6 +27,7 @@ export default function App() {
       children: [
         { path: "/", element: <Home /> },
         { path: "/:search", element: <SearchResults /> },
+        { path: "category/:type", element: <SearchResults /> },
         { path: "men", element: <Men /> },
         { path: "women", element: <Women /> },
         { path: "kids", element: <Kids /> },

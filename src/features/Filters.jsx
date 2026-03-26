@@ -6,7 +6,7 @@ import styles from "./Filters.module.css"
 import panelStyles from "../components/navigationComponents/Navigation.module.css"
 
 export default function Filters(){
-    const [searchParams, setSearchParams] = useSearchParams()
+    const [, setSearchParams] = useSearchParams()
     const { closePanel, allData, filters, setFilters } = useContext(StylesContext)
     const [ isFilterButtonOpen, setIsFilterButtonOpen ] = useState({
         productCategory: true,
