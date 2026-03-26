@@ -1,6 +1,6 @@
 import { useContext, useEffect, useMemo, useState } from "react"
 import { useSearchParams } from "react-router-dom";
-import { createDefaultFilters, StylesContext } from "../contexts/StylesContext"
+import { defaultFilters, StylesContext } from "../contexts/StylesContext"
 import BlackButton from "../reusedComponents/BlackButton"
 import styles from "./Filters.module.css"
 import panelStyles from "../components/navigationComponents/Navigation.module.css"
@@ -45,23 +45,28 @@ export default function Filters(){
     const minPercent = ((priceMin - minPrice) / rangeSpan) * 100
     const maxPercent = ((priceMax - minPrice) / rangeSpan) * 100
 
-    useEffect(() => {
-        setFilters((prev) => ({
-            ...prev,
-            minPrice: priceMin <= minPrice ? null : priceMin,
-            maxPrice: priceMax >= maxPrice ? null : priceMax,
-        }));
-    }, [maxPrice, minPrice, priceMax, priceMin, setFilters]);
-
     function applyFilters() {
+    const nextMinPrice = priceMin <= minPrice ? null : priceMin;
+    const nextMaxPrice = priceMax >= maxPrice ? null : priceMax;
     const params = new URLSearchParams();
 
     if (filters.categories.length > 0) {params.set("category", filters.categories.join(","));}
     if (filters.sizes.length > 0) {params.set("size", filters.sizes.join(","));}
     if (filters.color.length > 0) {params.set("color", filters.color.join(","));}
     if (filters.brands.length > 0) {params.set("brand", filters.brands.join(","));}
-    if (priceMin > minPrice) {params.set("minPrice", priceMin);}
-    if (priceMax < maxPrice) {params.set("maxPrice", priceMax);}
+    if (nextMinPrice !== null) {params.set("minPrice", nextMinPrice);}
+    if (nextMaxPrice !== null) {params.set("maxPrice", nextMaxPrice);}
+
+    setFilters((prev) => {
+        if (prev.minPrice === nextMinPrice && prev.maxPrice === nextMaxPrice) {
+            return prev;
+        }
+        return {
+            ...prev,
+            minPrice: nextMinPrice,
+            maxPrice: nextMaxPrice,
+        };
+    });
 
     setSearchParams(params);
 
@@ -69,7 +74,7 @@ export default function Filters(){
 }
 
     function clearFilters() {
-        setFilters(createDefaultFilters());
+        setFilters(defaultFilters());
         setPriceMin(minPrice);
         setPriceMax(maxPrice);
         setSearchParams(new URLSearchParams());

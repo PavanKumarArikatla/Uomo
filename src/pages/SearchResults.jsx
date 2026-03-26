@@ -7,10 +7,10 @@ import styles from "./SearchResults.module.css";
 
 function parseFilters(searchParams) {
   return {
-    categories: searchParams.get("category")?.split(",").filter(Boolean) || [],
-    sizes: searchParams.get("size")?.split(",").filter(Boolean) || [],
-    brands: searchParams.get("brand")?.split(",").filter(Boolean) || [],
-    color: searchParams.get("color")?.split(",").filter(Boolean) || [],
+    categories: searchParams.get("category")?.split(",") || [],
+    sizes: searchParams.get("size")?.split(",") || [],
+    brands: searchParams.get("brand")?.split(",") || [],
+    color: searchParams.get("color")?.split(",") || [],
     minPrice: searchParams.get("minPrice")
       ? Number(searchParams.get("minPrice"))
       : null,
