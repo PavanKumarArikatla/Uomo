@@ -1,3 +1,45 @@
+.activeFilters {
+  width: min(94%, 1250px);
+  margin: 1.25rem auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.filterChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.filterChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid #d4d4d4;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.chipClose {
+  font-weight: 700;
+}
+
+.resetButton {
+  border: 1px solid #d4d4d4;
+  background: #fff;
+  padding: 0.5rem 0.85rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.74rem;
+}
+
 .beforeSearchContainer {
   min-height: 20rem;
   margin: clamp(1rem, 3vw, 2rem) 0;
@@ -31,15 +73,6 @@
   text-align: center;
 }
 
-.filters {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 3rem;
-  gap: 1rem;
-  padding: 0 clamp(0.5rem, 3vw, 4rem);
-}
-
 select:focus {
   outline: none;
   box-shadow: none;
@@ -52,23 +85,18 @@ select:focus {
 }
 
 @media (max-width: 760px) {
-  .beforeSearch {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .filters {
+  .activeFilters {
     flex-direction: column;
     align-items: flex-start;
-    padding: 0 0.5rem;
+  }
+
+  .beforeSearch {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 460px) {
   .beforeSearch {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .filters {
-    display: none;
   }
 }

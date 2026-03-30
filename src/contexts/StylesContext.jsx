@@ -2,6 +2,16 @@ import { createContext } from "react";
 import { useState, useEffect } from "react";
 
 export const StylesContext = createContext();
+export function defaultFilters() {
+  return {
+    categories: [],
+    sizes: [],
+    brands: [],
+    color: [],
+    minPrice: null,
+    maxPrice: null,
+  };
+}
 
 export default function CardProvider({ children }) {
   const [search, setSearch] = useState("");
@@ -10,6 +20,10 @@ export default function CardProvider({ children }) {
   const [wishlist, setWishlist] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const [activePanel, setActivePanel] = useState(null);
+  const [sort, setSort] = useState("newest");
+  const [cartState, setCartState] = useState("shopping")
+  const [filters, setFilters] = useState(defaultFilters);
+
   
   const count = cartItems.length;
   const {
@@ -48,7 +62,6 @@ export default function CardProvider({ children }) {
     setSearch(e.target.value);
   }
   
-  
   function addItems(card) {
     setCartItems((cartItems) => [...cartItems, card]);
   }
@@ -65,16 +78,23 @@ export default function CardProvider({ children }) {
     setWishlist((cartItems) => cartItems.filter((item) => item.id !== id));
   }
   
-  useEffect(function () {
-    setLoading(true);
-    async function getAllStyles() {
+  useEffect(() => {
+  setLoading(true);
+
+  async function getAllStyles() {
+    try {
       const res = await fetch("http://localhost:3000/data");
-      const styles = await res.json();
-      setAllStyles(styles);
+      const data = await res.json();
+      setAllStyles(data);
+    } catch (err) {
+      console.error(err);
+    } finally {
       setLoading(false);
     }
-    getAllStyles();
-  }, []);
+  }
+
+  getAllStyles();
+}, []);
   
   function togglePanel(panelName) {
     setActivePanel((currentPanel) =>
@@ -115,7 +135,13 @@ export default function CardProvider({ children }) {
         activePanel,
         togglePanel,
         openPanel,
-        closePanel
+        closePanel,
+        sort,
+        setSort,
+        cartState,
+        setCartState,
+        filters,
+        setFilters
       }}
     >
       {children}

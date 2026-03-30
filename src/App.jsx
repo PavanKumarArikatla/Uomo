@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 
-import Login from "./pages/Login";
 import Wishlist from "./pages/Wishlist";
 import Cart from "./pages/cart/Cart";
 import ItemDetails from "./pages/ItemDetails";
@@ -27,6 +26,8 @@ export default function App() {
       element: <AppLayout />,
       children: [
         { path: "/", element: <Home /> },
+        { path: "/:search", element: <SearchResults /> },
+        { path: "/category/:type", element: <SearchResults /> },
         { path: "men", element: <Men /> },
         { path: "women", element: <Women /> },
         { path: "kids", element: <Kids /> },
@@ -55,7 +56,6 @@ export default function App() {
         },
       ],
     },
-    { path: "login", element: <Login /> }
   ]);
 
   return (

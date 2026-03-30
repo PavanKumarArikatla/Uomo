@@ -4,7 +4,6 @@ import Item from "./Item";
 
 export default function Wishlist() {
   const { wishlist } = useContext(StylesContext);
-  console.log(typeof wishlist);
   return (
     <div className="homecontainer">
 
