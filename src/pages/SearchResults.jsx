@@ -4,11 +4,15 @@ import Card from "../reusedComponents/Card";
 import Shopping from "../reusedComponents/Shopping";
 import styles from "./SearchResults.module.css";
 import useFilteredSortedProducts from "../utils/useFilteredSortedProducts";
+import { useParams } from "react-router-dom";
 
 export default function SearchResults() {
 
-  const { search, searchResults, loading, addItems } = useContext(StylesContext)
-  const filteredProducts = useFilteredSortedProducts(searchResults)
+  const { allData, searchResults, loading, addItems } = useContext(StylesContext);
+  const {type} = useParams()
+  const categoryProducts = allData.filter(item => item.style === type)
+  const filteredProducts = type ? useFilteredSortedProducts(categoryProducts) : useFilteredSortedProducts(searchResults);
+  
   return (
     <div className="homecontainer">
       
@@ -66,9 +70,7 @@ export default function SearchResults() {
             filteredProducts.map((card) => (
                 <Card card={card} addItems={addItems} key={card.id} />
               ))
-        ) : (
-          <p className="text-center col-span-full">No items match the selected filters.</p>
-        )
+        ) : <p className="text-center col-span-full">No items match the selected filters.</p>
         }
       </Shopping>
     </div>

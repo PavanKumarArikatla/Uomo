@@ -1,5 +1,5 @@
 import { useContext, useEffect, useMemo, useState } from "react"
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, NavLink } from "react-router-dom";
 import { defaultFilters, StylesContext } from "../contexts/StylesContext"
 import BlackButton from "../reusedComponents/BlackButton"
 import styles from "./Filters.module.css"
@@ -50,7 +50,7 @@ export default function Filters(){
     const nextMaxPrice = priceMax >= maxPrice ? null : priceMax;
     const params = new URLSearchParams();
 
-    if (filters.categories.length > 0) {params.set("category", filters.categories.join(","));}
+    if (filters.categories !== "") {params.set("category", filters.categories);}
     if (filters.sizes.length > 0) {params.set("size", filters.sizes.join(","));}
     if (filters.color.length > 0) {params.set("color", filters.color.join(","));}
     if (filters.brands.length > 0) {params.set("brand", filters.brands.join(","));}
@@ -113,18 +113,18 @@ export default function Filters(){
                     </h1>
                     {isFilterButtonOpen.productCategory && <div className={styles.productCategories}>
                         <section>
-                            <p>Dresses</p>
-                            <p>Sweatshirts</p>
-                            <p>Jackets</p>
-                            <p>Jeans</p>
-                            <p>Man</p>
+                            <NavLink to="category/dresses"><p>Dresses</p></NavLink>
+                            <NavLink to="category/sweatshirts"><p>Sweatshirts</p></NavLink>
+                            <NavLink to="category/jackets"><p>Jackets</p></NavLink>
+                            <NavLink to="category/jeans"><p>Jeans</p></NavLink>
+                            <NavLink to="category/men"><p>Men</p></NavLink>
                         </section>
                         <section>
-                            <p>Shorts</p>
-                            <p>Swimwear</p>
-                            <p>T-shirts & Tops</p>
-                            <p>Trousers</p>
-                            <p>Jumpers & Cardigans</p>
+                            <NavLink to="category/shorts"><p>Shorts</p></NavLink>
+                            <NavLink to="category/swimwear"><p>Swimwear</p></NavLink>
+                            <NavLink to="category/tshirts&tops"><p>T-shirts & Tops</p></NavLink>
+                            <NavLink to="category/trousers"><p>Trousers</p></NavLink>
+                            <NavLink to="category/jumpers&cardigans"><p>Jumpers & Cardigans</p></NavLink>
                         </section>
                     </div>
                     }
