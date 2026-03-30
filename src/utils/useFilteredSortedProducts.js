@@ -2,14 +2,14 @@ import { useContext, useEffect, useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 import { StylesContext } from "../contexts/StylesContext";
 
+function finalPrice(price, discount){
+  return (Number(price) * (1 - (Number(discount)/100)))
+}
+
 function getFinalPrice(product) {
   return product.discount
     ? finalPrice(product.price, product.discount)
     : Number(product.price);
-}
-
-function finalPrice(price, discount){
-  return (Number(price) * (1 - (Number(discount)/100)))
 }
 
 function parseNumberParam(searchParams, price) {
