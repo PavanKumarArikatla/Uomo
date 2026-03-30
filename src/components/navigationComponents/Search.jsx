@@ -9,10 +9,10 @@ export default function Search(){
     const navigate = useNavigate();
     const { search, searchResults, handleChange, togglePanel, addItems } = useContext(StylesContext)
     function handleSubmit(e) {
-    e.preventDefault();
-    togglePanel("search");
-    if (search) navigate("/search");
-  }
+      e.preventDefault();
+      togglePanel("search");
+      if (search) navigate(search);
+    }
     return (
         <div className={styles.searchBlock}>
             <div className={styles.search}>
@@ -30,27 +30,27 @@ export default function Search(){
                 <br></br>
 
                 { search && searchResults.length ? (
-                        <Shopping>
-                          {searchResults.map((card) => (
-                            <Card
-                              key={card._id || card.style}
-                              card={card}
-                              addItems={addItems}
-                            />
-                          ))}
-                        </Shopping>
-                      ) : (
-                        <div>
-                          <h4>QUICkLINKS</h4>
-                          <div className="">
-                            <Link to=""><p>New Arrivals</p></Link>
-                            <Link to=""><p>Dresses</p></Link>
-                            <Link to=""><p>Accessories</p></Link>
-                            <Link to=""><p>Footwear</p></Link>
-                            <Link to=""><p>Sweatshirt</p></Link>
-                          </div>
-                        </div>
-                      )}
+                  <Shopping>
+                    {searchResults.map((card) => (
+                      <Card
+                        key={card._id || card.style}
+                        card={card}
+                        addItems={addItems}
+                      />
+                    ))}
+                  </Shopping>
+                ) : (
+                  <div>
+                    <h4>QUICkLINKS</h4>
+                    <div>
+                      <Link to=""><p>New Arrivals</p></Link>
+                      <Link to=""><p>Dresses</p></Link>
+                      <Link to=""><p>Accessories</p></Link>
+                      <Link to=""><p>Footwear</p></Link>
+                      <Link to=""><p>Sweatshirt</p></Link>
+                    </div>
+                  </div>
+                )}
             </div>
         </div>
     )

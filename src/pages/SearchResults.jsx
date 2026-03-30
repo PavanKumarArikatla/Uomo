@@ -1,40 +1,17 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { StylesContext } from "../contexts/StylesContext";
 import Card from "../reusedComponents/Card";
 import Shopping from "../reusedComponents/Shopping";
 import styles from "./SearchResults.module.css";
+import useFilteredSortedProducts from "../utils/useFilteredSortedProducts";
 
 export default function SearchResults() {
-  const { search, searchResults, addItems, togglePanel } = useContext(StylesContext);
-  const [sort, setSort] = useState("newest");
-  let [sortedResults, setSortedResults] = useState([]);
 
-
-  useEffect(() => {
-    if (searchResults) {
-      sortedResults = [...searchResults]; 
-      switch (sort) {
-        case "newest":
-          sortedResults.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));  
-          break;
-        case "Discount":
-          sortedResults.sort((a, b) => b.discount - a.discount);
-          break;
-        case "priceLowToHigh":
-          sortedResults.sort((a, b) => a.price - b.price);
-          break;
-        case "priceHighToLow":
-          sortedResults.sort((a, b) => b.price - a.price);
-          break;
-        default:
-          break;
-      }
-      setSortedResults(sortedResults);
-    }
-  }, [sort, searchResults]);
+  const { search, searchResults, loading, addItems } = useContext(StylesContext)
+  const filteredProducts = useFilteredSortedProducts(searchResults)
   return (
     <div className="homecontainer">
-
+      
       <div className={styles.beforeSearchContainer}>
         <h1 className="text-3xl font-bold text-center py-5 h-16">YOU MIGHT LIKE</h1>
 
@@ -82,41 +59,18 @@ export default function SearchResults() {
         </div>
       </div>
 
-      <div className={styles.filters}>
-        <div>
-          <h1>HOME / THE SHOP</h1>
-        </div>
-        <div className="flex gap-4">
-          <p className="w-44 px-2 border-2">
-            <select value={sort} onChange={(e) => setSort(e.target.value)}>
-              <option value="newest">Newest</option>
-              <option value="Discount">Discount</option>
-              <option value="priceLowToHigh">Price: Low to High</option>
-              <option value="priceHighToLow">Price: High to Low</option>
-            </select>
-          </p>
-          
-          <p>|</p>
-          <button onClick={() => {togglePanel("filter")}} className="cursor-pointer">Filter</button>
-        </div>
-      </div>
-
-      {sortedResults.length ? (
-        <Shopping>
-          {sortedResults.map((card) => (
-            <Card
-              key={card._id || card.style}
-              card={card}
-              addItems={addItems}
-            />
-          ))}
-        </Shopping>
-      ) : (
-        <div className="text-center py-5">
-          <p>No item found named <b className="text-red-600">"{search}"</b></p>
-          <p>You might also like above styles.</p>
-        </div>
-      )}
+      <Shopping>
+        {loading ? (
+          "Loading..."
+        ) : filteredProducts.length ? (
+            filteredProducts.map((card) => (
+                <Card card={card} addItems={addItems} key={card.id} />
+              ))
+        ) : (
+          <p className="text-center col-span-full">No items match the selected filters.</p>
+        )
+        }
+      </Shopping>
     </div>
   );
 }

@@ -28,11 +28,8 @@ export default function TrendyLimited({ style, products }) {
         {products?.map((card) => (
           <Card
             card={card}
-            // image={card.image}
             addItems={addItems}
-            // style={card.style}
-            // price={card.price}
-            key={card.style}
+            key={card.id}
           />
         ))}
 

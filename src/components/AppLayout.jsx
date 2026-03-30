@@ -5,7 +5,7 @@ import AppNavigation from "../reusedComponents/AppNavigation";
 import Footer from "./homeComponents/Footer";
 import Login from "../components/navigationComponents/Login";
 import Register from "../components/navigationComponents/Register";
-import HomeCart from "./navigationComponents/MiniCart";
+import MiniCart from "./navigationComponents/MiniCart";
 import Search from "./navigationComponents/Search";
 import Filters from "../features/Filters";
 
@@ -21,7 +21,8 @@ export default function AppLayout() {
 
       {activePanel === "login" && <Login />}
       {activePanel === "register" && <Register />}
-      {activePanel === "cart" && <HomeCart />}
+      {activePanel === "cart" && <MiniCart />}
+      {activePanel === "wishlist" && <MiniCart />}
       {activePanel === "search" && <Search />}
       {activePanel === "filter" && <Filters />}
     </>
