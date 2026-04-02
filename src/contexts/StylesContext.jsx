@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 export const StylesContext = createContext();
 export function defaultFilters() {
   return {
-    categories: [],
+    category: "",
     sizes: [],
     brands: [],
     color: [],

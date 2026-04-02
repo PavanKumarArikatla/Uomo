@@ -25,7 +25,7 @@ function parseNumberParam(searchParams, price) {
 
 function parseFilters(searchParams) {
   return {
-    categories: searchParams.get("category") || [],
+    category: searchParams.get("category") || "",
     sizes: searchParams.get("size")?.split(",") || [],
     brands: searchParams.get("brand")?.split(",") || [],
     color: searchParams.get("color")?.split(",") || [],
@@ -43,7 +43,7 @@ function areFilterArraysEqual(first, second) {
 
 function areFiltersEqual(first, second) {
   return (
-    areFilterArraysEqual(first.categories, second.categories) &&
+    // areFilterArraysEqual(first.category, second.category) &&
     areFilterArraysEqual(first.sizes, second.sizes) &&
     areFilterArraysEqual(first.brands, second.brands) &&
     areFilterArraysEqual(first.color, second.color) &&
@@ -64,7 +64,7 @@ function filterProducts(products, filters) {
         ? [item.size]
         : [];
 
-    if (filters.categories.length && !filters.categories.includes(category)) {
+    if (filters.category.length && !filters.category.includes(category)) {
       return false;
     }
 

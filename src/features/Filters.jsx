@@ -50,7 +50,7 @@ export default function Filters(){
     const nextMaxPrice = priceMax >= maxPrice ? null : priceMax;
     const params = new URLSearchParams();
 
-    if (filters.categories !== "") {params.set("category", filters.categories);}
+    if (filters.categories !== "" && undefined) {params.set("category", filters.categories);}
     if (filters.sizes.length > 0) {params.set("size", filters.sizes.join(","));}
     if (filters.color.length > 0) {params.set("color", filters.color.join(","));}
     if (filters.brands.length > 0) {params.set("brand", filters.brands.join(","));}
