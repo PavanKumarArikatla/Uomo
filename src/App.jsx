@@ -28,11 +28,36 @@ export default function App() {
         { path: "/", element: <Home /> },
         { path: "/:search", element: <SearchResults /> },
         { path: "/category/:type", element: <SearchResults /> },
-        { path: "men", element: <Men /> },
-        { path: "women", element: <Women /> },
-        { path: "kids", element: <Kids /> },
-        { path: "beauty", element: <Beauty /> },
-        { path: "more", element: <More /> },
+        { path: "men",
+          children: [
+            { index: true, element: <Men /> },
+            { path: ":style", element: <ItemDetails /> }
+          ]
+        },
+        { path: "women", 
+          children: [
+            { index: true, element: <Women /> },
+            { path: ":style", element: <ItemDetails />}
+          ]
+        },
+        { path: "kids",
+          children: [
+            { index: true, element: <Kids /> },
+            { path: ":style", element: <ItemDetails /> }
+          ]
+        },
+        { path: "beauty", 
+          children: [
+            { index: true, element: <Beauty /> },
+            { path: ":style", element: <ItemDetails />}
+          ]
+        },
+        { path: "more", 
+          children: [
+            { index: true, element: <More /> },
+            { path: ":style", element: <ItemDetails />}
+          ]
+        },
         { path: "item", element: <ItemDetails /> },
         { path: "search", element: <SearchResults /> },
         { path: "fashion", element: <SearchResults /> },

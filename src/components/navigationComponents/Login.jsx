@@ -4,7 +4,7 @@ import BlackButton from "../../reusedComponents/BlackButton"
 import styles from "./Navigation.module.css"
 
 export default function Login(){
-    const { openPanel, closePanel } = useContext(StylesContext)
+    const { openPanel, closePanel, userCredentials, setUserCredentials } = useContext(StylesContext)
     return (
         <div className={styles.overlay}>
             <div className={styles.modal}>
@@ -15,12 +15,31 @@ export default function Login(){
 
                 <div className={styles.form}>
                 <form>
-                    <input type="text" className={styles.input2} placeholder="Username or email address *" required /><br /><br></br>
+                    <input 
+                        type="text" 
+                        className={styles.input2} 
+                        value={userCredentials.email}
+                        onChange={(e) =>
+                            setUserCredentials((prev) => ({
+                            ...prev,
+                            email: e.target.value
+                            }))
+                        }
+                        placeholder="Username or email address *" 
+                        required 
+                    />
                     <fieldset className={styles.fieldset}>
                     <legend className={styles.legend}>Password *</legend>
                     <input
                         type="password"
                         className={styles.passwordInput}
+                        value={userCredentials.password}
+                        onChange={(e) => 
+                            setUserCredentials((prev) => ({
+                                ...prev,
+                                password: e.target.value
+                            }))
+                        }
                         placeholder="********"
                         required
                     />
@@ -29,8 +48,8 @@ export default function Login(){
 
                 <div className={styles.rememberForgot}>
                     <div className="flex items-center gap-2">
-                    <input type="checkbox" id="Remember me" />
-                    <label for="Remember me">Remember me</label>
+                        <input type="checkbox" id="Remember me"  />
+                        <label htmlFor="Remember me">Remember me</label>
                     </div>
                     <p className="underline">Lost password?</p>
                 </div>

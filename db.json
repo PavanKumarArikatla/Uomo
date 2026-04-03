@@ -702,5 +702,21 @@
         "path": "winter"
       }
     ]
-  }
+  },
+  "users": [
+    {
+      "id": 1,
+      "username": "pavan",
+      "email": "pavanarikatla3@gmail.com",
+      "password": "Pavan@123",
+      "cart": []
+    },
+    {
+      "id": 2,
+      "username": "praveen",
+      "email": "admintrevista@gmail.com",
+      "password": "Admin@123",
+      "cart": []
+    }
+  ]
 }

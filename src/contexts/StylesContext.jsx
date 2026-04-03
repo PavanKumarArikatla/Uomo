@@ -23,7 +23,9 @@ export default function CardProvider({ children }) {
   const [sort, setSort] = useState("newest");
   const [cartState, setCartState] = useState("shopping")
   const [filters, setFilters] = useState(defaultFilters);
+  const [ userCredentials, setUserCredentials ] = useState({username: "", email: "", password: ""})
 
+  console.log(userCredentials.username, userCredentials.password, userCredentials.email)
   
   const count = cartItems.length;
   const {
@@ -141,7 +143,9 @@ export default function CardProvider({ children }) {
         cartState,
         setCartState,
         filters,
-        setFilters
+        setFilters,
+        userCredentials,
+        setUserCredentials
       }}
     >
       {children}

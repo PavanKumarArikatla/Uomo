@@ -4,7 +4,7 @@ import BlackButton from "../../reusedComponents/BlackButton"
 import styles from "./Navigation.module.css"
 
 export default function Register(){
-    const { closePanel } = useContext(StylesContext)
+    const { closePanel, userCredentials, setUserCredentials } = useContext(StylesContext)
     return(
         <div className={styles.overlay}>
             <div className={styles.modal}>
@@ -15,12 +15,34 @@ export default function Register(){
 
                 <div className={styles.form}>
                 <form>
-                    <input type="text" className={styles.input2} placeholder="Username" required /><br></br><br></br>
-                    <input type="text" className={styles.input2} placeholder="Email address *" required /><br></br><br></br>
+                    <input type="text"
+                        value={userCredentials.username}
+                        onChange={(e) => setUserCredentials((prev) => ({
+                            ...prev,
+                            username: e.target.value
+                        })
+                        )} 
+                        className={styles.input2} 
+                        placeholder="Username" 
+                        required />
+                    <input type="text"
+                        value={userCredentials.email}
+                        onChange={(e) => setUserCredentials((prev) => ({
+                            ...prev,
+                            email: e.target.value
+                        }))} 
+                        className={styles.input2} 
+                        placeholder="Email address *" 
+                        required />
                     <fieldset className={styles.fieldset}>
                     <legend className={styles.legend}>Password *</legend>
                     <input
                         type="password"
+                        value={userCredentials.password}
+                        onChange={(e) => setUserCredentials((prev) => ({
+                            ...prev,
+                            password: e.target.value
+                        }))}
                         className={styles.passwordInput}
                         placeholder="********"
                         required
