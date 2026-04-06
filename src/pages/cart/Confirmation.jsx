@@ -1,25 +1,27 @@
 import styles from "./Confirmation.module.css";
 import { BsCheckCircleFill } from "react-icons/bs";
 export default function Confirmation(){
-   // const orderData = JSON.parse(localStorage.getItem("orderData")) || {};
-   const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-   const subtotal = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);  
-   const vat = subtotal * 0.18;
-   const total = subtotal + vat;
 
-   
 
-   // const orderData = {
-   //  orderNumber: "",
-   //  date: "27/11/2020",
-   //    total: total.toFixed(2),
-   //    paymentMethod: "Direct Bank Transfer",
-   //    items: cartItems.map(item => ({
-   //       name: item.name,
-   //       quantity: item.quantity,
-   //       totalPrice: (item.price * item.quantity).toFixed(2)
-   //    }))
-   // };
+const orderData = JSON.parse(localStorage.getItem("orderData")) || {
+  orderNumber: "N/A",
+  date: "N/A",
+  paymentMethod:"N/A",
+  cartItems: []
+};
+
+const cartItems = Array.isArray(orderData.cartItems)
+  ? orderData.cartItems
+  : [];
+
+const subtotal = cartItems.reduce((acc, item) =>{
+  const price = Number(item.price) || 0;
+  const quantity = Number(item.quantity) || 0;
+  return acc+price*quantity;
+}, 0);
+
+const vat = subtotal * 0.18;
+const total = subtotal + vat;
 
    
     return (
@@ -30,40 +32,40 @@ export default function Confirmation(){
        <div className={styles.paymentDetails}>
         <span>
          <h3>Order Number</h3>
-         <p>13119</p>
+         <p>{orderData.orderNumber}</p>
          </span>
             <span>
          <h3>Date</h3>
-            <p>27/11/2020</p>
+            <p>{orderData.date}</p>
             </span>
          <span>
          <h3>Total</h3>
-         <p>$40.10</p>
+         <p>${total.toFixed(2)}</p>
          </span>
          <span>
          <h3>Payment Method</h3>
-            <p>Direct Bank Transfer</p> 
+            <p>{orderData.paymentMethod}</p> 
             </span>
        </div>
        <div>
         <div className={styles.table1}>
-                                <p className={styles.h11}>YOUR ORDER</p>
-                                <p className={styles.tableCell}>Product <span>Total</span></p>
-                                <hr className={styles.hr}/>
-                                 {cartItems.map((item, index) => (
-                                    <p className={`text-gray-400 ${styles.tableCell}`} key={index}>
-                                        {item.name} *{item.quantity} <span>${(item.price * item.quantity).toFixed(2)}</span>
-                                    </p>
-                                ))}
-                                <hr className={styles.hr}/>
-                                <p className={styles.tableCell}>Subtotal <span>${subtotal.toFixed(2)}</span></p>
-                                <hr className={styles.hr}/>
-                                <p className={styles.tableCell}>Shipping <span className="text-gray-400">Free shipping</span></p>
-                                <hr className={styles.hr}/>
-                                <p className={styles.tableCell}>VAT <span>${vat.toFixed(2)}</span></p>
-                                <hr className={styles.hr}/>
-                                <p className={styles.tableCell}>Total <span>${total.toFixed(2)}</span></p>
-                            </div>
+            <p className={styles.h11}>YOUR ORDER</p>
+            <p className={styles.tableCell}>Product <span>Total</span></p>
+            <hr className={styles.hr}/>
+            {cartItems.map((item, index) => (
+              <p className={`text-gray-400 ${styles.tableCell}`} key={index}>
+                {item.quantity} <span>${(item.price * item.quantity).toFixed(2)}</span>
+               </p>
+             ))}
+            <hr className={styles.hr}/>
+            <p className={styles.tableCell}>Subtotal <span>${subtotal.toFixed(2)}</span></p>
+            <hr className={styles.hr}/>
+            <p className={styles.tableCell}>Shipping <span className="text-gray-400">Free shipping</span></p>
+            <hr className={styles.hr}/>
+            <p className={styles.tableCell}>VAT <span>${vat.toFixed(2)}</span></p>
+            <hr className={styles.hr}/>
+            <p className={styles.tableCell}>Total <span>${total.toFixed(2)}</span></p>
+      </div>
        </div>
        </div>
     )

@@ -1,15 +1,25 @@
-import { useContext, useState, useEffect} from "react";
+import { useContext, useState} from "react";
 import BlackButton from "../../reusedComponents/BlackButton";
 import { StylesContext } from "../../contexts/StylesContext";
 import styles from "./ShippingAndCheckout.module.css"
 
 
 export default function ShippingAndCheckout(){
+
     const [paymentMethod, setPaymentMethod] = useState("");
-    const { setCartState } = useContext(StylesContext)
+    const { cartItems = [], setCartState } = useContext(StylesContext)
+
+    const subtotal = (cartItems || []).reduce((acc, item) =>{
+        const price = Number(item.price) || 0;
+        const qty = Number(item.quantity) || 0;
+        return acc + price * qty;
+    }, 0);
+
+    const vat = subtotal * 0.18;
+    const total = subtotal + vat;
+
     const [formData, setFormData] = useState({
         firstName: "",
-        cartItems: [],
         lastName: "",
         companyName: "",
         country: "",
@@ -26,44 +36,58 @@ export default function ShippingAndCheckout(){
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
-        setFormData(prevState => ({
-            ...prevState,
+        setFormData(prev => ({
+            ...prev,
             [name]: type === "checkbox" ? checked : value
         }));
     };
 
     const handleSubmit = (e) => {
-  e.preventDefault();             
-  if (!formData.firstName || !formData.email || !formData.phone) {
+  e.preventDefault();  
+  
+  if (cartItems.length === 0) {
+    alert("Your cart is empty")
+    return;
+  }
+
+  if (!formData.firstName || 
+    !formData.email || 
+    !formData.phone ||
+    !formData.lastName ||
+    !formData.postcode ||
+    !formData.townCity 
+    ) {
     alert("Please fill all required fields");
     return;
   } 
 
-  if (formData.saveAddress) {
-    localStorage.setItem("saveAddress", JSON.stringify(formData));
-  }
-
   if (!paymentMethod) {
     alert("Please select a payment method");
-    return;
+    return; 
   }
 
-//   const orderData = {
-//     orderNumber: ,
-//     date: "27/11/2020", 
-//     total: formData.cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0).toFixed(2),
-//     paymentMethod: paymentMethod === "bankTransfer" ? "Direct Bank Transfer" : paymentMethod === "checkPayments" ? "Check payments" : paymentMethod === "cashOnDelivery" ? "Cash on delivery" : "PayPal",
-//     items: formData.cartItems.map(item => ({    
-//         name: item.name,
-//         quantity: item.quantity,
-//         totalPrice: (item.price * item.quantity).toFixed(2)
-//     }))
-//   };
+  const orderData = {
+      orderNumber: Math.floor(Math.random() * 100000),
+      date: new Date().toLocaleDateString(),
+      paymentMethod: paymentMethod,
+      cartItems: cartItems.map(item => ({
+        price: Number(item.price),
+        quantity: Number(item.quantity)
+      })),
+      subtotal,
+      vat,
+      total,
+      customer: formData
+    };
 
-//   localStorage.setItem("orderData", JSON.stringify([orderData]));
+    localStorage.setItem("orderData", JSON.stringify(orderData));
+
+    if (formData.saveAddress) {
+      localStorage.setItem("saveAddress", JSON.stringify(formData));
+  }
 
   console.log("Form Data:", formData);
-  setCartState("confirmation");
+  
 
   setFormData({
     firstName: "",
@@ -81,13 +105,10 @@ export default function ShippingAndCheckout(){
     orderNotes: "",
   });
 
+  setCartState("confirmation");
+
 
     };
-
-     const cartItems = formData.cartItems || [];
-                        const subtotal = cartItems.reduce((acc, item) => { return acc + (item.price * item.quantity) }, 0);
-                        const vat = subtotal * 0.18;
-                        const total = subtotal + vat;
 
 
     return (
@@ -121,7 +142,6 @@ export default function ShippingAndCheckout(){
                      </form>
 
             </div>
-
     
                 <div className={styles.orderdetails}>
                     <div className={styles.table1}>
@@ -132,12 +152,11 @@ export default function ShippingAndCheckout(){
                         
                         {cartItems.map((item, index) => (
                             <p className={`text-gray-400 ${styles.tableCell}`} key={index}>
-                                {item.name} *{item.quantity} <span>${(item.price * item.quantity).toFixed(2)}</span>
+                                {item.quantity} <span>${(Number(item.price || 0) * Number(item.quantity || 0)).toFixed(2)}</span>
                             </p> 
                             
                         ))}  
-                        <p className={`text-gray-400 ${styles.tableCell}`}> <span>${formData.cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0).toFixed(2)}</span></p>    
-                        <p className={`text-gray-400 ${styles.tableCell}`}> <span>${formData.cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0).toFixed(2)}</span></p>
+                 
                         <hr className={styles.hr}/>
 
                         <p className={styles.tableCell}>Subtotal <span>${subtotal.toFixed(2)}</span></p>
@@ -167,6 +186,9 @@ export default function ShippingAndCheckout(){
                         PLACE ORDER
                     </BlackButton></div>
                 </div>
+
+                
+                
         
         </div>
     )
