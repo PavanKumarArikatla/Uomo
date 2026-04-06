@@ -1,10 +1,10 @@
 import styles from "./DashboardOrders.module.css";
 
 const orders = [
-  { id: "#2418", date: "October 27, 2020", status: "On hold", total: "$1,200.65 for 3 items" },
-  { id: "#2418", date: "October 27, 2020", status: "On hold", total: "$1,200.65 for 3 items" },
-  { id: "#2418", date: "October 27, 2020", status: "On hold", total: "$1,200.65 for 3 items" },
-  { id: "#2418", date: "October 27, 2020", status: "On hold", total: "$1,200.65 for 3 items" },
+  { id: "#2218", date: "March 27, 2025", status: "On hold", total: "$5,200.65 for 3 items" },
+  { id: "#2118", date: "October 27, 2024", status: "On hold", total: "$1,600.5 for 2 items" },
+  { id: "#2018", date: "September 27, 2023", status: "On hold", total: "$1,200.65 for 1 items" },
+  { id: "#2318", date: "October 27, 2026", status: "On hold", total: "$3,800.65 for 4 items" },
 ];
 
 export default function DashboardOrders() {

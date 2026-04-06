@@ -5,7 +5,7 @@ export default function DashboardHome() {
   return (
     <section className={styles.panel}>
       <p className={styles.line}>
-        Hello <b>alifin58</b> (not <b>alifin58</b>?{" "}
+        Hello <b>someone</b> (not <b>someone</b>?{" "}
         <button type="button" className={styles.inlineBtn}>
           Log out
         </button>

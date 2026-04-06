@@ -14,6 +14,7 @@ export function defaultFilters() {
 }
 
 export default function CardProvider({ children }) {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
   const [allStyles, setAllStyles] = useState([]);

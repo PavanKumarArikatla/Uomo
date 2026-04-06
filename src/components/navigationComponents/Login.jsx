@@ -54,7 +54,10 @@ export default function Login(){
                     <p className="underline">Lost password?</p>
                 </div>
 
-                <BlackButton>LOG IN</BlackButton>
+                <BlackButton onClick={()=> {
+                    setIsLoggedIn(true)
+                    closePanel()
+                    }}>LOG IN</BlackButton>
 
                 <p className="text-xs">No account yet? <button onClick={() => openPanel("register")} className="underline cursor-pointer">Create Account</button></p>
                 </div>
