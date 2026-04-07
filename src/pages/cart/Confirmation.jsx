@@ -2,26 +2,15 @@ import styles from "./Confirmation.module.css";
 import { BsCheckCircleFill } from "react-icons/bs";
 export default function Confirmation(){
 
+const orderData = JSON.parse(localStorage.getItem("orderData")) || {};
 
-const orderData = JSON.parse(localStorage.getItem("orderData")) || {
-  orderNumber: "N/A",
-  date: "N/A",
-  paymentMethod:"N/A",
-  cartItems: []
-};
+const cartItems = Array.isArray(orderData.cartItems)? orderData.cartItems: [];
 
-const cartItems = Array.isArray(orderData.cartItems)
-  ? orderData.cartItems
-  : [];
+ const subtotal = cartItems.reduce((acc, item) =>
+             acc + (Number(item.price) || 0) * (Number(item.quantity) || 1), 0);
 
-const subtotal = cartItems.reduce((acc, item) =>{
-  const price = Number(item.price) || 0;
-  const quantity = Number(item.quantity) || 0;
-  return acc+price*quantity;
-}, 0);
-
-const vat = subtotal * 0.18;
-const total = subtotal + vat;
+               const vat = subtotal * 0.18;
+               const total = subtotal + vat;
 
    
     return (
@@ -52,11 +41,22 @@ const total = subtotal + vat;
             <p className={styles.h11}>YOUR ORDER</p>
             <p className={styles.tableCell}>Product <span>Total</span></p>
             <hr className={styles.hr}/>
-            {cartItems.map((item, index) => (
+
+            {cartItems.length === 0 ? (
+               <p>Your cart is empty</p>
+            ) : (
+            cartItems.map((item, index) => {
+              const style = item.style || "Unknown Product";
+              const price = Number(item.price) || 0;
+              const quantity = Number(item.quantity) || 1;
+              return (
               <p className={`text-gray-400 ${styles.tableCell}`} key={index}>
-                {item.quantity} <span>${(item.price * item.quantity).toFixed(2)}</span>
+                {style} {"\u00D7"} {quantity} {" "} <span>${(price * quantity).toFixed(2)}</span>
                </p>
-             ))}
+              );
+               })
+            )}
+            
             <hr className={styles.hr}/>
             <p className={styles.tableCell}>Subtotal <span>${subtotal.toFixed(2)}</span></p>
             <hr className={styles.hr}/>

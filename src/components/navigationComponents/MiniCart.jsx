@@ -26,8 +26,8 @@ export default function MiniCart(){
         <div className={styles.overlay}>
             <div className={styles.modal}>
                 <div className={styles.cartItems}>
-                    <div className={styles.head}>
-                        <b>SHOPPING CART({cartItems.length})</b>
+                    <div className={styles.head}> 
+                        <b>Wishlist({cartItems.length})</b>
                         <button onClick={closePanel} className="cursor-pointer">&#x1D5B7;</button>
                     </div>
                     {cartItems.length > 0 ?

@@ -6,19 +6,12 @@ import styles from "./ShippingAndCheckout.module.css"
 
 export default function ShippingAndCheckout(){
 
-    const [paymentMethod, setPaymentMethod] = useState("");
     const { cartItems = [], setCartState } = useContext(StylesContext)
+    const [paymentMethod, setPaymentMethod] = useState("");
 
-    const subtotal = (cartItems || []).reduce((acc, item) =>{
-        const price = Number(item.price) || 0;
-        const qty = Number(item.quantity) || 0;
-        return acc + price * qty;
-    }, 0);
-
-    const vat = subtotal * 0.18;
-    const total = subtotal + vat;
-
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState(() => {
+        const savedData = localStorage.getItem("saveAddress");
+        return savedData ? JSON.parse(savedData) : {
         firstName: "",
         lastName: "",
         companyName: "",
@@ -32,6 +25,7 @@ export default function ShippingAndCheckout(){
         saveAddress: false,
         shipToDifferentAddress: false,
         orderNotes: "",
+        };
     });
 
     const handleChange = (e) => {
@@ -41,6 +35,17 @@ export default function ShippingAndCheckout(){
             [name]: type === "checkbox" ? checked : value
         }));
     };
+
+    const fixedCartItems = cartItems.map(item => ({
+    style: item.style || "Unknown Product",
+    price: Number(item.price) || 0,
+    quantity: Number(item.quantity) || 1,
+  }));
+
+    const subtotal = fixedCartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    const vat = subtotal * 0.18;
+    const total = subtotal + vat;
+
 
     const handleSubmit = (e) => {
   e.preventDefault();  
@@ -70,20 +75,19 @@ export default function ShippingAndCheckout(){
       orderNumber: Math.floor(Math.random() * 100000),
       date: new Date().toLocaleDateString(),
       paymentMethod: paymentMethod,
-      cartItems: cartItems.map(item => ({
-        price: Number(item.price),
-        quantity: Number(item.quantity)
-      })),
+      cartItems: fixedCartItems,
       subtotal,
-      vat,
-      total,
-      customer: formData
+        vat,
+        total,
+        customer: formData,
     };
 
     localStorage.setItem("orderData", JSON.stringify(orderData));
 
     if (formData.saveAddress) {
       localStorage.setItem("saveAddress", JSON.stringify(formData));
+  } else {
+      localStorage.removeItem("saveAddress");
   }
 
   console.log("Form Data:", formData);
@@ -150,9 +154,9 @@ export default function ShippingAndCheckout(){
                         <hr className={styles.hr}/> 
                         
                         
-                        {cartItems.map((item, index) => (
+                        {fixedCartItems.map((item, index) => (
                             <p className={`text-gray-400 ${styles.tableCell}`} key={index}>
-                                {item.quantity} <span>${(Number(item.price || 0) * Number(item.quantity || 0)).toFixed(2)}</span>
+                               {item.style} {"\u00D7"} {item.quantity} <span>${(item.price * item.quantity).toFixed(2)}</span>
                             </p> 
                             
                         ))}  

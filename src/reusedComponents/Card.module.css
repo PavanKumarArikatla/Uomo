@@ -36,6 +36,26 @@
   transform: translateX(-50%) translateY(-4px);
 }
 
+.heartIcon {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  color: #fff;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.imageWrapper:hover .heartIcon {
+  opacity: 1;
+}
+
+.active {
+  color: red;
+}
+
 .category {
   margin-top: 0.7rem;
   font-size: 0.72rem;

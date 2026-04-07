@@ -65,9 +65,17 @@ export default function CardProvider({ children }) {
   function addItems(card) {
     setCartItems((cartItems) => [...cartItems, card]);
   }
-  
+
   function addItemsToWishlist(card) {
-    setWishlist((wishlist) => [...wishlist, card]);
+    setWishlist((prev)=>{
+      const exists = prev.find((item)=>item.id === card.id);
+      if(exists){
+        return prev.filter((item)=>item.id !== card.id)
+      } else {
+        return [...prev, card]
+      }
+    })
+  
   }
   
   function deleteItem(id) {
@@ -75,7 +83,7 @@ export default function CardProvider({ children }) {
   }
   
   function deleteItemFromWishlist(id) {
-    setWishlist((cartItems) => cartItems.filter((item) => item.id !== id));
+    setWishlist((wishlist) => wishlist.filter((item) => item.id !== id));
   }
   
   useEffect(() => {
