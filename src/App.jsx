@@ -26,7 +26,7 @@ export default function App() {
       element: <AppLayout />,
       children: [
         { path: "/", element: <Home /> },
-        { path: "/:search", element: <SearchResults /> },
+        { path: "/search/:search", element: <SearchResults /> },
         { path: "/category/:type", element: <SearchResults /> },
         { path: "men",
           children: [
@@ -58,7 +58,7 @@ export default function App() {
             { path: ":style", element: <ItemDetails />}
           ]
         },
-        { path: "item", element: <ItemDetails /> },
+        { path: "/:item", element: <ItemDetails /> },
         { path: "search", element: <SearchResults /> },
         { path: "fashion", element: <SearchResults /> },
         { path: "watches", element: <SearchResults /> },

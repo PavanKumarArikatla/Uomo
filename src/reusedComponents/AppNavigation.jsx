@@ -4,7 +4,7 @@ import { StylesContext } from "../contexts/StylesContext";
 import styles from "./AppNavigation.module.css";
 
 export default function AppNavigation() {
-  const { count, activePanel, togglePanel, openPanel } = useContext(StylesContext);
+  const { count, activePanel, togglePanel, openPanel, userLoggedIn, userCredentials } = useContext(StylesContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -32,16 +32,16 @@ export default function AppNavigation() {
             <NavLink to="/women" >WOMEN</NavLink>
           </p>
           <p className={styles.type}>
-            <NavLink to="/kids" >COLLECTION</NavLink>
+            <NavLink to="/kids" >KIDS</NavLink>
           </p>
           <p className={styles.type}>
-            <NavLink to="/beauty" >JOURNAL</NavLink>
+            <NavLink to="/beauty" >BEAUTY</NavLink>
           </p>
           <p className={styles.type}>
-            <NavLink to="/more" >LOOKBOOK</NavLink>
+            <NavLink to="/more" >MORE</NavLink>
           </p>
           <p className={styles.type}>
-            <NavLink to="/dashboard" >PAGES</NavLink>
+            <NavLink to="/dashboard" >DASHBOARD</NavLink>
           </p>
         </div>
       </div>
@@ -50,11 +50,6 @@ export default function AppNavigation() {
         <button onClick={() => togglePanel("search")}>
           <li>
             {activePanel !== "search" ? <i className="fa-brands fa-sistrix cursor-pointer"></i> : <p className="cursor-pointer">&#x1D5B7;</p>}
-          </li>
-        </button>
-        <button onClick={() => togglePanel("login")} className="cursor-pointer">
-          <li>
-            <i className="fa-regular fa-user"></i>
           </li>
         </button>
 
@@ -70,6 +65,15 @@ export default function AppNavigation() {
             {count > 0 && <span className={styles.badge}>{count}</span>}
           </li>
         </button>
+
+        {userLoggedIn ? <button onClick={() => navigate("/dashboard/account-details")} className="cursor-pointer underline">
+            {userCredentials.username}
+          </button>
+        : <button onClick={() => togglePanel("login")} className="cursor-pointer">
+            <li>
+              <i className="fa-regular fa-user"></i>
+            </li>
+          </button>}
 
         <button
           type="button"

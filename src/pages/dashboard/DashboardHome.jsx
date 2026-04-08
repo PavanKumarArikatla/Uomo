@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 import styles from "./DashboardHome.module.css";
+import { useContext } from "react";
+import { StylesContext } from "../../contexts/StylesContext";
 
 export default function DashboardHome() {
+  const { userCredentials } = useContext(StylesContext)
   return (
     <section className={styles.panel}>
       <p className={styles.line}>
-        Hello <b>alifin58</b> (not <b>alifin58</b>?{" "}
+        Hello <b>{userCredentials.username}</b> (not <b>{userCredentials.username}</b>?{" "}
         <button type="button" className={styles.inlineBtn}>
           Log out
         </button>

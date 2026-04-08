@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
+import ItemsQuantity from "../reusedComponents/ItemsQuantity"
 import styles from "./ItemDetails.module.css";
 
 const detailsRows = [
@@ -93,11 +94,10 @@ export default function ItemDetails() {
                   {hasGalleryImages ? (
                     galleryImages.map((image, index) => (
                       <button
-                        key={`${image}-${index}`}
+                        key={index}
                         className={`${styles.thumb} ${
                           index === selectedIndex ? styles.thumbActive : ""
                         }`}
-                        aria-label={`View image ${index + 1}`}
                         onClick={() => setSelectedIndex(index)}
                       >
                         <img
@@ -164,11 +164,7 @@ export default function ItemDetails() {
                 
 
                 <div className={styles.buyRow}>
-                  <div className={styles.qty}>
-                    <button>-</button>
-                    <span>1</span>
-                    <button>+</button>
-                  </div>
+                  <ItemsQuantity />
                   <button className={styles.addToCart}>Add to Cart</button>
                 </div>
                 <div className={styles.meta}>
