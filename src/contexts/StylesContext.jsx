@@ -26,7 +26,6 @@ export default function CardProvider({ children }) {
   const [users, setUsers] = useState([]);
   const [userLoggedIn, setUserLoggedIn] = useState(false);
   const [userCredentials, setUserCredentials] = useState({username: "", email: "", password: "", address: [], country: ""});
-  const [itemQty, setItemQty] = useState(1)
 
   const count = cartItems.length;
   const {
@@ -168,8 +167,6 @@ export default function CardProvider({ children }) {
         users,
         userLoggedIn,
         setUserLoggedIn,
-        itemQty,
-        setItemQty
       }}
     >
       {children}
