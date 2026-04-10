@@ -6,7 +6,6 @@ export default function Card({ card, addItems }) {
   const location = useLocation()
   const discount = card.price*(card.discount/100);
   const price = (card.price - discount).toFixed(2);
-  console.log(location.pathname)
   return (
     <div className={styles.card}>
       <div className={styles.imageWrapper}>

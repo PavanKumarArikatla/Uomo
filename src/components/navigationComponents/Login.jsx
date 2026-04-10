@@ -6,25 +6,7 @@ import styles from "./Navigation.module.css"
 export default function Login(){
     const { openPanel, closePanel, userCredentials, setUserCredentials, users, setUserLoggedIn } = useContext(StylesContext)
     const [error, setError] = useState("")
-    // Uncomment this function if backend is built
-    // const handleLogin = async () => {
-    //     try{
-    //         const res = await fetch("http://localhost:5000/", {
-    //             method: "POST",
-    //             headers: {"Content-Type": "application/json"},
-    //             body: JSON.stringify(userCredentials)
-    //         });
-    //         const data = await res.json()
-
-    //         if(res.ok){
-    //             closePanel()
-    //         }else{
-    //             console.log(data.message)
-    //         }
-    //     }catch (error) {
-    //         console.error("Error:", error);
-    //     }
-    // }
+    
     function handleLogin(){
         const loggedInUser = users.find(user => 
             user.email === userCredentials.email && user.password === userCredentials.password)
