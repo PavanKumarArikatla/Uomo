@@ -24,10 +24,10 @@ export default function CardProvider({ children }) {
   const [sort, setSort] = useState("newest");
   const [cartState, setCartState] = useState("shopping")
   const [filters, setFilters] = useState(defaultFilters);
-  const [ userCredentials, setUserCredentials ] = useState({username: "", email: "", password: ""})
+  const [users, setUsers] = useState([]);
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const [userCredentials, setUserCredentials] = useState({username: "", email: "", password: "", address: [], country: ""});
 
-  console.log(userCredentials.username, userCredentials.password, userCredentials.email)
-  
   const count = cartItems.length;
   const {
     mensStyles,
@@ -98,6 +98,24 @@ export default function CardProvider({ children }) {
 
   getAllStyles();
 }, []);
+
+  useEffect(() => {
+    setLoading(true);
+
+    async function getUsers(){
+      try{
+        const res = await fetch("http://localhost:3000/users");
+        const data = await res.json();
+        setUsers(data)
+      }catch(err){
+        console.error(err)
+      }finally{
+        setLoading(false)
+      }
+    }
+
+    getUsers();
+  },[])
   
   function togglePanel(panelName) {
     setActivePanel((currentPanel) =>
@@ -146,7 +164,10 @@ export default function CardProvider({ children }) {
         filters,
         setFilters,
         userCredentials,
-        setUserCredentials
+        setUserCredentials,
+        users,
+        userLoggedIn,
+        setUserLoggedIn,
       }}
     >
       {children}

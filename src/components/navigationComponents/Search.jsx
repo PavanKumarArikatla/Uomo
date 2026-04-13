@@ -11,7 +11,7 @@ export default function Search(){
     function handleSubmit(e) {
       e.preventDefault();
       togglePanel("search");
-      if (search) navigate(search);
+      if (search) navigate(`/search/${search}`);
     }
     return (
         <div className={styles.searchBlock}>

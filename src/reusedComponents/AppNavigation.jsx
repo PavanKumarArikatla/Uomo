@@ -4,9 +4,9 @@ import { StylesContext } from "../contexts/StylesContext";
 import styles from "./AppNavigation.module.css";
 
 export default function AppNavigation() {
-  const { count, activePanel, togglePanel, isLoggedIn } = useContext(StylesContext);
-  const navigate = useNavigate();
+  const { count, activePanel, togglePanel, userLoggedIn, userCredentials } = useContext(StylesContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className={`${styles.nav} ${isMenuOpen ? styles.menuOpen : ""}`}>
@@ -42,14 +42,6 @@ export default function AppNavigation() {
             {activePanel !== "search" ? <i className="fa-brands fa-sistrix cursor-pointer"></i> : <p className="cursor-pointer">&#x1D5B7;</p>}
           </li>
         </button>
-        
-        {!isLoggedIn ? (<button onClick={() => togglePanel("login")} className="cursor-pointer">
-          <li>
-            <i className="fa-regular fa-user"></i>
-          </li>
-        </button>) : (<button onClick={() => navigate("/dashboard/account-details")} className="cursor-pointer">
-          user
-        </button>)}
 
         <button className="cursor-pointer" onClick={() => togglePanel("wishlist")}>
           <li>
@@ -63,6 +55,15 @@ export default function AppNavigation() {
             {count > 0 && <span className={styles.badge}>{count}</span>}
           </li>
         </button>
+
+        {userLoggedIn ? <button onClick={() => navigate("/dashboard/account-details")} className="cursor-pointer underline">
+            {userCredentials.username}
+          </button>
+        : <button onClick={() => togglePanel("login")} className="cursor-pointer">
+            <li>
+              <i className="fa-regular fa-user"></i>
+            </li>
+          </button>}
 
         <button
           type="button"

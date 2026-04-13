@@ -58,7 +58,7 @@ export default function App() {
             { path: ":style", element: <ItemDetails />}
           ]
         },
-        { path: "item", element: <ItemDetails /> },
+        { path: "/:item", element: <ItemDetails /> },
         { path: "search", element: <SearchResults /> },
         { path: "fashion", element: <SearchResults /> },
         { path: "watches", element: <SearchResults /> },

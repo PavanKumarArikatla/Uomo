@@ -4,6 +4,7 @@
       {
         "id": 1,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -19,11 +20,13 @@
         "brand": "Bear Brown",
         "rating": 4,
         "color":"green",
-        "size": ["s", "m", "l", "xl"]
+        "size": ["s", "m", "l", "xl"],
+        "quantity":1
       },
       {
         "id": 2,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -40,11 +43,13 @@
         "discount": "12",
         "rating":4,
         "color":"orange",
-        "size": ["xs", "s", "m", "l", "xl", "xxl"]     
+        "size": ["xs", "s", "m", "l", "xl", "xxl"]     ,
+        "quantity":1
       },
       {
         "id": 3,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -61,11 +66,13 @@
         "discount": "20",
         "rating":3,
         "color":"darkkhaki",
-        "size": ["m", "l", "xxl"]      
+        "size": ["m", "l", "xxl"]      ,
+        "quantity":1
       },
       {
         "id": 4,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -82,11 +89,13 @@
         "discount": "5",
         "rating":5,
         "color":"skyblue",
-        "size": ["xs", "xxl"]      
+        "size": ["xs", "xxl"]      ,
+        "quantity":1
       },
       {
         "id": 5,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -103,11 +112,13 @@
         "discount": "8",
         "rating":4,
         "color":"brown",
-        "size": ["s", "m", "l"]      
+        "size": ["s", "m", "l"]      ,
+        "quantity":1
       },
       {
         "id": 6,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -124,11 +135,13 @@
         "discount": "17",
         "rating":2,
         "color":"green",
-        "size": ["s", "m", "l", "xl"]      
+        "size": ["s", "m", "l", "xl"]      ,
+        "quantity":1
       },
       {
         "id": 7,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -145,11 +158,13 @@
         "discount":0,
         "rating":1,
         "color":"yellow",
-        "size": ["s", "m", "l", "xl"]      
+        "size": ["s", "m", "l", "xl"]      ,
+        "quantity":1
       },
       {
         "id": 8,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -166,13 +181,15 @@
         "discount": 18,
         "rating":3,
         "color":"skyblue",
-        "size": ["xs", "xxl"]      
+        "size": ["xs", "xxl"]      ,
+        "quantity":1
       }
     ],
     "womenStyles": [
       {
         "id": 9,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
          "/Mountains.jpg",
           "/Mountains.jpg",
@@ -189,11 +206,13 @@
         "discount": 15,
         "rating":5,
         "color":"blue",
-        "size" : ["s", "m", "l", "xl"]      
+        "size" : ["s", "m", "l", "xl"]      ,
+        "quantity":1
       },
       {
         "id": 10,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -210,11 +229,13 @@
         "discount": 20,
         "rating":4,
         "color":"tomato",
-        "size": ["s", "m", "l", "xl"]      
+        "size": ["s", "m", "l", "xl"]      ,
+        "quantity":1
       },
       {
         "id": 11,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -231,11 +252,13 @@
         "discount": 13,
         "rating":5,
         "color":"yellow",
-        "size": ["s", "m", "l", "xl"]      
+        "size": ["s", "m", "l", "xl"]      ,
+        "quantity":1
       },
       {
         "id": 12,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -252,11 +275,13 @@
         "discount": 15,
         "rating":5,
         "color":"tomato",
-        "size": ["s", "m", "l", "xl"]      
+        "size": ["s", "m", "l", "xl"]      ,
+        "quantity":1
       },
       {
         "id": 13,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -273,11 +298,13 @@
         "discount": 10,
         "rating":5,
         "color":"green",
-        "size": ["s", "m", "l", "xl"]      
+        "size": ["s", "m", "l", "xl"]      ,
+        "quantity":1
       },
       {
         "id": 14,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -294,11 +321,13 @@
         "discount": 18,
         "rating":4,
         "color":"orange",
-        "size": ["xs", "s", "m", "l", "xl", "xxl"]     
+        "size": ["xs", "s", "m", "l", "xl", "xxl"]     ,
+        "quantity":1
       },
       {
         "id": 15,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -315,11 +344,13 @@
         "discount": 10,
         "rating":5,
         "color":"brown",
-        "size": ["s", "m", "l"]      
+        "size": ["s", "m", "l"]      ,
+        "quantity":1
       },
       {
         "id": 16,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -336,13 +367,15 @@
         "discount": 20,
         "rating":3,
         "color":"brown",
-        "size": ["s", "m", "l"]      
+        "size": ["s", "m", "l"]      ,
+        "quantity":1
       }
     ],
     "trendyProducts": [
       {
         "id": 17,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -358,11 +391,13 @@
         "brand": "Lee",
         "rating": 5,
         "color":"darkseagreen",
-        "size": ["m", "l", "xxl"]
+        "size": ["m", "l", "xxl"],
+        "quantity":1
       },
       {
         "id": 18,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -378,11 +413,13 @@
         "brand": "Lee",
         "rating":4,
         "color":"blue",
-        "size" : ["s", "m", "l", "xl"]      
+        "size" : ["s", "m", "l", "xl"]      ,
+        "quantity":1
       },
       {
         "id": 19,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -399,11 +436,13 @@
         "discount": 12,
         "rating":5,
         "color":"brown",
-        "size": ["s", "m", "l"]      
+        "size": ["s", "m", "l"]      ,
+        "quantity":1
       },
       {
         "id": 20,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -419,11 +458,13 @@
         "brand": "Lee",
         "rating":4,
         "color":"green",
-        "size": ["s", "m", "l", "xl"]      
+        "size": ["s", "m", "l", "xl"]      ,
+        "quantity":1
       },
       {
         "id": 21,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -439,11 +480,13 @@
         "brand": "Lee",
         "rating":5,
         "color":"brown",
-        "size": ["s", "m", "l"]      
+        "size": ["s", "m", "l"]      ,
+        "quantity":1
       },
       {
         "id": 22,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -459,11 +502,13 @@
         "brand": "Lee",
         "rating":5, 
         "color":"yellow",
-        "size": ["s", "m", "l", "xl"]      
+        "size": ["s", "m", "l", "xl"]      ,
+        "quantity":1
       },
       {
         "id": 23,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -480,11 +525,13 @@
         "discount": 50,
         "rating":5,
         "color":"green",
-        "size": ["s", "m", "l", "xl"]      
+        "size": ["s", "m", "l", "xl"]      ,
+        "quantity":1
       },
       {
         "id": 24,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -501,13 +548,15 @@
         "discount": 25,
         "rating":4,
         "color":"darkseagreen",
-        "size": ["m", "l", "xxl"]      
+        "size": ["m", "l", "xxl"]      ,
+        "quantity":1
       }
     ],
     "limitedEditionProducts": [
       {
         "id": 25,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -524,11 +573,13 @@
         "discount": 20,
         "rating":3,
         "color":"orange",
-        "size": ["xs", "s", "m", "l", "xl", "xxl"]     
+        "size": ["xs", "s", "m", "l", "xl", "xxl"]     ,
+        "quantity":1
       },
       {
         "id": 26,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -545,11 +596,13 @@
         "discount": 15,
         "rating":4,
         "color":"tomato",
-        "size": ["s", "m", "l", "xl"]      
+        "size": ["s", "m", "l", "xl"]      ,
+        "quantity":1
       },
       {
         "id": 27,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -566,11 +619,13 @@
         "discount": 10,
         "rating":5,
         "color":"brown",
-        "size": ["s", "m", "l"]      
+        "size": ["s", "m", "l"]      ,
+        "quantity":1
       },
       {
         "id": 28,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
           "/Mountains.jpg",
           "/Mountains.jpg",
@@ -587,75 +642,281 @@
         "discount": 35,
         "rating":5,
         "color":"blue",
-        "size" : ["s", "m", "l", "xl"]      
+        "size" : ["s", "m", "l", "xl"]      ,
+        "quantity":1
       }
     ],
     "eastsideProducts": [
       {
         "id": 29,
         "image": "/Mountains.jpg",
-        "style": "Uomo1"
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
+        "images": [
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg"
+        ],
+        "style": "shorts",
+        "price": "58.99",
+        "type": "Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "rating": 4,
+        "color":"green",
+        "size": ["s", "m", "l", "xl"],
+        "quantity":1
       },
       {
         "id": 30,
         "image": "/Mountains.jpg",
-        "style": "Uomo2"
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
+        "images": [
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg"
+        ],
+        "style": "shorts",
+        "price": "58.99",
+        "type": "Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "rating": 4,
+        "color":"green",
+        "size": ["s", "m", "l", "xl"],
+        "quantity":1
       },
       {
         "id": 31,
         "image": "/Mountains.jpg",
-        "style": "Uomo3"
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
+        "images": [
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg"
+        ],
+        "style": "shorts",
+        "price": "58.99",
+        "type": "Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "rating": 4,
+        "color":"green",
+        "size": ["s", "m", "l", "xl"],
+        "quantity":1
       },
       {
         "id": 32,
         "image": "/Mountains.jpg",
-        "style": "Uomo4"
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
+        "images": [
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg"
+        ],
+        "style": "shorts",
+        "price": "58.99",
+        "type": "Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "rating": 4,
+        "color":"green",
+        "size": ["s", "m", "l", "xl"],
+        "quantity":1
       },
       {
         "id": 33,
         "image": "/Mountains.jpg",
-        "style": "Uomo5"
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
+        "images": [
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg"
+        ],
+        "style": "shorts",
+        "price": "58.99",
+        "type": "Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "rating": 4,
+        "color":"green",
+        "size": ["s", "m", "l", "xl"],
+        "quantity":1
       },
       {
         "id": 34,
         "image": "/Mountains.jpg",
-        "style": "Uomo6"
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
+        "images": [
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg"
+        ],
+        "style": "shorts",
+        "price": "58.99",
+        "type": "Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "rating": 4,
+        "color":"green",
+        "size": ["s", "m", "l", "xl"],
+        "quantity":1
       },
       {
         "id": 35,
         "image": "/Mountains.jpg",
-        "style": "Uomo7"
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
+        "images": [
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg"
+        ],
+        "style": "shorts",
+        "price": "58.99",
+        "type": "Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "rating": 4,
+        "color":"green",
+        "size": ["s", "m", "l", "xl"],
+        "quantity":1
       },
       {
         "id": 36,
         "image": "/Mountains.jpg",
-        "style": "Uomo8"
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
+        "images": [
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg"
+        ],
+        "style": "shorts",
+        "price": "58.99",
+        "type": "Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "rating": 4,
+        "color":"green",
+        "size": ["s", "m", "l", "xl"],
+        "quantity":1
       },
       {
         "id": 37,
         "image": "/Mountains.jpg",
-        "style": "Uomo9"
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
+        "images": [
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg"
+        ],
+        "style": "shorts",
+        "price": "58.99",
+        "type": "Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "rating": 4,
+        "color":"green",
+        "size": ["s", "m", "l", "xl"],
+        "quantity":1
       },
       {
         "id": 38,
         "image": "/Mountains.jpg",
-        "style": "Uomo10"
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
+        "images": [
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg"
+        ],
+        "style": "shorts",
+        "price": "58.99",
+        "type": "Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "rating": 4,
+        "color":"green",
+        "size": ["s", "m", "l", "xl"],
+        "quantity":1
       },
       {
         "id": 39,
         "image": "/Mountains.jpg",
-        "style": "Uomo11"
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
+        "images": [
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg"
+        ],
+        "style": "shorts",
+        "price": "58.99",
+        "type": "Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "rating": 4,
+        "color":"green",
+        "size": ["s", "m", "l", "xl"],
+        "quantity":1
       },
       {
         "id": 40,
         "image": "/Mountains.jpg",
-        "style": "Uomo12"
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
+        "images": [
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg",
+          "/Mountains.jpg"
+        ],
+        "style": "shorts",
+        "price": "58.99",
+        "type": "Printed Cotton Blend Crew Neck",
+        "brand": "Bear Brown",
+        "rating": 4,
+        "color":"green",
+        "size": ["s", "m", "l", "xl"],
+        "quantity":1
       }
     ],
     "categories": [
       {
         "id": 41,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "style": "Traditional Wear",
         "path": "fashion",
         "category" : "WOMEN"
@@ -663,6 +924,7 @@
       {
         "id": 42,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "style": "Accessories",
         "path": "watches",
         "category" : "SUNGLASSES"
@@ -670,6 +932,7 @@
       {
         "id": 43,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "style": "Jeans",
         "path": "cosmetics",
         "category" : "DENIM"
@@ -677,6 +940,7 @@
       {
         "id": 44,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "style": "Night Wear",
         "path": "babystore",
         "category" : "THE CLASSICS"
@@ -686,18 +950,21 @@
       {
         "id": 44,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "style": "WinterStyles1",
         "path": "winter"
       },
       {
         "id": 45,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "style": "WinterStyles2",
         "path": "winter"
       },
       {
         "id": 46,
         "image": "/Mountains.jpg",
+        "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "style": "WinterStyles3",
         "path": "winter"
       }
@@ -707,15 +974,19 @@
     {
       "id": 1,
       "username": "pavan",
-      "email": "pavanarikatla3@gmail.com",
+      "email": "pavan@gmail.com",
       "password": "Pavan@123",
+      "address": ["Madhura Nagar, Hyderabad, Telangana", "Bhavanipuram, Vijayawada, Andhra Pradesh"],
+      "country": "India",
       "cart": []
     },
     {
       "id": 2,
       "username": "praveen",
-      "email": "admintrevista@gmail.com",
+      "email": "admin@gmail.com",
       "password": "Admin@123",
+      "address": ["Habsiguda, Hyderabad, Telangana"],
+      "country": "India",
       "cart": []
     }
   ]

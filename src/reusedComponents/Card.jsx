@@ -9,7 +9,11 @@ export default function Card({ card, addItems }) {
   return (
     <div className={styles.card}>
       <div className={styles.imageWrapper}>
-        <Link to={`${location.pathname}/${card.style}`} state={card}>
+        <Link to={
+          location.pathname === "/"
+            ? `/${card.style}`
+            : `${location.pathname}/${card.style}`
+        } state={card}>
           <img src={card.image} alt={card.style} className={styles.image}/>
         </Link>
         <button className={styles.cartButton} onClick={() => addItems(card)}>
