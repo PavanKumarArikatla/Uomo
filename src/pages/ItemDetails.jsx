@@ -55,7 +55,6 @@ function getImageSrc(imagePath = "") {
 }
 
 export default function ItemDetails() {
-  //  receiving props(card as item) through <Link>
   const location = useLocation();
   const item = location.state ?? {};
   const galleryImages = useMemo(() => {
@@ -164,7 +163,7 @@ export default function ItemDetails() {
                 
 
                 <div className={styles.buyRow}>
-                  <ItemsQuantity />
+                  <ItemsQuantity item />
                   <button className={styles.addToCart}>Add to Cart</button>
                 </div>
                 <div className={styles.meta}>
