@@ -1,6 +1,9 @@
 import styles from "./Confirmation.module.css";
 import { BsCheckCircleFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 export default function Confirmation(){
+
+const navigate = useNavigate();
 
 const orderData = JSON.parse(localStorage.getItem("orderData")) || {};
 
@@ -12,6 +15,10 @@ const cartItems = Array.isArray(orderData.cartItems)? orderData.cartItems: [];
                const vat = subtotal * 0.18;
                const total = subtotal + vat;
 
+   
+   if(!orderData || Object.keys(orderData).length === 0){
+      return <p>No order data found</p>
+   }
    
     return (
         <div>
@@ -66,7 +73,14 @@ const cartItems = Array.isArray(orderData.cartItems)? orderData.cartItems: [];
             <hr className={styles.hr}/>
             <p className={styles.tableCell}>Total <span>${total.toFixed(2)}</span></p>
       </div>
+       </div> 
+       <br />
+       <div>
+      
+         <button className={styles.orderbut} type="button" onClick={()=>navigate("/dashboard/order-details", {state: orderData} )}>
+            VIEW DETAILS</button>
        </div>
        </div>
+       
     )
 }

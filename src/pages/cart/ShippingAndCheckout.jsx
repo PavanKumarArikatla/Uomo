@@ -40,6 +40,8 @@ export default function ShippingAndCheckout(){
     style: item.style || "Unknown Product",
     price: Number(item.price) || 0,
     quantity: Number(item.quantity) || 1,
+    image: item.image,
+    color: item.color || "N/A"
   }));
 
     const subtotal = fixedCartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
@@ -80,6 +82,7 @@ export default function ShippingAndCheckout(){
         vat,
         total,
         customer: formData,
+        status: "Confirmed"
     };
 
     localStorage.setItem("orderData", JSON.stringify(orderData));

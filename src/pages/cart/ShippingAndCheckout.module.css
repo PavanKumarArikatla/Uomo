@@ -32,11 +32,11 @@
   font-weight: 500;
 }
 .table1{
-    height: 40%;
+    /* height: 40%; */
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    padding: 0 10%;
+    padding: 0 10% 5%;
     border: black 1px solid;
 }
 .hr{
@@ -58,7 +58,7 @@
   font-weight: 300;
 }
 .bankTransfer label {
-    display: flex;
+  display: flex;
   gap: 15px;
   cursor: pointer;
 }

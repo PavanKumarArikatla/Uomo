@@ -25,7 +25,7 @@ export default function CardProvider({ children }) {
   const [filters, setFilters] = useState(defaultFilters);
 
   
-  const count = cartItems.length;
+  const count = {cartCount: cartItems.length, wishlistCount: wishlist.length};
   const {
     mensStyles,
     womenStyles,
@@ -72,7 +72,9 @@ export default function CardProvider({ children }) {
       if(exists){
         return prev.filter((item)=>item.id !== card.id)
       } else {
-        return [...prev, card]
+        return [...prev,
+          card
+        ]
       }
     })
   

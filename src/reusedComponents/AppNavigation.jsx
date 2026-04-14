@@ -59,15 +59,16 @@ export default function AppNavigation() {
         </button>
 
         <button className="cursor-pointer" onClick={() => togglePanel("wishlist")}>
-          <li>
+          <li className={styles.cartWrapper}>
             <i className="fa-regular fa-heart"></i>
+            {count.wishlistCount > 0 && <span className={styles.badge}>{count.wishlistCount}</span>}
           </li>
         </button>
 
         <button className="cursor-pointer" onClick={() => togglePanel("cart")}>
           <li className={styles.cartWrapper}>
             <i className="fa-solid fa-bag-shopping"></i>
-            {count > 0 && <span className={styles.badge}>{count}</span>}
+            {count.cartCount > 0 && <span className={styles.badge}>{count.cartCount}</span>}
           </li>
         </button>
 

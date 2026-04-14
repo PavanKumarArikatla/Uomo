@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 
-import Wishlist from "./pages/Wishlist";
+import Wishlist from "./components/navigationComponents/Wishlist";
 import Cart from "./pages/cart/Cart";
 import ItemDetails from "./pages/ItemDetails";
 import Men from "./pages/categories/fashion/Men";
@@ -19,6 +19,8 @@ import DashboardAccountDetails from "./pages/dashboard/DashboardAccountDetails";
 import DashboardWishlist from "./pages/dashboard/DashboardWishlist";
 import DashboardDownloads from "./pages/dashboard/DashboardDownloads";
 import DashboardLogout from "./pages/dashboard/DashboardLogout";
+import DashboardOrderTracking from "./pages/dashboard/DashboardOrderTracking";
+import DashboardOrderDetails from "./pages/dashboard/DashboardOrderDetails";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -39,7 +41,7 @@ export default function App() {
         { path: "watches", element: <SearchResults /> },
         { path: "cosmetics", element: <SearchResults /> },
         { path: "babystore", element: <SearchResults /> },
-        { path: "wishlist", element: <Wishlist /> },
+        // { path: "wishlist", element: <Wishlist /> },
         { path: "cart", element: <Cart /> },
         {
           path: "dashboard",
@@ -52,6 +54,9 @@ export default function App() {
             { path: "account-details", element: <DashboardAccountDetails /> },
             { path: "wishlist", element: <DashboardWishlist /> },
             { path: "logout", element: <DashboardLogout /> },
+            { path: "order-tracking", element: <DashboardOrderTracking/>},
+            { path: "order-details", element: <DashboardOrderDetails/>},
+            
           ],
         },
       ],
