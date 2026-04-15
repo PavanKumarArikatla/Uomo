@@ -1,7 +1,8 @@
 import { useLocation } from "react-router-dom";
-import { useEffect, useMemo, useState } from "react";
-import ItemsQuantity from "../reusedComponents/ItemsQuantity"
+import { useContext, useEffect, useMemo, useState } from "react";
 import styles from "./ItemDetails.module.css";
+import BlackButton from "../reusedComponents/BlackButton";
+import { StylesContext } from "../contexts/StylesContext";
 
 const detailsRows = [
   { label: 'SKU', value: 'UOM-7784' },
@@ -55,6 +56,7 @@ function getImageSrc(imagePath = "") {
 }
 
 export default function ItemDetails() {
+  const { addItems } = useContext(StylesContext);
   const location = useLocation();
   const item = location.state ?? {};
   const galleryImages = useMemo(() => {
@@ -163,8 +165,8 @@ export default function ItemDetails() {
                 
 
                 <div className={styles.buyRow}>
-                  <ItemsQuantity item />
-                  <button className={styles.addToCart}>Add to Cart</button>
+                  <BlackButton onClick={() => addItems(item)}>Add to Cart</BlackButton>
+                  <BlackButton>Add to Wishlist</BlackButton>
                 </div>
                 <div className={styles.meta}>
                   <p>

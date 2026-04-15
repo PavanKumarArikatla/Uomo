@@ -27,7 +27,6 @@ export default function ItemsQuantity({item}){
         )
     }
 
-    console.log(item.quantity)
     return(
         <div className="flex gap-4 items-center">
             <button onClick={qtyDecrement} className="cursor-pointer">-</button>

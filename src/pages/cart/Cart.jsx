@@ -16,7 +16,8 @@ export default function Cart() {
 
   return (
     <div className={styles.cart}>
-      <b className="text-3xl">CART</b>
+      <b class 
+      Name="text-3xl">CART</b>
 
       <section>
         <button onClick={() => setCartState("shopping")} className="cursor-pointer">

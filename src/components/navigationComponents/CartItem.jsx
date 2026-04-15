@@ -5,7 +5,6 @@ import ItemsQuantity from "../../reusedComponents/ItemsQuantity"
 
 export default function CartItem({item}){
     const {deleteItem} = useContext(StylesContext)
-    console.log(item.quantity)
     return(
         <main className={styles.main}>
             <img src={item.image} alt={item.style} className={styles.image} />
@@ -21,7 +20,7 @@ export default function CartItem({item}){
                 <h4>Color : {item.color}</h4>
                 <h4>Size : L</h4>
                 <div className="flex justify-between">
-                    <ItemsQuantity item />
+                    <ItemsQuantity item={item} />
                     <h1>${Math.round(item.price)}</h1>
                 </div>
             </div>

@@ -66,8 +66,20 @@ export default function CardProvider({ children }) {
   }
   
   function addItems(card) {
-    setCartItems((cartItems) => [...cartItems, card]);
-  }
+  setCartItems((prevItems) => {
+    const exists = prevItems.find((item) => item.id === card.id);
+
+    if (exists) {
+      return prevItems.map((item) =>
+        item.id === card.id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      );
+    } else {
+      return [...prevItems, { ...card, quantity: 1 }];
+    }
+  });
+}
   
   function addItemsToWishlist(card) {
     setWishlist((wishlist) => [...wishlist, card]);

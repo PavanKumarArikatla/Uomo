@@ -2,26 +2,16 @@ import { NavLink } from "react-router-dom";
 import { useContext } from "react"
 import { StylesContext } from "../../contexts/StylesContext"
 import BlackButton from "../../reusedComponents/BlackButton"
-import styles from "./Navigation.module.css"
 import CartItem from "./CartItem"
 import GreyButton from "../../reusedComponents/GreyButton"
+import { calculateTotals } from "../../utils/Price_Discount"
+import styles from "./Navigation.module.css"
 
 export default function MiniCart(){
     const { closePanel, cartItems } = useContext(StylesContext)
-    const totals = cartItems.reduce((acc, item) => {
-    const price = Number(item.price) || 0;
-    const discountAmount = price * (item.discount / 100) || 0;
-
-    acc.totalMRP += price;
-    acc.totalDiscount += discountAmount;
-
-    return acc;
-  },
-  { totalMRP: 0, totalDiscount: 0 }
-);
-
-  const totalMRP = Number(totals.totalMRP.toFixed(2));
-  const totalDiscount = Number(totals.totalDiscount.toFixed(2));
+    const totals = calculateTotals(cartItems);
+    const totalMRP = Number(totals.totalMRP.toFixed(2));
+    const totalDiscount = Number(totals.totalDiscount.toFixed(2));
     return(
         <div className={styles.overlay}>
             <div className={styles.modal}>

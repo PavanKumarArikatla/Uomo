@@ -3,15 +3,13 @@ import { StylesContext } from "../../contexts/StylesContext";
 import ItemsQuantity from "../../reusedComponents/ItemsQuantity";
 import BlackButton from "../../reusedComponents/BlackButton";
 import GreyButton from "../../reusedComponents/GreyButton"
+import { calculateTotals } from "../../utils/Price_Discount";
 import styles from "./ShoppingBag.module.css"
 
 export default function ShoppingBag(){
     const { cartItems, deleteItem, setCartState } = useContext(StylesContext);
-    const totals = cartItems.reduce((acc, item) => {
-    acc = Number(item.price) + acc;
-    return acc;
-    }, 0);
-    const totalMRP = Number(totals.toFixed(2));
+    const totals = calculateTotals(cartItems);
+    const totalMRP = Number(totals.totalMRP.toFixed(2));
     return(
     <div className={styles.divider}>
 
@@ -37,7 +35,7 @@ export default function ShoppingBag(){
                         </div>
                         <div className={styles.prices}>
                             <p>${item.price}</p>
-                            <div className={styles.qtyBox}><ItemsQuantity /></div>
+                            <div className={styles.qtyBox}><ItemsQuantity item={item} /></div>
                             <p>${ item.discount ? (Number(item.price) - (Number(item.discount/100)*Number(item.price))).toFixed(2) : item.price}</p>
                         </div>
                     </div>
@@ -64,7 +62,7 @@ export default function ShoppingBag(){
                 <br></br>
                 <div className={styles.subtotal}>
                     <p>SUBTOTAL</p>
-                    <p>${totalMRP}</p>
+                    <p>{`$${totalMRP.toFixed(2)}`}</p>
                 </div>
                 <div className={styles.shippingRow}>
                     <p>SHIPPING</p>
