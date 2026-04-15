@@ -10,6 +10,7 @@ export default function ShoppingBag(){
     const { cartItems, deleteItem, setCartState } = useContext(StylesContext);
     const totals = calculateTotals(cartItems);
     const totalMRP = Number(totals.totalMRP.toFixed(2));
+    const totalDiscount = Number(totals.totalDiscount.toFixed(2));
     return(
     <div className={styles.divider}>
 
@@ -36,7 +37,7 @@ export default function ShoppingBag(){
                         <div className={styles.prices}>
                             <p>${item.price}</p>
                             <div className={styles.qtyBox}><ItemsQuantity item={item} /></div>
-                            <p>${ item.discount ? (Number(item.price) - (Number(item.discount/100)*Number(item.price))).toFixed(2) : item.price}</p>
+                            <p>${ item.discount ? ((Number(item.price) - (Number(item.discount/100)*Number(item.price))) * item.quantity).toFixed(2)  : (item.price * item.quantity).toFixed(2) }</p>
                         </div>
                     </div>
                     <button onClick={(() => deleteItem(item.id))} className={styles.deleteButton}>&#x1D5B7;</button>
@@ -62,7 +63,7 @@ export default function ShoppingBag(){
                 <br></br>
                 <div className={styles.subtotal}>
                     <p>SUBTOTAL</p>
-                    <p>{`$${totalMRP.toFixed(2)}`}</p>
+                    <p>${(totalMRP - totalDiscount).toFixed(2)}</p>
                 </div>
                 <div className={styles.shippingRow}>
                     <p>SHIPPING</p>
