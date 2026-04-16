@@ -23,6 +23,12 @@ export default function CardProvider({ children }) {
   const [sort, setSort] = useState("newest");
   const [cartState, setCartState] = useState("shopping")
   const [filters, setFilters] = useState(defaultFilters);
+  const [orders, setOrders] = useState([
+  { id: "2418", date: "October 27, 2020", status: "On hold", total: "$1,200.65 for 3 items" },
+  { id: "2418", date: "October 27, 2020", status: "Placed", total: "$1,200.65 for 3 items" },
+  { id: "2418", date: "October 27, 2020", status: "On hold", total: "$1,200.65 for 3 items" },
+  { id: "2418", date: "October 27, 2020", status: "On hold", total: "$1,200.65 for 3 items" },
+])
 
   
   const count = {cartCount: cartItems.length, wishlistCount: wishlist.length};
@@ -151,7 +157,9 @@ export default function CardProvider({ children }) {
         cartState,
         setCartState,
         filters,
-        setFilters
+        setFilters,
+        orders,
+        setOrders
       }}
     >
       {children}

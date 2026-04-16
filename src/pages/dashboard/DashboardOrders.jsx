@@ -1,18 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import OrderTracking from "./DashboardOrderTracking";
 import styles from "./DashboardOrders.module.css";
 import { useNavigate } from "react-router-dom";
-
-const orders = [
-  { id: "#2418", date: "October 27, 2020", status: "On hold", total: "$1,200.65 for 3 items" },
-  { id: "#2418", date: "October 27, 2020", status: "Placed", total: "$1,200.65 for 3 items" },
-  { id: "#2418", date: "October 27, 2020", status: "On hold", total: "$1,200.65 for 3 items" },
-  { id: "#2418", date: "October 27, 2020", status: "On hold", total: "$1,200.65 for 3 items" },
-];
+import { StylesContext } from "../../contexts/StylesContext";
 
 export default function DashboardOrders() {
 
   const navigate = useNavigate();
+  const  { orders } = useContext(StylesContext)
 
   const handleAction = (order) => {
     if (order.status === "On hold") {
