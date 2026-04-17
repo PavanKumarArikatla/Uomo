@@ -1,0 +1,52 @@
+.checkCircle {
+    font-size: 80px;
+    margin: 10px auto;
+    color: #B9A16B;
+}
+.orderCompleted{
+    text-align: center;
+    font-size: 38px;
+}
+.paymentDetails {
+    border: dashed 2px #EEEEEE;
+    margin: 30px auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    font-size: 0.7rem;
+}
+.paymentDetails h3{
+    color: gray;
+}
+.h11 {
+  margin: 1% 0;
+  font-weight: 500;
+}
+.table1{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: #e5e7eb 1px solid;
+    padding: 2% 5% ;
+    font-size: 0.7rem;
+}
+.hr{
+    border: 1px solid #e5e7eb;
+}
+.tableCell{
+    display: flex;
+    justify-content: space-between; 
+    font-size: 0.7rem;
+}
+.orderbut{
+    border: 1px solid black;
+    width: 50%;
+    margin-left: 25%;
+    gap: 0.5rem;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}

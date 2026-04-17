@@ -1,14 +1,27 @@
 import { Link, useLocation } from "react-router-dom";
 import styles from "./Card.module.css";
+import { FaHeart } from "react-icons/fa";
+import { useContext, useState } from "react";
+import { StylesContext} from "../contexts/StylesContext";
 
 export default function Card({ card, addItems }) {
 
   const location = useLocation()
   const discount = card.price*(card.discount/100);
   const price = (card.price - discount).toFixed(2);
+  const {wishlist, addItemsToWishlist} = useContext(StylesContext);
+  const isWishlisted = wishlist.some((item)=>item.id === card.id)
+  
+
   return (
     <div className={styles.card}>
       <div className={styles.imageWrapper}>
+        <FaHeart className={`${styles.heartIcon} ${isWishlisted ? styles.active : ''}`} 
+          onClick={() => {
+            addItemsToWishlist(card);
+          }}
+          title={isWishlisted ? "Remove from wishlist" : "Add to wishlist"}
+        />
         <Link to={`${location.pathname}/${card.style}`} state={card}>
           <img src={card.image} alt={card.style} className={styles.image}/>
         </Link>

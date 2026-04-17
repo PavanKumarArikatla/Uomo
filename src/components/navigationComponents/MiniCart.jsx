@@ -26,12 +26,12 @@ export default function MiniCart(){
         <div className={styles.overlay}>
             <div className={styles.modal}>
                 <div className={styles.cartItems}>
-                    <div className={styles.head}>
-                        <b>SHOPPING CART({cartItems.length})</b>
+                    <div className={styles.head}> 
+                        <b>Cart({cartItems.length})</b>
                         <button onClick={closePanel} className="cursor-pointer">&#x1D5B7;</button>
                     </div>
                     {cartItems.length > 0 ?
-                        cartItems.map(item => <CartItem item={item} /> ) 
+                        cartItems.map((item) => (<CartItem key={item.id} item={item}/> ))
                         : <h1 className="text-center">Your cart is empty</h1>
                     }
 

@@ -8,6 +8,7 @@ import Register from "../components/navigationComponents/Register";
 import MiniCart from "./navigationComponents/MiniCart";
 import Search from "./navigationComponents/Search";
 import Filters from "../features/Filters";
+import Wishlist from "../components/navigationComponents/Wishlist"
 
 export default function AppLayout() {
   const { activePanel } = useContext(StylesContext);
@@ -22,7 +23,7 @@ export default function AppLayout() {
       {activePanel === "login" && <Login />}
       {activePanel === "register" && <Register />}
       {activePanel === "cart" && <MiniCart />}
-      {activePanel === "wishlist" && <MiniCart />}
+      {activePanel === "wishlist" && <Wishlist/>}
       {activePanel === "search" && <Search />}
       {activePanel === "filter" && <Filters />}
     </>

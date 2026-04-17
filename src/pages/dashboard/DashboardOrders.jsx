@@ -1,13 +1,22 @@
+import { useContext, useState } from "react";
+import OrderTracking from "./DashboardOrderTracking";
 import styles from "./DashboardOrders.module.css";
-
-const orders = [
-  { id: "#2218", date: "March 27, 2025", status: "On hold", total: "$5,200.65 for 3 items" },
-  { id: "#2118", date: "October 27, 2024", status: "On hold", total: "$1,600.5 for 2 items" },
-  { id: "#2018", date: "September 27, 2023", status: "On hold", total: "$1,200.65 for 1 items" },
-  { id: "#2318", date: "October 27, 2026", status: "On hold", total: "$3,800.65 for 4 items" },
-];
+import { useNavigate } from "react-router-dom";
+import { StylesContext } from "../../contexts/StylesContext";
 
 export default function DashboardOrders() {
+
+  const navigate = useNavigate();
+  const  { orders } = useContext(StylesContext)
+
+  const handleAction = (order) => {
+    if (order.status === "On hold") {
+      navigate("/dashboard/order-tracking", {state: order})
+    } else{
+      navigate("/dashboard/order-details", {state: order})
+    }
+  }
+
   return (
     <div className={styles.tableWrap}>
       <table className={styles.table}>
@@ -28,9 +37,12 @@ export default function DashboardOrders() {
               <td>{order.status}</td>
               <td>{order.total}</td>
               <td>
-                <button type="button" className={styles.actionBtn}>
-                  View
+                <button type="button" className={styles.actionBtn} onClick={()=>handleAction(order)}>
+                  {order.status === "Placed" ? "View" : "Track"}
                 </button>
+                {order.status === "Delivered"
+                ? "View Details"
+                : ""}
               </td>
             </tr>
           ))}
