@@ -13,7 +13,6 @@ export default function ShoppingBag(){
     const totalDiscount = Number(totals.totalDiscount.toFixed(2));
     return(
     <div className={styles.divider}>
-
         <div> 
             <div className={styles.item}>
                 <b>PRODUCT</b>
@@ -55,7 +54,6 @@ export default function ShoppingBag(){
             </div>
 
         </div>
-
 
         <div className={styles.cartAmount}>
             <div className={styles.totalsCard}>

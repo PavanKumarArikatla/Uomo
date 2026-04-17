@@ -61,10 +61,6 @@ export default function CardProvider({ children }) {
 
   const searchResults = allData && filterProducts(allData);
   
-  function handleChange(e) {
-    setSearch(e.target.value);
-  }
-  
   function addItems(card) {
   setCartItems((prevItems) => {
     const exists = prevItems.find((item) => item.id === card.id);
@@ -94,26 +90,23 @@ export default function CardProvider({ children }) {
   }
   
   useEffect(() => {
-  setLoading(true);
-
-  async function getAllStyles() {
-    try {
-      const res = await fetch("http://localhost:3000/data");
-      const data = await res.json();
-      setAllStyles(data);
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setLoading(false);
+    setLoading(true);
+    async function getAllStyles() {
+      try {
+        const res = await fetch("http://localhost:3000/data");
+        const data = await res.json();
+        setAllStyles(data);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
     }
-  }
-
-  getAllStyles();
-}, []);
+    getAllStyles();
+  }, []);
 
   useEffect(() => {
     setLoading(true);
-
     async function getUsers(){
       try{
         const res = await fetch("http://localhost:3000/users");
@@ -125,7 +118,6 @@ export default function CardProvider({ children }) {
         setLoading(false)
       }
     }
-
     getUsers();
   },[])
   
@@ -144,42 +136,22 @@ export default function CardProvider({ children }) {
   return (
     <StylesContext.Provider
       value={{
-        mensStyles,
-        womenStyles,
-        trendyProducts,
-        limitedEditionProducts,
-        eastsideProducts,
-        categories,
-        winterstyles,
+        mensStyles, womenStyles, trendyProducts, limitedEditionProducts, eastsideProducts, categories, winterstyles,
         searchResults,
-        cartItems,
         wishlist,
         allData,
-        setCartItems,
-        addItems,
-        addItemsToWishlist,
-        deleteItem,
-        deleteItemFromWishlist,
+        cartItems, setCartItems,
+        addItems, addItemsToWishlist,
+        deleteItem, deleteItemFromWishlist,
         loading,
         count,
-        search,
-        setSearch,
-        handleChange,
-        activePanel,
-        togglePanel,
-        openPanel,
-        closePanel,
-        sort,
-        setSort,
-        cartState,
-        setCartState,
-        filters,
-        setFilters,
-        userCredentials,
-        setUserCredentials,
-        users,
-        userLoggedIn,
-        setUserLoggedIn,
+        search, setSearch,
+        activePanel, togglePanel, openPanel, closePanel,
+        sort, setSort,
+        cartState, setCartState,
+        filters, setFilters, 
+        userCredentials, setUserCredentials,
+        users, userLoggedIn, setUserLoggedIn,
       }}
     >
       {children}
