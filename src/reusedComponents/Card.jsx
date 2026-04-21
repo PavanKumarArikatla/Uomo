@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import styles from "./Card.module.css";
 
-export default function Card({ card, addItems }) {
+export default function Card({ card, addItems, searchRoute }) {
 
   const location = useLocation()
   const discount = card.price*(card.discount/100);
@@ -9,11 +9,7 @@ export default function Card({ card, addItems }) {
   return (
     <div className={styles.card}>
       <div className={styles.imageWrapper}>
-        <Link to={
-          location.pathname === "/"
-            ? `/${card.style}`
-            : `${location.pathname}/${card.style}`
-        } state={card}>
+        <Link to={ searchRoute ? `{${searchRoute}` : `${card.style}/${card.type}`} state={card}>
           <img src={card.image} alt={card.style} className={styles.image}/>
         </Link>
         <button className={styles.cartButton} onClick={() => addItems(card)}>

@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
-
 import Wishlist from "./pages/Wishlist";
 import Cart from "./pages/cart/Cart";
 import ItemDetails from "./pages/ItemDetails";
@@ -26,40 +25,38 @@ export default function App() {
       element: <AppLayout />,
       children: [
         { path: "/", element: <Home /> },
-        { path: "/search/:search", element: <SearchResults /> },
-        { path: "/category/:type", element: <SearchResults /> },
+        { path: "/:search", element: <SearchResults /> },
+        { path: "/:search/:type", element: <ItemDetails /> },
         { path: "men",
           children: [
             { index: true, element: <Men /> },
-            { path: ":style", element: <ItemDetails /> }
+            { path: ":style/:type", element: <ItemDetails /> }
           ]
         },
         { path: "women", 
           children: [
             { index: true, element: <Women /> },
-            { path: ":style", element: <ItemDetails />}
+            { path: ":style/:type", element: <ItemDetails />}
           ]
         },
         { path: "kids",
           children: [
             { index: true, element: <Kids /> },
-            { path: ":style", element: <ItemDetails /> }
+            { path: ":style/:type", element: <ItemDetails /> }
           ]
         },
         { path: "beauty", 
           children: [
             { index: true, element: <Beauty /> },
-            { path: ":style", element: <ItemDetails />}
+            { path: ":style/:type", element: <ItemDetails />}
           ]
         },
         { path: "more", 
           children: [
             { index: true, element: <More /> },
-            { path: ":style", element: <ItemDetails />}
+            { path: ":style/:type", element: <ItemDetails />}
           ]
         },
-        { path: "/:item", element: <ItemDetails /> },
-        { path: "search", element: <SearchResults /> },
         { path: "fashion", element: <SearchResults /> },
         { path: "watches", element: <SearchResults /> },
         { path: "cosmetics", element: <SearchResults /> },

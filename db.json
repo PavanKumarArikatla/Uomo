@@ -596,7 +596,7 @@
         "discount": 15,
         "rating":4,
         "color":"tomato",
-        "size": ["s", "m", "l", "xl"]      ,
+        "size": ["s", "m", "l", "xl"],
         "quantity":1
       },
       {
@@ -619,7 +619,7 @@
         "discount": 10,
         "rating":5,
         "color":"brown",
-        "size": ["s", "m", "l"]      ,
+        "size": ["s", "m", "l"],
         "quantity":1
       },
       {
@@ -642,7 +642,7 @@
         "discount": 35,
         "rating":5,
         "color":"blue",
-        "size" : ["s", "m", "l", "xl"]      ,
+        "size" : ["s", "m", "l", "xl"],
         "quantity":1
       }
     ],

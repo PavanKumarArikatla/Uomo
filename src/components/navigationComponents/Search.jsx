@@ -28,7 +28,7 @@ export default function Search(){
       setSearchSuggestions(updatedSuggestions);
       localStorage.setItem("searchSuggestions", JSON.stringify(updatedSuggestions));
  
-      navigate(`/search/${search}`);
+      navigate(`/${search}`);
     }
     function handleDeleteSuggestion(curSuggestion){
         setSearchSuggestions((prev) => {
@@ -56,7 +56,7 @@ export default function Search(){
                 <div className="flex gap-4">
                     {searchSuggestions.map((suggestion) => (
                         <div className="w-[10%] bg-gray-300 flex justify-around" key={suggestion}>
-                            <Link to={`/search/${suggestion}`} onClick={() => togglePanel("search")}>
+                            <Link to={`/${suggestion}`} onClick={() => togglePanel("search")}>
                                 <p>{suggestion}</p>
                             </Link>
                             <button onClick={() => handleDeleteSuggestion(suggestion)} className="cursor-pointer">&#x1D5B7;</button>

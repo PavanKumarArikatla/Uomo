@@ -68,7 +68,7 @@ export default function SearchResults() {
           "Loading..."
         ) : filteredProducts.length ? (
             filteredProducts.map((card) => (
-                <Card card={card} addItems={addItems} key={card.id} />
+                <Card card={card} addItems={addItems} searchRoute={card.type} key={card.id} />
               ))
         ) : <p className="text-center col-span-full">No items match the selected filters.</p>
         }
