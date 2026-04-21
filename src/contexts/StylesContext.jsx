@@ -28,7 +28,7 @@ export default function CardProvider({ children }) {
   const [userLoggedIn, setUserLoggedIn] = useState(false);
   const [userCredentials, setUserCredentials] = useState({username: "", email: "", password: "", address: [], country: ""});
 
-  const count = cartItems.length;
+  const count = cartItems.reduce((totalItems, item) => item.quantity + totalItems , 0)
   const {
     mensStyles,
     womenStyles,

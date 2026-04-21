@@ -5,7 +5,7 @@ function Footer() {
     <footer style={{backgroundColor: '#cfcdc6'}}>
       <div className={styles.footer}>
       <div className={styles.contactBlock}>
-        <img src="logo.svg" alt="Eastside" />
+        <img src="" alt="Eastside" />
         <p>1418 River Drive, Suite 35 Cottonhall, CA 9622</p>
         <p>United States</p>
         <p>sale@uomo.com</p>
