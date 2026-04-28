@@ -7,7 +7,7 @@ export default function Uomo({ products}) {
       <b className={styles.text}>UOMO</b>
       <div className={styles.sixth}>{products?.map((pic) => (
               <Link to="men" key={pic.id}>
-                <img src={"./image.jpg"} alt={pic.style} />
+                <img src={"./temp/image.jpg"} alt={pic.style} />
               </Link>
             ))}</div>
     </div>

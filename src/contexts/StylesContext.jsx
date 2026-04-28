@@ -27,6 +27,7 @@ export default function CardProvider({ children }) {
   const [users, setUsers] = useState([]);
   const [userLoggedIn, setUserLoggedIn] = useState(false);
   const [userCredentials, setUserCredentials] = useState({username: "", email: "", password: "", address: [], country: ""});
+  const [cartLoading, setCartLoading] = useState(false)
 
   const count = cartItems.reduce((totalItems, item) => item.quantity + totalItems , 0)
   const {
@@ -48,6 +49,13 @@ export default function CardProvider({ children }) {
       ];
   }
 
+  function setAppLoading(){
+    setCartLoading(true)
+    setTimeout(() => {
+      setCartLoading(false)
+    }, 200)
+  }
+
   const allData = getAllData();
 
   function filterProducts(products) {
@@ -62,19 +70,21 @@ export default function CardProvider({ children }) {
   const searchResults = allData && filterProducts(allData);
   
   function addItems(card) {
-  setCartItems((prevItems) => {
-    const exists = prevItems.find((item) => item.id === card.id);
 
-    if (exists) {
-      return prevItems.map((item) =>
-        item.id === card.id
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      );
-    } else {
-      return [...prevItems, { ...card, quantity: 1 }];
-    }
-  });
+    setCartItems((prevItems) => {
+      const exists = prevItems.find((item) => item.id === card.id);
+
+      if (exists) {
+        return prevItems.map((item) =>
+          item.id === card.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+        return [...prevItems, { ...card, quantity: 1 }];
+      }
+    });
+    setAppLoading()
 }
   
   function addItemsToWishlist(card) {
@@ -152,6 +162,8 @@ export default function CardProvider({ children }) {
         filters, setFilters, 
         userCredentials, setUserCredentials,
         users, userLoggedIn, setUserLoggedIn,
+        cartLoading,
+        setAppLoading
       }}
     >
       {children}

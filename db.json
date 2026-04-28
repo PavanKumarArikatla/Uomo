@@ -3,61 +3,63 @@
     "mensStyles": [
       {
         "id": 1,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
-        "style": "shorts",
+        "style": "shirts",
         "price": "58.99",
         "type": "Printed Cotton Blend Crew Neck",
         "brand": "Bear Brown",
         "rating": 4,
+        "gender": "MEN",
         "color":"green",
         "size": ["s", "m", "l", "xl"],
         "quantity":1
       },
       {
         "id": 2,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
-        "style": "shorts",
+        "style": "polos",
         "price": "75.99",
         "type": "Relaxed Fit Cotton Casual Shirt",
         "brand": "Adidas",
         "discount": "12",
         "rating":4,
+        "gender": "MEN",
         "color":"orange",
         "size": ["xs", "s", "m", "l", "xl", "xxl"]     ,
         "quantity":1
       },
       {
         "id": 3,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "dresses",
         "price": "50.99",
@@ -65,22 +67,23 @@
         "brand": "WROGN ",
         "discount": "20",
         "rating":3,
+        "gender": "MEN",
         "color":"darkkhaki",
         "size": ["m", "l", "xxl"],
         "quantity":1
       },
       {
         "id": 4,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "swimwear",
         "price": "45.99",
@@ -88,22 +91,23 @@
         "brand": "Burberry",
         "discount": "5",
         "rating":5,
+        "gender": "MEN",
         "color":"skyblue",
         "size": ["xs", "xxl"],
         "quantity":1
       },
       {
         "id": 5,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "t-shirts",
         "price": "38.99",
@@ -111,22 +115,23 @@
         "brand": "Pepe Jeans",
         "discount": "8",
         "rating":4,
+        "gender": "MEN",
         "color":"brown",
         "size": ["s", "m", "l"],
         "quantity":1
       },
       {
         "id": 6,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "tops",
         "price": "25.99",
@@ -134,22 +139,23 @@
         "brand": "Andamen",
         "discount": "17",
         "rating":2,
+        "gender": "MEN",
         "color":"green",
         "size": ["s", "m", "l", "xl"],
         "quantity":1
       },
       {
         "id": 7,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "t-shirts",
         "price": "88.99",
@@ -157,22 +163,23 @@
         "brand": "Andamen",
         "discount":0,
         "rating":1,
+        "gender": "MEN",
         "color":"yellow",
         "size": ["s", "m", "l", "xl"],
         "quantity":1
       },
       {
         "id": 8,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "t-shirts",
         "price": "8.99",
@@ -180,6 +187,7 @@
         "brand": "Andamen",
         "discount": 18,
         "rating":3,
+        "gender": "MEN",
         "color":"skyblue",
         "size": ["xs", "xxl"],
         "quantity":1
@@ -188,16 +196,16 @@
     "womenStyles": [
       {
         "id": 9,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-         "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+         "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "jumpers",
         "price": "58.99",
@@ -211,16 +219,16 @@
       },
       {
         "id": 10,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "cardigans",
         "price": "65.99",
@@ -234,16 +242,16 @@
       },
       {
         "id": 11,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "man",
         "price": "78.99",
@@ -257,16 +265,16 @@
       },
       {
         "id": 12,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "jeans",
         "price": "38.99",
@@ -280,16 +288,16 @@
       },
       {
         "id": 13,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "jackets",
         "price": "50.99",
@@ -303,16 +311,16 @@
       },
       {
         "id": 14,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "jackets",
         "price": "58.99",
@@ -326,16 +334,16 @@
       },
       {
         "id": 15,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "jeans",
         "price": "28.39",
@@ -349,16 +357,16 @@
       },
       {
         "id": 16,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "sweatshirts",
         "price": "99.99",
@@ -374,16 +382,16 @@
     "trendyProducts": [
       {
         "id": 17,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "sweatshirts",
         "price": "39.99",
@@ -396,16 +404,16 @@
       },
       {
         "id": 18,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "jumpers",
         "price": "59.99",
@@ -418,16 +426,16 @@
       },
       {
         "id": 19,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "dresses",
         "price": "49.99",
@@ -441,16 +449,16 @@
       },
       {
         "id": 20,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "sweatshirts",
         "price": "45.99",
@@ -463,16 +471,16 @@
       },
       {
         "id": 21,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "jeans",
         "price": "75.99",
@@ -485,16 +493,16 @@
       },
       {
         "id": 22,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "swimwear",
         "price": "39.99",
@@ -507,16 +515,16 @@
       },
       {
         "id": 23,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "jackets",
         "price": "69.99",
@@ -530,16 +538,16 @@
       },
       {
         "id": 24,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "trousers",
         "price": "39.99",
@@ -555,16 +563,16 @@
     "limitedEditionProducts": [
       {
         "id": 25,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "trousers",
         "price": "10.99",
@@ -578,16 +586,16 @@
       },
       {
         "id": 26,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "trousers",
         "price": "15.99",
@@ -601,16 +609,16 @@
       },
       {
         "id": 27,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "shorts",
         "price": "9.99",
@@ -624,16 +632,16 @@
       },
       {
         "id": 28,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "man",
         "price": "19.99",
@@ -649,16 +657,16 @@
     "eastsideProducts": [
       {
         "id": 29,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "shorts",
         "price": "58.99",
@@ -671,16 +679,16 @@
       },
       {
         "id": 30,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "shorts",
         "price": "58.99",
@@ -693,16 +701,16 @@
       },
       {
         "id": 31,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "shorts",
         "price": "58.99",
@@ -715,16 +723,16 @@
       },
       {
         "id": 32,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "shorts",
         "price": "58.99",
@@ -737,16 +745,16 @@
       },
       {
         "id": 33,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "shorts",
         "price": "58.99",
@@ -759,16 +767,16 @@
       },
       {
         "id": 34,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "shorts",
         "price": "58.99",
@@ -781,16 +789,16 @@
       },
       {
         "id": 35,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "shorts",
         "price": "58.99",
@@ -803,16 +811,16 @@
       },
       {
         "id": 36,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "shorts",
         "price": "58.99",
@@ -825,16 +833,16 @@
       },
       {
         "id": 37,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "shorts",
         "price": "58.99",
@@ -847,16 +855,16 @@
       },
       {
         "id": 38,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "shorts",
         "price": "58.99",
@@ -869,16 +877,16 @@
       },
       {
         "id": 39,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "shorts",
         "price": "58.99",
@@ -891,16 +899,16 @@
       },
       {
         "id": 40,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "images": [
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg",
-          "/Mountains.jpg"
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg",
+          "/temp/Mountains.jpg"
         ],
         "style": "shorts",
         "price": "58.99",
@@ -915,7 +923,7 @@
     "categories": [
       {
         "id": 41,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "style": "Traditional Wear",
         "path": "fashion",
@@ -923,7 +931,7 @@
       },
       {
         "id": 42,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "style": "Accessories",
         "path": "watches",
@@ -931,7 +939,7 @@
       },
       {
         "id": 43,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "style": "Jeans",
         "path": "cosmetics",
@@ -939,7 +947,7 @@
       },
       {
         "id": 44,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "style": "Night Wear",
         "path": "babystore",
@@ -949,21 +957,21 @@
     "winterstyles": [
       {
         "id": 44,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "style": "WinterStyles1",
         "path": "winter"
       },
       {
         "id": 45,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "style": "WinterStyles2",
         "path": "winter"
       },
       {
         "id": 46,
-        "image": "/Mountains.jpg",
+        "image": "/temp/Mountains.jpg",
         "description": "A versatile puffer built for transitional weather with soft insulation, light shell fabric, and a clean silhouette.",
         "style": "WinterStyles3",
         "path": "winter"

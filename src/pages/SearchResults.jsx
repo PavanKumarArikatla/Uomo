@@ -9,9 +9,9 @@ import { useParams } from "react-router-dom";
 export default function SearchResults() {
 
   const { allData, searchResults, loading, addItems } = useContext(StylesContext);
-  const {type} = useParams()
-  const categoryProducts = allData.filter(item => item.style === type)
-  const filteredProducts = type ? useFilteredSortedProducts(categoryProducts) : useFilteredSortedProducts(searchResults);
+  const {search} = useParams()
+  const categoryProducts = allData.filter(item => item.style === search)
+  const filteredProducts = search ? useFilteredSortedProducts(categoryProducts) : useFilteredSortedProducts(searchResults);
   
   return (
     <div className="homecontainer">

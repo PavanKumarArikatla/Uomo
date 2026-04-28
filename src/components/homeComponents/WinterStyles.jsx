@@ -5,7 +5,7 @@ export default function WinterStyles() {
   return (
     <div className={styles.fifth}>
       <div className="bg-red-600">
-          <img src={"../../image.jpg"} alt="Jackets" className={styles.img1} />
+          <img src={"./temp/image.jpg"} alt="Jackets" className={styles.img1} />
           <span className={styles.text}>
             <small>STARTING AT $19</small><br />
             <b>Jackets</b>
@@ -14,7 +14,7 @@ export default function WinterStyles() {
       </div>
 
       <div>
-          <img src={"../../image.jpg"} alt="Hoodie" className={styles.img2}/>
+          <img src={"./temp/image.jpg"} alt="Hoodie" className={styles.img2}/>
           <span className={styles.text}>
             <small>STARTING AT $39</small><br />
             <b>Hoodies</b>

@@ -156,7 +156,7 @@ export default function ItemDetails() {
               </div>
     
               <div className={styles.productDetails}>
-                <p className={styles.breadcrumbs}>{item?.gender}/ {item.brand} / {item.style}</p>
+                <p className={styles.breadcrumbs}>{item?.gender} / {item.brand} / {item.style}</p>
                 <h1 className={styles.title}>{item.type}</h1>
                 <p className={styles.price}>${item.price}</p>
                 <p className={styles.summary}>

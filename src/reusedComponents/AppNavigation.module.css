@@ -26,6 +26,11 @@
   transition: transform 0.2s ease;
 }
 
+.loading{
+  margin: 2px auto;
+  z-index: 100;
+}
+
 .navLeft,
 .navRight {
   display: flex;

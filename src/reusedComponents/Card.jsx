@@ -1,15 +1,17 @@
 import { Link, useLocation } from "react-router-dom";
 import styles from "./Card.module.css";
+import { useContext } from "react";
+import { StylesContext } from "../contexts/StylesContext";
 
 export default function Card({ card, addItems, searchRoute }) {
-
+  const { setAppLoading } = useContext(StylesContext)
   const location = useLocation()
   const discount = card.price*(card.discount/100);
   const price = (card.price - discount).toFixed(2);
   return (
     <div className={styles.card}>
       <div className={styles.imageWrapper}>
-        <Link to={ searchRoute ? `{${searchRoute}` : `${card.style}/${card.type}`} state={card}>
+        <Link to={ searchRoute ? `{${searchRoute}` : `${card.style}/${card.type}`} state={card} onClick={() => setAppLoading()}>
           <img src={card.image} alt={card.style} className={styles.image}/>
         </Link>
         <button className={styles.cartButton} onClick={() => addItems(card)}>
