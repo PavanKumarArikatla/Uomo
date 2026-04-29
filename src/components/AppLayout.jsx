@@ -8,14 +8,17 @@ import Register from "../components/navigationComponents/Register";
 import MiniCart from "./navigationComponents/MiniCart";
 import Search from "./navigationComponents/Search";
 import Filters from "../features/Filters";
+import styles from "./AppLayout.module.css";
 
 export default function AppLayout() {
-  const { activePanel } = useContext(StylesContext);
+  const { activePanel, cartLoading } = useContext(StylesContext);
   return (
     <>
       <div>
         <AppNavigation />
-        <Outlet />
+        <main className={`${styles.content} ${cartLoading ? styles.contentLoading : ""}`}>
+          <Outlet />
+        </main>
         <Footer />
       </div>
 
