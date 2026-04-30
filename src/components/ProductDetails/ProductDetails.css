@@ -1,0 +1,161 @@
+.productDetails {
+  width: 390px;
+  font-family: Arial, sans-serif;
+  padding: 16px 12px;
+}
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.topBar span {
+  font-size: 8px;
+  color: #333;
+  letter-spacing: 0.2px;
+}
+.navBtns {
+  display: flex;
+  gap: 10px;
+}
+.productDetails h1 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px;
+  margin-bottom: 10px;
+  color: #111;
+}
+.productDetails h2 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+.desc {
+  font-size: 10px;
+  line-height: 18px;
+  color: #555;
+  margin-bottom: 18px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.label {
+  width: 48px;
+  font-size: 10px;
+  color: #111;
+}
+
+.sizes {
+  display: flex;
+  gap: 6px;
+}
+.sizes button {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #d6d6d6;
+  background: #fff;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.activeSize {
+  border: 1px solid #111 !important;
+}
+
+.guide {
+  margin-left: auto;
+  font-size: 10px;
+  border-bottom: 1px solid #111;
+  cursor: pointer;
+}
+
+.colors {
+  display: flex;
+  gap: 8px;
+}
+
+.colors div {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.red {
+  background: #e60000;
+}
+
+.blue {
+  background: #424b78;
+}
+
+.black {
+  background: #222;
+}
+
+.activeColor {
+  outline: 1px solid #111;
+  outline-offset: 2px;
+}
+
+.cartRow {
+  display: flex;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.qtyBox {
+  width: 86px;
+  height: 30px;
+  border: 1px solid #111;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.qtyBox button {
+  border: none;
+  background: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.qtyBox span {
+  font-size: 10px;
+}
+
+.cartBtn {
+  flex: 1;
+  height: 30px;
+  border: none;
+  background: #000;
+  color: white;
+  font-size: 10px;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.actions span {
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.meta {
+  border-top: 1px solid #eee;
+  padding-top: 12px;
+}
+
+.meta p {
+  font-size: 10px;
+  color: #555;
+  margin-bottom: 6px;
+}

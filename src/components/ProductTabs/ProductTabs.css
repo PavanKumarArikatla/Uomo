@@ -1,0 +1,84 @@
+.container {
+  width: 100%;
+}
+
+/* Tabs container */
+.tabs {
+  display: flex;
+  justify-content: space-between; /* or center */
+  gap: 300px;
+  border-bottom: none;
+}
+/* Buttons */
+.tabs button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 0;
+  position: relative;
+  color: #555;
+}
+
+/* ❌ Remove hover underline */
+.tabs button::after {
+  display: none;
+}
+
+/* ❌ Remove hover effect */
+.tabs button:hover {
+  color: #000;
+}
+
+/* ✅ Active tab style */
+.active {
+  font-weight: bold;
+  color: black;
+}
+
+/* Content */
+.content {
+  margin-top: 20px;
+}
+.infoSection {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px; /* 🔥 space between left & right */
+  margin-top: 30px;
+}
+
+/* Each column */
+.left,
+.right {
+  width: 50%;
+}
+
+/* Headings */
+.left h3,
+.right h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* Lists */
+ul {
+  padding-left: 20px;
+}
+
+ol {
+  padding-left: 20px;
+}
+
+/* List items */
+li {
+  list-style: disc;
+  margin-bottom: 10px;
+  color: #555;
+  line-height: 1.6;
+}
+.Line Info{
+  display: flex;
+}
+h4{
+  font-family: Bold;
+}

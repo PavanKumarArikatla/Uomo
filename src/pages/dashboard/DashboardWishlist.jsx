@@ -1,9 +1,9 @@
 import styles from "./DashboardWishlist.module.css";
 
 const wishlistItems = [
-  { name: "Colorful Jacket", price: "$29" },
-  { name: "Shirt In Botanical Cheetah Print", price: "$62" },
-  { name: "Cotton Jersey T-Shirt", price: "$17" },
+  { name: "Colorful Jacket", price: "$89.99" },
+  { name: "Shirt In Botanical Cheetah Print", price: "$62.99" },
+  { name: "Cotton Jersey T-Shirt", price: "$47.99" },
 ];
 
 export default function DashboardWishlist() {
