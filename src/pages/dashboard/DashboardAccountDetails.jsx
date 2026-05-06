@@ -1,15 +1,18 @@
+import { useContext } from "react";
 import BlackButton from "../../reusedComponents/BlackButton";
 import styles from "./DashboardAccountDetails.module.css";
+import { StylesContext } from "../../contexts/StylesContext";
 
 export default function DashboardAccountDetails() {
+  const { userCredentials } = useContext(StylesContext)
   return (
     <form className={styles.form}>
       <div className={styles.row}>
-        <input type="text" placeholder="First Name" />
-        <input type="text" placeholder="Last Name" />
+        <input type="text" placeholder={userCredentials.username} />
+        <input type="text" placeholder={userCredentials.username} />
       </div>
-      <input type="text" placeholder="Display Name" />
-      <input type="email" placeholder="Email Address" defaultValue={null} />
+      <input type="text" placeholder={userCredentials.username} />
+      <input type="email" placeholder={userCredentials.email} defaultValue={null} />
 
       <h2>Password Change</h2>
       <input type="password" placeholder="Current password (leave blank to leave unchanged)" />
@@ -17,9 +20,6 @@ export default function DashboardAccountDetails() {
       <input type="password" placeholder="Confirm new password" />
 
       <BlackButton className={styles.submitBtn}>Save Changes</BlackButton>
-      {/* <button type="submit" className={styles.submitBtn}>
-        Save Changes
-      </button> */}
     </form>
   );
 }

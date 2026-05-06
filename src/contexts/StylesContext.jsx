@@ -24,17 +24,13 @@ export default function CardProvider({ children }) {
   const [sort, setSort] = useState("newest");
   const [cartState, setCartState] = useState("shopping")
   const [filters, setFilters] = useState(defaultFilters);
-  const [ userCredentials, setUserCredentials ] = useState({username: "", email: "", password: ""})
-  const [orders, setOrders] = useState([
-  { id: "2418", date: "October 27, 2020", status: "On hold", total: "$1,200.65 for 3 items" },
-  { id: "2418", date: "October 27, 2020", status: "Placed", total: "$1,200.65 for 3 items" },
-  { id: "2418", date: "October 27, 2020", status: "On hold", total: "$1,200.65 for 3 items" },
-  { id: "2418", date: "October 27, 2020", status: "On hold", total: "$1,200.65 for 3 items" },
-])
+  const [orders, setOrders] = useState([])  
+  const [users, setUsers] = useState([]);
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const [userCredentials, setUserCredentials] = useState({username: "", email: "", password: "", address: [], country: ""});
+  const [cartLoading, setCartLoading] = useState(false)
+  const count = {cartCount: cartItems.reduce((totalItems, item) => item.quantity + totalItems , 0), wishlistCount: wishlist.length};
 
-  console.log(userCredentials.username, userCredentials.password, userCredentials.email)
-  
-  const count = {cartCount: cartItems.length, wishlistCount: wishlist.length};
   const {
     mensStyles,
     womenStyles,
@@ -54,6 +50,13 @@ export default function CardProvider({ children }) {
       ];
   }
 
+  function setAppLoading(){
+    setCartLoading(true)
+    setTimeout(() => {
+      setCartLoading(false)
+    }, 200)
+  }
+
   const allData = getAllData();
 
   function filterProducts(products) {
@@ -67,14 +70,24 @@ export default function CardProvider({ children }) {
 
   const searchResults = allData && filterProducts(allData);
   
-  function handleChange(e) {
-    setSearch(e.target.value);
-  }
-  
   function addItems(card) {
-    setCartItems((cartItems) => [...cartItems, card]);
-  }
 
+    setCartItems((prevItems) => {
+      const exists = prevItems.find((item) => item.id === card.id);
+
+      if (exists) {
+        return prevItems.map((item) =>
+          item.id === card.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+        return [...prevItems, { ...card, quantity: 1 }];
+      }
+    });
+    setAppLoading()
+}
+  
   function addItemsToWishlist(card) {
     setWishlist((prev)=>{
       const exists = prev.find((item)=>item.id === card.id);
@@ -86,7 +99,6 @@ export default function CardProvider({ children }) {
         ]
       }
     })
-  
   }
   
   function deleteItem(id) {
@@ -98,22 +110,36 @@ export default function CardProvider({ children }) {
   }
   
   useEffect(() => {
-  setLoading(true);
-
-  async function getAllStyles() {
-    try {
-      const res = await fetch("http://localhost:3000/data");
-      const data = await res.json();
-      setAllStyles(data);
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setLoading(false);
+    setLoading(true);
+    async function getAllStyles() {
+      try {
+        const res = await fetch("http://localhost:3000/data");
+        const data = await res.json();
+        setAllStyles(data);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
     }
-  }
+    getAllStyles();
+  }, []);
 
-  getAllStyles();
-}, []);
+  useEffect(() => {
+    setLoading(true);
+    async function getUsers(){
+      try{
+        const res = await fetch("http://localhost:3000/users");
+        const data = await res.json();
+        setUsers(data)
+      }catch(err){
+        console.error(err)
+      }finally{
+        setLoading(false)
+      }
+    }
+    getUsers();
+  },[])
   
   function togglePanel(panelName) {
     setActivePanel((currentPanel) =>
@@ -130,41 +156,25 @@ export default function CardProvider({ children }) {
   return (
     <StylesContext.Provider
       value={{
-        mensStyles,
-        womenStyles,
-        trendyProducts,
-        limitedEditionProducts,
-        eastsideProducts,
-        categories,
-        winterstyles,
+        mensStyles, womenStyles, trendyProducts, limitedEditionProducts, eastsideProducts, categories, winterstyles,
         searchResults,
-        cartItems,
         wishlist,
         allData,
-        setCartItems,
-        addItems,
-        addItemsToWishlist,
-        deleteItem,
-        deleteItemFromWishlist,
+        cartItems, setCartItems,
+        addItems, addItemsToWishlist,
+        deleteItem, deleteItemFromWishlist,
         loading,
         count,
-        search,
-        setSearch,
-        handleChange,
-        activePanel,
-        togglePanel,
-        openPanel,
-        closePanel,
-        sort,
-        setSort,
-        cartState,
-        setCartState,
-        filters,
-        setFilters,
-        userCredentials,
-        setUserCredentials,
-        orders,
-        setOrders
+        orders, setOrders,
+        search, setSearch,
+        activePanel, togglePanel, openPanel, closePanel,
+        sort, setSort,
+        cartState, setCartState,
+        filters, setFilters, 
+        userCredentials, setUserCredentials,
+        users, userLoggedIn, setUserLoggedIn,
+        cartLoading,
+        setAppLoading
       }}
     >
       {children}

@@ -5,7 +5,7 @@
 
     export default function ShippingAndCheckout(){
 
-        const { cartItems = [], setCartState, orders, setOrders } = useContext(StylesContext)
+        const { cartItems, setCartItems, setCartState, orders, setOrders } = useContext(StylesContext)
         const [paymentMethod, setPaymentMethod] = useState("");
 
         const [formData, setFormData] = useState(() => {
@@ -48,7 +48,7 @@
         const total = subtotal + vat;
 
 
-        const handleSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();  
         
         if (cartItems.length === 0) {
@@ -56,24 +56,23 @@
             return;
         }
 
-    if (!formData.firstName || 
-        !formData.email || 
-        !formData.phone ||
-        !formData.lastName ||
-        !formData.postcode ||
-        !formData.townCity 
-        ) {
-        alert("Please fill all required fields");
-        return;
-    } 
+        if(!formData.firstName || 
+            !formData.email || 
+            !formData.phone ||
+            !formData.lastName ||
+            !formData.postcode ||
+            !formData.townCity 
+            ) {
+            alert("Please fill all required fields");
+            return;
+        } 
 
-    if (!paymentMethod) {
-        alert("Please select a payment method");
-        return; 
-    }
+        if (!paymentMethod) {
+            alert("Please select a payment method");
+            return; 
+        }
 
     const orderData = {
-        id: Math.floor(Math.random() * 100000),
         date: new Date().toLocaleDateString(),
         paymentMethod: paymentMethod,
         cartItems: fixedCartItems,
@@ -83,13 +82,13 @@
             customer: formData,
             status: "Confirmed"
         };
-        const id = Math.floor(Math.random() * 100000)
-        const date = new Date().toLocaleDateString()
-        const status= "Confirmed"
-        setOrders((prev) => ([
-            ...prev,
-            {id, date, status, total}
-        ]))
+    const id = Math.floor(Math.random() * 100000)
+    const date = new Date().toLocaleDateString()
+    const status= "Confirmed"
+    setOrders((prev) => ([
+        ...prev,
+        {id, date, status, total}
+    ]))
 
         localStorage.setItem("orderData", JSON.stringify(orderData));
 
@@ -97,10 +96,7 @@
         localStorage.setItem("saveAddress", JSON.stringify(formData));
     } else {
         localStorage.removeItem("saveAddress");
-    }
-
-    console.log("Form Data:", formData);
-    
+    }    
 
     setFormData({
         firstName: "",
@@ -119,10 +115,8 @@
     });
 
     setCartState("confirmation");
-
-
-        };
-
+    setCartItems([])
+    };
 
         return (
         

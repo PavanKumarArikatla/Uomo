@@ -4,25 +4,25 @@ import { FaHeart } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { StylesContext} from "../contexts/StylesContext";
 
-export default function Card({ card, addItems }) {
-
+export default function Card({ card, addItems, searchRoute }) {
+  const { setAppLoading } = useContext(StylesContext)
   const location = useLocation()
   const discount = card.price*(card.discount/100);
   const price = (card.price - discount).toFixed(2);
   const {wishlist, addItemsToWishlist} = useContext(StylesContext);
   const isWishlisted = wishlist.some((item)=>item.id === card.id)
   
-
   return (
     <div className={styles.card}>
       <div className={styles.imageWrapper}>
         <FaHeart className={`${styles.heartIcon} ${isWishlisted ? styles.active : ''}`} 
           onClick={() => {
+            setAppLoading();
             addItemsToWishlist(card);
           }}
           title={isWishlisted ? "Remove from wishlist" : "Add to wishlist"}
         />
-        <Link to={`${location.pathname}/${card.style}`} state={card}>
+        <Link to={ searchRoute ? `{${searchRoute}` : `${card.style}/${card.type}`} state={card} onClick={() => setAppLoading()}>
           <img src={card.image} alt={card.style} className={styles.image}/>
         </Link>
         <button className={styles.cartButton} onClick={() => addItems(card)}>
@@ -31,9 +31,13 @@ export default function Card({ card, addItems }) {
       </div>
       <article className={styles.category}>{card.style}</article>
       <p className={styles.nav}>{card.type}</p>
-      <div className={styles.price}>{card.discount ? 
-        <nav className="flex gap-3"> <h6 className="line-through opacity-70">${card.price}</h6> <h6 className="text-red-600">${price}</h6> </nav>
-        :`$${card.price}`}
+      <div className={styles.price}>
+        {card.discount 
+        ? <nav className="flex gap-3">
+            <h6 className="line-through opacity-70">${card.price}</h6> 
+            <h6 className="text-red-600">${price}</h6>
+          </nav>
+        : `$${card.price}`}
       </div>
     </div>
   );

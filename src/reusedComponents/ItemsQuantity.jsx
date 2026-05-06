@@ -1,11 +1,37 @@
+import { useContext } from "react";
+import { StylesContext } from "../contexts/StylesContext";
 
+export default function ItemsQuantity({item}){
 
-export default function ItemsQuantity(){
+    const { setCartItems } = useContext(StylesContext)
+    function qtyIncrement(){
+        setCartItems(prev => 
+            prev.map((curItem) => 
+                curItem.id === item.id 
+                    ? { ...curItem, quantity: curItem.quantity + 1 }
+                    : curItem
+            )
+        )
+    }
+
+    function qtyDecrement(){
+        setCartItems(prev => 
+            prev.map(curItem => 
+                curItem.id === item.id 
+                ? { ...curItem, 
+                    quantity: curItem.quantity > 1 
+                    ? curItem.quantity - 1 
+                    : 1}
+                : curItem
+            )
+        )
+    }
+
     return(
-        <div className="flex gap-4">
-            <button>-</button>
-            <p>1</p>
-            <button>+</button>
+        <div className="flex gap-4 items-center">
+            <button onClick={qtyDecrement} className="cursor-pointer">-</button>
+            <p>{item.quantity}</p>
+            <button onClick={qtyIncrement} className="cursor-pointer">+</button>
         </div>
     )
 }

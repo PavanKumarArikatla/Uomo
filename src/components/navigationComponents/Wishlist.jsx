@@ -40,7 +40,7 @@ export default function Wishlist() {
                     )}
                 </div>
                 <div className={styles.actions}>
-                <NavLink to="/dashboard/wishlist"><GreyButton onClick={closePanel}>VIEW CART</GreyButton></NavLink>
+                <NavLink to="/dashboard/wishlist"><GreyButton onClick={closePanel}>VIEW WISHLIST</GreyButton></NavLink>
                 </div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import { useContext } from "react"
-import styles from "./CartItem.module.css"
 import { StylesContext } from "../../contexts/StylesContext"
 import ItemsQuantity from "../../reusedComponents/ItemsQuantity"
+import styles from "./CartItem.module.css"
 
 export default function CartItem({item}){
     const {deleteItem} = useContext(StylesContext)
@@ -20,8 +20,8 @@ export default function CartItem({item}){
                 <h4>Color : {item.color}</h4>
                 <h4>Size : L</h4>
                 <div className="flex justify-between">
-                    <ItemsQuantity />
-                    <h1>${Math.round(item.price)}</h1>
+                    <ItemsQuantity item={item} />
+                    <h1>${Math.round(item.quantity * item.price)}</h1>
                 </div>
             </div>
             <div className={styles.delete}>

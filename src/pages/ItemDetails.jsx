@@ -1,6 +1,8 @@
 import { useLocation } from "react-router-dom";
-import { useEffect, useMemo, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import styles from "./ItemDetails.module.css";
+import BlackButton from "../reusedComponents/BlackButton";
+import { StylesContext } from "../contexts/StylesContext";
 
 const detailsRows = [
   { label: 'SKU', value: 'UOM-7784' },
@@ -54,7 +56,7 @@ function getImageSrc(imagePath = "") {
 }
 
 export default function ItemDetails() {
-  //  receiving props(card as item) through <Link>
+  const { addItems } = useContext(StylesContext);
   const location = useLocation();
   const item = location.state ?? {};
   const galleryImages = useMemo(() => {
@@ -93,11 +95,10 @@ export default function ItemDetails() {
                   {hasGalleryImages ? (
                     galleryImages.map((image, index) => (
                       <button
-                        key={`${image}-${index}`}
+                        key={index}
                         className={`${styles.thumb} ${
                           index === selectedIndex ? styles.thumbActive : ""
                         }`}
-                        aria-label={`View image ${index + 1}`}
                         onClick={() => setSelectedIndex(index)}
                       >
                         <img
@@ -155,7 +156,7 @@ export default function ItemDetails() {
               </div>
     
               <div className={styles.productDetails}>
-                <p className={styles.breadcrumbs}>{item?.gender}/ {item.brand} / {item.style}</p>
+                <p className={styles.breadcrumbs}>{item?.gender} / {item.brand} / {item.style}</p>
                 <h1 className={styles.title}>{item.type}</h1>
                 <p className={styles.price}>${item.price}</p>
                 <p className={styles.summary}>
@@ -164,12 +165,8 @@ export default function ItemDetails() {
                 
 
                 <div className={styles.buyRow}>
-                  <div className={styles.qty}>
-                    <button>-</button>
-                    <span>1</span>
-                    <button>+</button>
-                  </div>
-                  <button className={styles.addToCart}>Add to Cart</button>
+                  <BlackButton onClick={() => addItems(item)}>Add to Cart</BlackButton>
+                  <BlackButton>Add to Wishlist</BlackButton>
                 </div>
                 <div className={styles.meta}>
                   <p>

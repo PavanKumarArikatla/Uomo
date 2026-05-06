@@ -9,9 +9,9 @@ import { useParams } from "react-router-dom";
 export default function SearchResults() {
 
   const { allData, searchResults, loading, addItems } = useContext(StylesContext);
-  const {type} = useParams()
-  const categoryProducts = allData.filter(item => item.style === type)
-  const filteredProducts = type ? useFilteredSortedProducts(categoryProducts) : useFilteredSortedProducts(searchResults);
+  const {search} = useParams()
+  const categoryProducts = allData.filter(item => item.style === search)
+  const filteredProducts = search ? useFilteredSortedProducts(categoryProducts) : useFilteredSortedProducts(searchResults);
   
   return (
     <div className="homecontainer">
@@ -68,7 +68,7 @@ export default function SearchResults() {
           "Loading..."
         ) : filteredProducts.length ? (
             filteredProducts.map((card) => (
-                <Card card={card} addItems={addItems} key={card.id} />
+                <Card card={card} addItems={addItems} searchRoute={card.type} key={card.id} />
               ))
         ) : <p className="text-center col-span-full">No items match the selected filters.</p>
         }

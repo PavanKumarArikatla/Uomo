@@ -7,6 +7,7 @@ import WinterStyles from "../components/homeComponents/WinterStyles";
 import Uomo from "../components/homeComponents/Uomo";
 import Services from "../components/homeComponents/Services";
 import SocialMedia from "../components/homeComponents/SocialMedia";
+import Loading from "../reusedComponents/Loading"
 import styles from "./Home.module.css";
 
 export default function Home() {
