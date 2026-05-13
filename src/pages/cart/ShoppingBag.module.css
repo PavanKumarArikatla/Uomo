@@ -99,19 +99,62 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
 }
 
 .shippingRow {
   display: flex;
   justify-content: space-between;
-  gap: 0.8rem;
-  margin-top: 0.7rem;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.9rem;
+  padding-top: 0.9rem;
+}
+
+.shippingRow > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .line {
   width: 100%;
   margin: 1rem 0;
+}
+
+.shippingOption {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+}
+
+.vat {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  margin-top: 0.7rem;
+  font-size: 14px;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.7rem;
+  font-size: 14px;
+}
+
+.changeAddress {
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.changeAddress1 {
+  width: 50%;
+  margin-left: 10px;
+  border: 1px solid;
 }
 
 @media (max-width: 992px) {

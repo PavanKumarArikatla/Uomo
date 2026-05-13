@@ -38,17 +38,15 @@ export default function DashboardOrders() {
               <td>{order.total}</td>
               <td>
                 <button type="button" className={styles.actionBtn} onClick={()=>handleAction(order)}>
-                  {order.status === "Placed" ? "View" : "Track"}
+                  {order.status === "Placed" ? "View" : order.status === "Delivered" ? "View Details" : "Track Order"}
                 </button>
-                {order.status === "Delivered"
-                ? "View Details"
-                : ""}
               </td>
             </tr>
           ))}
-        </tbody>
+        </tbody>  
       </table>
     </div>
   );
 }
 
+        

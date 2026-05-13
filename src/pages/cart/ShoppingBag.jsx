@@ -4,14 +4,31 @@ import ItemsQuantity from "../../reusedComponents/ItemsQuantity";
 import BlackButton from "../../reusedComponents/BlackButton";
 import GreyButton from "../../reusedComponents/GreyButton"
 import styles from "./ShoppingBag.module.css"
+import { useNavigate } from "react-router-dom";
 
 export default function ShoppingBag(){
+
+    const navigate = useNavigate();
+
     const { cartItems, deleteItem, setCartState } = useContext(StylesContext);
-    const totals = cartItems.reduce((acc, item) => {
-    acc = Number(item.price) + acc;
-    return acc;
+    // const totals = cartItems.reduce((acc, item) => {
+    // acc = Number(item.price) + acc;
+    // return acc;
+    // }, 0);
+    
+    const subtotal = cartItems.reduce((acc, item) => {
+    const quantity = item.quantity || 1;
+    // return acc + Number(item.price) * quantity;
+    // }, 0);
+
+    const priceAfterDiscount = item.discount ? (Number(item.price) - (Number(item.discount/100)*Number(item.price))) : Number(item.price);
+    return acc + priceAfterDiscount * quantity;
     }, 0);
-    const totalMRP = Number(totals.toFixed(2));
+
+   const vat = subtotal * 0.18;
+   const total = subtotal + vat;
+
+
     return(
     <div className={styles.divider}>
 
@@ -29,7 +46,7 @@ export default function ShoppingBag(){
 
             {cartItems.map((item) => 
             <div key={item.id}>
-                <div className="flex items-center">
+                <div className="flex items-center"> 
                     <div className={styles.item}>
                         <div className={styles.productMeta}>
                             <img src={item.image} alt={item.style} />
@@ -38,7 +55,7 @@ export default function ShoppingBag(){
                         <div className={styles.prices}>
                             <p>${item.price}</p>
                             <div className={styles.qtyBox}><ItemsQuantity /></div>
-                            <p>${ item.discount ? (Number(item.price) - (Number(item.discount/100)*Number(item.price))).toFixed(2) : item.price}</p>
+                            <p>{((item.discount ? Number(item.price) -(Number(item.discount) / 100) * Number(item.price): Number(item.price)) * (item.quantity || 1)).toFixed(2)}</p>
                         </div>
                     </div>
                     <button onClick={(() => deleteItem(item.id))} className={styles.deleteButton}>&#x1D5B7;</button>
@@ -50,7 +67,7 @@ export default function ShoppingBag(){
             <div className={styles.coupon}>
             <form className={styles.couponForm}>
                 <input type="text" placeholder="Coupon Code" />
-                <button>APPLY COUPON</button>
+                <button type="button">APPLY COUPON</button>
             </form>
             <div className={styles.updateCart}><GreyButton>UPDATE CART</GreyButton></div>
             </div>
@@ -61,19 +78,38 @@ export default function ShoppingBag(){
         <div className={styles.cartAmount}>
             <div className={styles.totalsCard}>
                 <h1>CART TOTALS</h1>
-                <br></br>
+                <br></br>                      
                 <div className={styles.subtotal}>
                     <p>SUBTOTAL</p>
-                    <p>${totalMRP}</p>
+                    <p>${subtotal.toFixed(2)}</p>
                 </div>
                 <div className={styles.shippingRow}>
-                    <p>SHIPPING</p>
+                    <p>SHIPPING</p>                                    
                     <div>
-                        <p>Free Shipping</p>
-                        <p>Flat rate</p>
+                        <label className={styles.shippingOption}>
+                            <input type="checkbox" name="" id="" /> Free Shipping
+                        </label>
+                        <label className={styles.shippingOption}>
+                            <input type="checkbox" name="" id="" />  Flat rate: $49
+                        </label>
+                        <label className={styles.shippingOption}>
+                            <input type="checkbox" name="" id="" />  Local pickup: $8
+                        </label>        
+                        <h5>Shipping to AL.</h5>
+                        <h1 className={styles.changeAddress} onClick={() => navigate("/dashboard/addresses")}>
+                              CHANGE ADDRESS <hr className={styles.changeAddress1} /> </h1>
                     </div>
                 </div>
-            </div>
+                <div className={styles.vat}>
+                    <p>VAT</p>
+                    <p>${vat.toFixed(2)}</p>
+                </div>                               
+       
+                <div className={styles.total}>
+                    <p>TOTAL</p>
+                    <p>${total.toFixed(2)}</p>
+                </div>                              
+            </div>      
 
             <BlackButton onClick={() => setCartState("shipping")}>PROCEED TO CHECKOUT</BlackButton>
         </div>

@@ -9,11 +9,6 @@ export default function Cart() {
   const [ isOrdered, setIsOrdered ] = useState(false);
   const { cartState, setCartItems, setCartState } = useContext(StylesContext);
 
-  function placeOrder() {
-    setCartItems([]);
-    setIsOrdered(() => !isOrdered);
-  }
-
   return (
     <div className={styles.cart}>
       <b className="text-3xl">CART</b>

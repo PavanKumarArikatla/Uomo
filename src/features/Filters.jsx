@@ -247,15 +247,15 @@ export default function Filters(){
                                 <input type="range" min={minPrice} max={maxPrice} value={priceMax} step="1" onChange={(event) => setPriceMax(Math.max(Number(event.target.value), priceMin + 1))} className={styles.range} />
                             </div>
                             <div className={styles.priceLabels}>
-                                <span>Min Price: ${priceMin}</span>
+                                <span>Min Price: ${priceMin}</span>    
                                 <span>Max Price: ${priceMax}</span>
                             </div>
                         </div>
                     )}  
-
+                        
                     <div className={styles.actions}>
                         <button onClick={clearFilters} className={styles.resetButton}>Clear Filters</button>
-                        <BlackButton onClick={applyFilters}>Apply Filters</BlackButton>
+                        <BlackButton onClick={applyFilters}>Apply Filters</BlackButton> 
                     </div>
                 </div>
 

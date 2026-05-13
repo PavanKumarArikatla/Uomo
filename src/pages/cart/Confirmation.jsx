@@ -4,18 +4,19 @@ import { useNavigate } from "react-router-dom";
 export default function Confirmation(){
 
 const navigate = useNavigate();
-
 const orderData = JSON.parse(localStorage.getItem("orderData")) || {};
-
 const cartItems = Array.isArray(orderData.cartItems)? orderData.cartItems: [];
 
- const subtotal = cartItems.reduce((acc, item) =>
-             acc + (Number(item.price) || 0) * (Number(item.quantity) || 1), 0);
+const subtotal = cartItems.reduce((acc, item) => {
+      const quantity = Number(item.quantity) || 1;
 
-               const vat = subtotal * 0.18;
+      const priceAfterDiscount = item.discount ? (Number(item.price) - (Number(item.discount/100)*Number(item.price))) : Number(item.price);
+      return acc + priceAfterDiscount * quantity;
+    }, 0);
+
+               const vat = subtotal * 0.18;                                                          
                const total = subtotal + vat;
 
-   
    if(!orderData || Object.keys(orderData).length === 0){
       return <p>No order data found</p>
    }
@@ -28,7 +29,7 @@ const cartItems = Array.isArray(orderData.cartItems)? orderData.cartItems: [];
        <div className={styles.paymentDetails}>
         <span>
          <h3>Order Number</h3>
-         <p>{orderData.orderNumber}</p>
+         <p>{orderData.id}</p>
          </span>
             <span>
          <h3>Date</h3>
@@ -75,10 +76,13 @@ const cartItems = Array.isArray(orderData.cartItems)? orderData.cartItems: [];
       </div>
        </div> 
        <br />
-       <div>
-      
+       <div className={styles.buttons}>
          <button className={styles.orderbut} type="button" onClick={()=>navigate("/dashboard/order-details", {state: orderData} )}>
-            VIEW DETAILS</button>
+            VIEW ORDER DETAILS
+         </button>
+         <button className={styles.orderbut1} type="button" onClick={()=>navigate("/")}>
+            CONTINUE SHOPPING
+         </button>
        </div>
        </div>
        

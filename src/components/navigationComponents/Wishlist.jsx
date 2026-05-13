@@ -29,9 +29,9 @@ export default function Wishlist() {
                                 &#x1D5B7;
                                 </button>
                                </h2> 
-                               <h4>Color : {item.color}</h4>
+                                <h4>Color : {item.color}</h4>
                                 <h4>Size : L</h4>
-                                <h1>${Math.round(item.price)}</h1>
+                                <h1>Price : ${Math.round(item.price)}</h1>
                             </div>
                         </div>
                     ))
@@ -40,7 +40,7 @@ export default function Wishlist() {
                     )}
                 </div>
                 <div className={styles.actions}>
-                <NavLink to="/dashboard/wishlist"><GreyButton onClick={closePanel}>VIEW CART</GreyButton></NavLink>
+                <NavLink to="/dashboard/wishlist"><GreyButton onClick={closePanel}>VIEW WISHLIST</GreyButton></NavLink>
                 </div>
                 </div>
             </div>

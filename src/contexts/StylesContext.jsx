@@ -23,14 +23,12 @@ export default function CardProvider({ children }) {
   const [sort, setSort] = useState("newest");
   const [cartState, setCartState] = useState("shopping")
   const [filters, setFilters] = useState(defaultFilters);
-  const [orders, setOrders] = useState([
-  { id: "2418", date: "October 27, 2020", status: "On hold", total: "$1,200.65 for 3 items" },
-  { id: "2418", date: "October 27, 2020", status: "Placed", total: "$1,200.65 for 3 items" },
-  { id: "2418", date: "October 27, 2020", status: "On hold", total: "$1,200.65 for 3 items" },
-  { id: "2418", date: "October 27, 2020", status: "On hold", total: "$1,200.65 for 3 items" },
-])
+  const [orders, setOrders] = useState([])
 
-  
+  const clearCart = () => {
+    setCartItems([]);
+  }
+
   const count = {cartCount: cartItems.length, wishlistCount: wishlist.length};
   const {
     mensStyles,
@@ -71,6 +69,22 @@ export default function CardProvider({ children }) {
   function addItems(card) {
     setCartItems((cartItems) => [...cartItems, card]);
   }
+
+  function addItemsToCart(card) {
+    setCartItems((prev)=>{
+      const exists = prev.find((item)=>item.id === card.id);
+      if(exists){
+        return prev;
+      } else {
+        return [...prev, card];
+      }
+    });
+
+    setWishlist((prev)=>{
+      return prev.filter((item)=>item.id !== card.id)
+    });
+  }
+
 
   function addItemsToWishlist(card) {
     setWishlist((prev)=>{
@@ -141,10 +155,12 @@ export default function CardProvider({ children }) {
         setCartItems,
         addItems,
         addItemsToWishlist,
+        addItemsToCart,
+        clearCart,  
         deleteItem,
         deleteItemFromWishlist,
         loading,
-        count,
+        count,    
         search,
         setSearch,
         handleChange,

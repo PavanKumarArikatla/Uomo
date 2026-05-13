@@ -22,6 +22,26 @@
   cursor: pointer;
 }
 
+.saveBtn {
+  position: absolute;
+  bottom: 0.5rem;                
+  left: 5%;
+  width: 90%;
+  height: 2.5rem;
+  background: rgba(255,255,255,0.95);
+  border: none;
+  border-top: 1px solid #ddd;
+  cursor: pointer;
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+}
+.art:hover .saveBtn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .art {
   position: relative;
   aspect-ratio: 1 / 1;

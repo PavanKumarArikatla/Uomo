@@ -22,6 +22,7 @@ import DashboardLogout from "./pages/dashboard/DashboardLogout";
 import DashboardOrderTracking from "./pages/dashboard/DashboardOrderTracking";
 import DashboardOrderDetails from "./pages/dashboard/DashboardOrderDetails";
 
+
 export default function App() {
   const router = createBrowserRouter([
     {
@@ -41,7 +42,6 @@ export default function App() {
         { path: "watches", element: <SearchResults /> },
         { path: "cosmetics", element: <SearchResults /> },
         { path: "babystore", element: <SearchResults /> },
-        // { path: "wishlist", element: <Wishlist /> },
         { path: "cart", element: <Cart /> },
         {
           path: "dashboard",

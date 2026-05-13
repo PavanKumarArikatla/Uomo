@@ -6,7 +6,7 @@
   border-radius: 8px;
   background: #fff;
 }
-
+ 
 .imageWrapper {
   position: relative;
   overflow: hidden;
@@ -15,7 +15,7 @@
 
 .cartButton {
   position: absolute;
-  width: calc(100% - 1rem);
+  width: calc(100% - 1rem);                                         
   min-height: 2.3rem;
   bottom: 0.5rem;
   left: 50%;
@@ -43,21 +43,22 @@
   color: #fff;
   font-size: 1.2rem;
   opacity: 0;
-  transition: color 0.3s ease;
-  cursor: pointer;
+  transition: opacity 0.3s ease, transform  0.3s ease;
+  cursor: pointer;       
   z-index: 2;
 }
 
 .imageWrapper:hover .heartIcon {
   opacity: 1;
-}
+  transform: scale(0.98);
+}  
 
 .active {
   color: red;
 }
 
 .category {
-  margin-top: 0.7rem;
+  margin-top: 0.7rem;  
   font-size: 0.72rem;
   opacity: 0.6;
 }
@@ -81,7 +82,7 @@
   transition: transform 0.3s ease;
 }
 
-.image:hover {
+.imageWrapper:hover .image {
   transform: scale(0.98);
 }
 
