@@ -3,12 +3,14 @@ import styles from "./SeasonStyles.module.css";
 import { useContext, useEffect, useRef, useState } from "react";
 import { StylesContext } from "../../contexts/StylesContext";
 
+const SLIDE_TRANSITION_MS = 800;
+
 export default function SeasonStyles({ season }) {
   const { categories, winterstyles } = useContext(StylesContext);
   const slides = season === "Summer" ? categories || [] : winterstyles || [];
   const intervalRef = useRef(null);
   const sliderRef = useRef(null);
-  const isSnappingRef = useRef(false);
+  const resetTimerRef = useRef(null);
 
   const hasMany = slides.length > 1;
 
@@ -19,13 +21,33 @@ export default function SeasonStyles({ season }) {
   const extendedSlides = hasMany
     ? [slides[slides.length - 1], ...slides, slides[0]]
     : [...slides];
+  const firstSlidePosition = hasMany ? 1 : 0;
+  const lastSlidePosition = hasMany ? slides.length : 0;
+  const firstClonePosition = hasMany ? extendedSlides.length - 1 : 0;
+  const lastClonePosition = 0;
 
   useEffect(() => {
-    setPosition(1);
-  }, [season, slides.length]);
+    setPosition(firstSlidePosition);
+  }, [season, slides.length, firstSlidePosition]);
+
+  useEffect(() => {
+    if (!noTransition) return undefined;
+
+    let secondFrame;
+    const firstFrame = requestAnimationFrame(() => {
+      secondFrame = requestAnimationFrame(() => {
+        setNoTransition(false);
+      });
+    });
+
+    return () => {
+      cancelAnimationFrame(firstFrame);
+      cancelAnimationFrame(secondFrame);
+    };
+  }, [noTransition]);
 
   const handleDotClick = (slideIndex) => {
-    setPosition(slideIndex + 1);
+    setPosition(hasMany ? slideIndex + 1 : 0);
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
       intervalRef.current = null;
@@ -41,7 +63,7 @@ export default function SeasonStyles({ season }) {
     }
 
     function next() {
-      setPosition((p) => p + 1);
+      setPosition((p) => Math.min(p + 1, firstClonePosition));
     }
 
     intervalRef.current = setInterval(next, 4000);
@@ -52,7 +74,7 @@ export default function SeasonStyles({ season }) {
         intervalRef.current = null;
       }
     };
-  }, [hasMany, slides.length, resetAutoplayTimer]);
+  }, [hasMany, slides.length, resetAutoplayTimer, firstClonePosition]);
 
   useEffect(() => {
     if (!resetAutoplayTimer) return;
@@ -64,33 +86,40 @@ export default function SeasonStyles({ season }) {
     return () => clearTimeout(pauseTimer);
   }, [resetAutoplayTimer]);
 
-  useEffect(() => {
-    if (!hasMany || isSnappingRef.current) return;
-
-    let snapToPosition = null;
+  const resetClonedSlide = () => {
+    if (!hasMany) return;
+    clearTimeout(resetTimerRef.current);
 
     if (position === extendedSlides.length - 1) {
-      snapToPosition = 1;
-    } else if (position <= 0) {
-      snapToPosition = extendedSlides.length - 2;
-    }
-
-    if (snapToPosition !== null) {
-      isSnappingRef.current = true;
       setNoTransition(true);
-
-      setTimeout(() => {
-        setPosition(snapToPosition);
-        setTimeout(() => {
-          setNoTransition(false);
-          isSnappingRef.current = false;
-        }, 20);
-      }, 20);
+      setPosition(firstSlidePosition);
+    } else if (position === lastClonePosition) {
+      setNoTransition(true);
+      setPosition(lastSlidePosition);
     }
-  }, [position, hasMany, extendedSlides.length]);
+  };
+
+  useEffect(() => {
+    if (
+      !hasMany ||
+      (position !== firstClonePosition && position !== lastClonePosition)
+    ) {
+      return undefined;
+    }
+
+    resetTimerRef.current = setTimeout(resetClonedSlide, SLIDE_TRANSITION_MS + 100);
+
+    return () => clearTimeout(resetTimerRef.current);
+  }, [hasMany, position, firstClonePosition, lastClonePosition]);
+
+  const handleTransitionEnd = (e) => {
+    if (!hasMany || e.target !== sliderRef.current) return;
+
+    resetClonedSlide();
+  };
 
   const goPrev = () => {
-    setPosition((p) => p - 1);
+    setPosition((p) => Math.max(p - 1, lastClonePosition));
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
       intervalRef.current = null;
@@ -99,7 +128,7 @@ export default function SeasonStyles({ season }) {
   };
 
   const goNext = () => {
-    setPosition((p) => p + 1);
+    setPosition((p) => Math.min(p + 1, firstClonePosition));
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
       intervalRef.current = null;
@@ -115,10 +144,11 @@ export default function SeasonStyles({ season }) {
   if (!slides.length) return null;
 
   const actualIndex = hasMany
-  ? ((position - 1 + slides.length) % slides.length)
-  : 0;
+    ? (position - 1 + slides.length) % slides.length
+    : 0;
+  const currentSlide = slides[actualIndex];
 
-  const translatePercent = position * 100;
+  const translatePercent = hasMany ? position * 100 : 0;
 
   const content = (
     <div
@@ -129,6 +159,7 @@ export default function SeasonStyles({ season }) {
       <div
         ref={sliderRef}
         className={styles.sliderInner}
+        onTransitionEnd={handleTransitionEnd}
         style={{
           transform: `translateX(-${translatePercent}%)`,
           transition: noTransition
@@ -137,12 +168,13 @@ export default function SeasonStyles({ season }) {
         }}
       >
         {extendedSlides.map((style, i) => (
-          <img
-            key={i}
-            src={style.image}
-            alt={`Slide ${i + 1}`}
-            className={styles.image}
-          />
+          <div className={styles.slide} key={`${style.id || style.image}-${i}`}>
+            <img
+              src={style.image}
+              alt={style.style || style.category || `Slide ${i + 1}`}
+              className={styles.image}
+            />
+          </div>
         ))}
       </div>
 
@@ -153,10 +185,10 @@ export default function SeasonStyles({ season }) {
             <hr className={styles.seasonDivider} />
             <span>NEW TREND</span>
           </div>
-            <p>{`${extendedSlides[actualIndex+1].style || ""}`}</p>
-              <strong>{`${extendedSlides[actualIndex+1]?.category || ""}`}</strong>
+            <p>{`${currentSlide?.style || ""}`}</p>
+              <strong>{`${currentSlide?.category || ""}`}</strong>
               <br></br>
-              <Link to={`${extendedSlides[actualIndex+1].path || ""}`}>
+              <Link to={`${currentSlide?.path || ""}`}>
                 <button className={styles.button}>DISCOVER MORE</button>
               </Link>
           </>
@@ -170,8 +202,8 @@ export default function SeasonStyles({ season }) {
             <p>
               <b>SPRING</b> COLLECTION
             </p>
-            <p>{`${extendedSlides[actualIndex+1]?.category || ""}`}</p>
-            <Link to={`${extendedSlides[actualIndex].path || ""}`}>
+            <p>{`${currentSlide?.category || ""}`}</p>
+            <Link to={`${currentSlide?.path || ""}`}>
               <button className={styles.span}>SHOP NOW</button>
             </Link>
           </>

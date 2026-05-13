@@ -124,6 +124,29 @@
   border-top: 1px solid #ececec;
 }
 
+/* Login.jsx */
+.passwordWrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.passwordInput{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding-right: 40px;
+}
+
+.eyeButton{
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
 /* Search.jsx styles */
 .searchBlock {
   position: fixed;

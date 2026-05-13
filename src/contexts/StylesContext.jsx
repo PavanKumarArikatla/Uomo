@@ -13,6 +13,14 @@ export function defaultFilters() {
   };
 }
 
+const defaultUserCredentials = {
+  username: "",
+  email: "",
+  password: "",
+  address: [],
+  country: "",
+};
+
 export default function CardProvider({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [search, setSearch] = useState("");
@@ -27,7 +35,7 @@ export default function CardProvider({ children }) {
   const [orders, setOrders] = useState([])  
   const [users, setUsers] = useState([]);
   const [userLoggedIn, setUserLoggedIn] = useState(false);
-  const [userCredentials, setUserCredentials] = useState({username: "", email: "", password: "", address: [], country: ""});
+  const [userCredentials, setUserCredentials] = useState(defaultUserCredentials);
   const [cartLoading, setCartLoading] = useState(false)
   const count = {cartCount: cartItems.reduce((totalItems, item) => item.quantity + totalItems , 0), wishlistCount: wishlist.length};
 
@@ -54,7 +62,7 @@ export default function CardProvider({ children }) {
     setCartLoading(true)
     setTimeout(() => {
       setCartLoading(false)
-    }, 200)
+    }, 500)
   }
 
   const allData = getAllData();
@@ -69,6 +77,21 @@ export default function CardProvider({ children }) {
   }
 
   const searchResults = allData && filterProducts(allData);
+
+  useEffect(() => {
+    const savedUser = localStorage.getItem("user");
+
+    if (!savedUser) return;
+
+    try {
+      const parsedUser = JSON.parse(savedUser);
+      setUserCredentials(parsedUser);
+      setUserLoggedIn(true);
+    } catch (err) {
+      console.error(err);
+      localStorage.removeItem("user");
+    }
+  }, []);
   
   function addItems(card) {
 
@@ -89,6 +112,8 @@ export default function CardProvider({ children }) {
 }
   
   function addItemsToWishlist(card) {
+
+    setAppLoading()
     setWishlist((prev)=>{
       const exists = prev.find((item)=>item.id === card.id);
       if(exists){

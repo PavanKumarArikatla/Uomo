@@ -4,7 +4,7 @@ import BlackButton from "../../reusedComponents/BlackButton"
 import styles from "./Navigation.module.css"
 
 export default function Register(){
-    const { closePanel, userCredentials, setUserCredentials } = useContext(StylesContext)
+    const { closePanel, userCredentials, setUserCredentials, openPanel } = useContext(StylesContext)
     return(
         <div className={styles.overlay}>
             <div className={styles.modal}>
@@ -53,6 +53,7 @@ export default function Register(){
                 <p className="text-xs text-left text-gray-400 font-courier">Your personal data will be used to support your experience throught this website, to manage access to your account, and for other purposes described in our privacy policy.</p>
 
                 <BlackButton>REGISTER</BlackButton>
+                <p className="text-xs">Already have an account? <button onClick={() => openPanel("login")} className="underline cursor-pointer">Login</button></p>
 
                 </div>
             </div>

@@ -56,7 +56,7 @@ function getImageSrc(imagePath = "") {
 }
 
 export default function ItemDetails() {
-  const { addItems } = useContext(StylesContext);
+  const { addItems, addItemsToWishlist } = useContext(StylesContext);
   const location = useLocation();
   const item = location.state ?? {};
   const galleryImages = useMemo(() => {
@@ -166,14 +166,14 @@ export default function ItemDetails() {
 
                 <div className={styles.buyRow}>
                   <BlackButton onClick={() => addItems(item)}>Add to Cart</BlackButton>
-                  <BlackButton>Add to Wishlist</BlackButton>
+                  <BlackButton onClick={() => addItemsToWishlist(item)}>Add to Wishlist</BlackButton>
                 </div>
                 <div className={styles.meta}>
                   <p>
                     <strong>SKU:</strong> UOM-7784
                   </p>
                   <p>
-                    <strong>Category:</strong> Men, Jackets
+                    <strong>Category:</strong> {item.gender}, {item.brand}
                   </p>
                   <p>
                     <strong>Tags:</strong> Hooded, Lightweight, New

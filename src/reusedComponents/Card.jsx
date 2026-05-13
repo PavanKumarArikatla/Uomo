@@ -16,10 +16,7 @@ export default function Card({ card, addItems, searchRoute }) {
     <div className={styles.card}>
       <div className={styles.imageWrapper}>
         <FaHeart className={`${styles.heartIcon} ${isWishlisted ? styles.active : ''}`} 
-          onClick={() => {
-            setAppLoading();
-            addItemsToWishlist(card);
-          }}
+          onClick={() => addItemsToWishlist(card)}
           title={isWishlisted ? "Remove from wishlist" : "Add to wishlist"}
         />
         <Link to={ searchRoute ? `{${searchRoute}` : `${card.style}/${card.type}`} state={card} onClick={() => setAppLoading()}>

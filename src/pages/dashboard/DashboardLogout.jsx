@@ -3,7 +3,7 @@ import styles from "./DashboardLogout.module.css";
 import { StylesContext } from "../../contexts/StylesContext";
 
 export default function DashboardLogout() {
-  const { setUserCredentials, userLoggedIn, setUserLoggedIn } = useContext(StylesContext)
+  const { setUserCredentials, userLoggedIn, setUserLoggedIn, setAppLoading } = useContext(StylesContext)
   return (
     <section className={styles.panel}>
       {userLoggedIn ? 
@@ -14,6 +14,8 @@ export default function DashboardLogout() {
           <button
             onClick={() => {
               setUserCredentials({username: "", email: "", password: "", address: [], country: ""});
+              localStorage.removeItem("user");
+              setAppLoading();
               setUserLoggedIn(false);
             }}
             className="cursor-pointer"
