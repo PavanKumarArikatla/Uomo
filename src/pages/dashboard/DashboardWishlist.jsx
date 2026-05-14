@@ -2,12 +2,8 @@ import { useContext } from "react";
 import styles from "./DashboardWishlist.module.css";
 import { StylesContext } from "../../contexts/StylesContext";
 
-
-
 export default function DashboardWishlist() {
-
   const { wishlist, deleteItemFromWishlist} = useContext(StylesContext)
-
   return (
     <section className={styles.grid}>
      {wishlist.length > 0 ? (
@@ -27,7 +23,7 @@ export default function DashboardWishlist() {
         </article>
       ))
     ):(
-      <p>Your wishlist is empty</p>
+      <p className={styles.message}>Your wishlist is empty</p>
     )}
     </section>
   );

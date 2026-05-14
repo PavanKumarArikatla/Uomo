@@ -5,8 +5,8 @@ import BlackButton from "../../reusedComponents/BlackButton"
 import styles from "./Navigation.module.css"
 
 export default function Login(){
-    const { openPanel, closePanel, userCredentials, setUserCredentials, users, setUserLoggedIn, setAppLoading } = useContext(StylesContext)
-    const [error, setError] = useState("")
+    const { openPanel, closePanel, users, currentUser, setCurrentUser, setAppLoading, setError, error } = useContext(StylesContext)
+    const [userCredentials, setUserCredentials] = useState({email: "", password: ""});
     const [showPassword, setShowPassword] = useState(false)
     const [rememberMe, setRememberMe] = useState(false)
 
@@ -22,9 +22,8 @@ export default function Login(){
                 localStorage.removeItem("user");
             }
             setError("");  
-            setUserCredentials(loggedInUser)
             closePanel();
-            setUserLoggedIn(true)
+            setCurrentUser(loggedInUser)
         } else {
             setError("Invalid credentials")
         }

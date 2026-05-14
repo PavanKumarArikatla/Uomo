@@ -13,16 +13,7 @@ export function defaultFilters() {
   };
 }
 
-const defaultUserCredentials = {
-  username: "",
-  email: "",
-  password: "",
-  address: [],
-  country: "",
-};
-
 export default function CardProvider({ children }) {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
   const [allStyles, setAllStyles] = useState([]);
@@ -32,10 +23,10 @@ export default function CardProvider({ children }) {
   const [sort, setSort] = useState("newest");
   const [cartState, setCartState] = useState("shopping")
   const [filters, setFilters] = useState(defaultFilters);
-  const [orders, setOrders] = useState([])  
+  const [orders, setOrders] = useState([])
+  const [error, setError] = useState("")
   const [users, setUsers] = useState([]);
-  const [userLoggedIn, setUserLoggedIn] = useState(false);
-  const [userCredentials, setUserCredentials] = useState(defaultUserCredentials);
+  const [currentUser, setCurrentUser] = useState(null);
   const [cartLoading, setCartLoading] = useState(false)
   const count = {cartCount: cartItems.reduce((totalItems, item) => item.quantity + totalItems , 0), wishlistCount: wishlist.length};
 
@@ -196,8 +187,8 @@ export default function CardProvider({ children }) {
         sort, setSort,
         cartState, setCartState,
         filters, setFilters, 
-        userCredentials, setUserCredentials,
-        users, userLoggedIn, setUserLoggedIn,
+        users, setUsers, currentUser, setCurrentUser,
+        error, setError,
         cartLoading,
         setAppLoading
       }}

@@ -3,27 +3,26 @@ import styles from "./DashboardLogout.module.css";
 import { StylesContext } from "../../contexts/StylesContext";
 
 export default function DashboardLogout() {
-  const { setUserCredentials, userLoggedIn, setUserLoggedIn, setAppLoading } = useContext(StylesContext)
+  const { currentUser, setCurrentUser, setAppLoading } = useContext(StylesContext)
   return (
     <section className={styles.panel}>
-      {userLoggedIn ? 
+      {currentUser ? 
         <>
           <p className={styles.message}>
             You are still logged in. Click the logout action in your auth flow to end this session.
           </p>
           <button
             onClick={() => {
-              setUserCredentials({username: "", email: "", password: "", address: [], country: ""});
               localStorage.removeItem("user");
               setAppLoading();
-              setUserLoggedIn(false);
+              setCurrentUser(null)
             }}
             className="cursor-pointer"
           >Logout</button> 
         </>
       
       : <p className={styles.message}>
-          You've logged out succesfully
+          You're logged out.
         </p>}
 
     </section>

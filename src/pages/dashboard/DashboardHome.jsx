@@ -4,31 +4,36 @@ import { useContext } from "react";
 import { StylesContext } from "../../contexts/StylesContext";
 
 export default function DashboardHome() {
-  const { userCredentials } = useContext(StylesContext)
+  const { currentUser } = useContext(StylesContext)
   return (
     <section className={styles.panel}>
-      <p className={styles.line}>
-        Hello <b>{userCredentials.username}</b> (not <b>{userCredentials.username}</b>?{" "}
-        <button type="button" className={styles.inlineBtn}>
-          Log out
-        </button>
-        )
-      </p>
-      <p className={styles.line}>
-        From your account dashboard you can view your{" "}
-        <Link to="/dashboard/orders" className={styles.inlineLink}>
-          recent orders
-        </Link>
-        , manage your{" "}
-        <Link to="/dashboard/addresses" className={styles.inlineLink}>
-          shipping and billing addresses
-        </Link>
-        , and{" "}
-        <Link to="/dashboard/account-details" className={styles.inlineLink}>
-          edit your password and account details
-        </Link>
-        .
-      </p>
+      {currentUser ? <>
+        <p className={styles.line}>
+          Hello <b>{currentUser.username}</b> (not <b>{currentUser.username}</b>?{" "}
+          <button type="button" className={styles.inlineBtn}>
+            Log out
+          </button>
+          )
+        </p>
+        <p className={styles.line}>
+          From your account dashboard you can view your{" "}
+          <Link to="/dashboard/orders" className={styles.inlineLink}>
+            recent orders
+          </Link>
+          , manage your{" "}
+          <Link to="/dashboard/addresses" className={styles.inlineLink}>
+            shipping and billing addresses
+          </Link>
+          , and{" "}
+          <Link to="/dashboard/account-details" className={styles.inlineLink}>
+            edit your password and account details
+          </Link>
+          .
+        </p>
+      </>
+      :  
+      <p>You have to login first</p>
+    }
     </section>
   );
 }

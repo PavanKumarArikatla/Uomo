@@ -5,7 +5,7 @@ import styles from "./AppNavigation.module.css";
 import Loading from "./Loading";
 
 export default function AppNavigation() {
-  const { count, activePanel, togglePanel, userLoggedIn, userCredentials, cartLoading, setAppLoading } = useContext(StylesContext);
+  const { count, activePanel, togglePanel, currentUser, cartLoading, setAppLoading } = useContext(StylesContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -33,9 +33,10 @@ export default function AppNavigation() {
             <p className={styles.type}>
               <NavLink to="more" onClick={() => setAppLoading()}>MORE</NavLink>
             </p>
-            <p className={styles.type}>
+            {currentUser ? <p className={styles.type}>
               <NavLink to="dashboard" onClick={() => setAppLoading()}>DASHBOARD</NavLink>
-            </p>
+            </p> : ""
+            }
           </div>
         </div>
 
@@ -60,8 +61,8 @@ export default function AppNavigation() {
             </li>
           </button>
 
-          {userLoggedIn ? <button onClick={() => navigate("/dashboard/account-details")} className="cursor-pointer underline">
-              {userCredentials.username}
+          {currentUser ? <button onClick={() => navigate("/dashboard/account-details")} className="cursor-pointer underline">
+              {currentUser.username}
             </button>
           : <button onClick={() => togglePanel("login")} className="cursor-pointer">
               <li>
