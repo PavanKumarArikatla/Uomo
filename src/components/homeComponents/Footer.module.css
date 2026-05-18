@@ -1,27 +1,43 @@
 .footer {
-  display: flex;
-  flex-grow: 1;
-  flex-shrink: 1;
+  display: grid;
+  grid-template-columns: 1.7fr 1fr 1fr 1fr 1.2fr;
+  column-gap: 0.8rem;
   width: 100%;
+  max-width: 1700px;
   margin: 0 auto;
   padding: clamp(1rem, 4vw, 4rem);
 }
 
 .footer div {
-  margin: auto;
   font-size: 0.8rem;
   min-width: 0;
 }
 
 .footer p {
   cursor: pointer;
-  margin: 0.3rem auto;
+  margin: 0.9rem;
+  margin-left: -1%;
 }
+
+.contactBlock img {
+  cursor: pointer;
+  width: 6.5rem;
+  margin-top: 20px;
+  padding-bottom: 5%;
+}
+
+.title {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 1rem;
+}                        
 
 .span {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
+  padding-top: 4%;
 }
 
 .span li {
@@ -39,15 +55,16 @@
 }
 
 .copy {
-  margin: 0;
+  margin-left: -15%;
   font-size: 0.72rem;
   color: #626262;
-}
+}    
 
 .localeRow {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 35px;
+  margin-right: -25%;
 }
 
 .label {
@@ -70,7 +87,7 @@
 .discover {
   font-size: 0.58rem;
   font-weight: 600;
-  color: #111;
+  color: #111;   
 }
 
 .skrill {
@@ -91,6 +108,12 @@
   min-width: 0;
 }
 
+.hrLine {
+  width: 90%;
+  margin-left: 8%;
+  border-color: #aca8a8a4;
+}
+
 @media (max-width: 1200px) {
   .footer {
     padding: 3rem 2rem;
@@ -103,7 +126,7 @@
     width: 90%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    gap: 3rem;
     padding: 3rem 2rem;
     justify-items: start;
     justify-content: center;
@@ -128,7 +151,7 @@
    width: 100%;
     max-width: 100%;
     gap: 0.75rem;
-    justify-content: flex-start;
+    justify-content: flex-start;   
     overflow: hidden;
   }
   .span a {
@@ -244,9 +267,9 @@
   .localeRow {
     display: grid;
     grid-template-columns: auto 1fr;
-    row-gap: 0.35rem;
+    row-gap: 0.35rem;                                  
     column-gap: 0.6rem;
-    align-items: center;
+    align-items: center;                                      
     justify-content: start;
   }
   .label,

@@ -23,12 +23,21 @@ export default function DashboardAddresses() {
   ]);
 
   const handleEdit = (index) => {
-    const updatedStreet = prompt("Enter new  address:");
-    if (!updatedStreet) return;
-    const updatedAddresses = [...addresses];
-    updatedAddresses[index].street = updatedStreet;
+    const currentAddress = addresses[index];
+
+    const updated = {...currentAddress,
+      name: prompt("Enter new name:", currentAddress.name) || currentAddress.name,
+      street: prompt("Enter new street:", currentAddress.street) || currentAddress.street,
+      country: prompt("Enter new country:", currentAddress.country) || currentAddress.country,
+      email: prompt("Enter new email:", currentAddress.email) || currentAddress.email,
+      phone: prompt("Enter new phone:", currentAddress.phone) || currentAddress.phone
+    };
+
+    if (!updated.street) return;
+    const updatedAddresses = [...addresses];   
+    updatedAddresses[index] = updated;
     setAddresses(updatedAddresses);
-  };
+  };        
 
   return (
     <section>

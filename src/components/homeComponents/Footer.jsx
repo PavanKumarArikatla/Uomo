@@ -1,19 +1,21 @@
 import styles from "./Footer.module.css";
+import { SlArrowUp } from "react-icons/sl";
+import { FaTwitter } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer style={{backgroundColor: '#cfcdc6'}}>
+    <footer style={{backgroundColor: '#D3D3D3'}}>
       <div className={styles.footer}>
       <div className={styles.contactBlock}>
-        <img src="logo.svg" alt="Eastside" />
-        <p>1418 River Drive, Suite 35 Cottonhall, CA 9622</p>
-        <p>United States</p>
-        <p>sale@uomo.com</p>
-        <p>+1 246-345-0695</p>
-        
+        <img  src="logo.svg" alt="Eastside" />
+        <p>1418 River Drive, Suite 35 Cottonhall, CA 9622 <br /> United States </p>
+        <p>sale@uomo.com <br /> +1 246-345-0695 </p>
         <div className={styles.span}>
           <a href="https://www.facebook.com">
             <i className="fa-brands fa-facebook"></i>
+          </a>
+          <a href="https://www.twitter.com">
+            <FaTwitter />
           </a>
           <a href="https://www.instagram.com">
             <i className="fa-brands fa-instagram"></i>
@@ -28,16 +30,16 @@ function Footer() {
       </div>
 
       <div className={styles.companyBlock}>
-        <p><b>COMPANY</b></p>
+        <p className={styles.title}><b>COMPANY</b></p>
         <p>About Us</p>
-        <p>Career</p>
+        <p>Career <hr style={{width: '12%', border: '1px solid'}} /> </p> 
         <p>Affiliates</p>
         <p>Blog</p>
         <p>Contact Us</p>
       </div>
 
       <div className={styles.shopBlock}>
-        <p><b>SHOP</b></p>
+        <p className={styles.title}><b>SHOP</b></p>
         <p>New Arrivals</p>
         <p>Accessories</p>
         <p>Men</p>
@@ -46,7 +48,7 @@ function Footer() {
       </div>
 
       <div className={styles.helpBlock}>
-        <p><b>HELP</b></p>
+        <p className={styles.title}><b>HELP</b></p>
         <p>Customer Service</p>
         <p>My Account</p>
         <p>Find a Store</p>
@@ -56,7 +58,7 @@ function Footer() {
       </div>
 
       <div className={styles.subscribeBlock}>
-        <p><b>SUBSCRIBE</b></p>
+        <p className={styles.title}><b>SUBSCRIBE</b></p>
         <p>Be the first to get latest news about trends,</p>
         <p>promotions and more!</p>
         <form className="flex items-center justify-around gap-2 bg-white h-14 w-80">
@@ -70,11 +72,9 @@ function Footer() {
           </button>
         </form>
 
-        
-        
         <p>Secure Payments</p>
         <div className={`flex align-center gap-10 ${styles.paymentRow}`}>
-          <span className={styles.discover}>DISCOVER</span>
+          <img src="/discover.png.webp" alt="Discover" className="w-10 h-6" />
           <img src="/mastercard.png" alt="Mastercard" className="w-10 h-6" />
           <img src="/paypal.png" alt="PayPal" className="w-10 h-10" />
           <span className={styles.skrill}>Skrill</span>
@@ -82,7 +82,7 @@ function Footer() {
         </div>
       </div>
       </div>
-      <hr/>
+      <hr className={styles.hrLine}/>
 
 
       <div className={styles.bottomRow}>
@@ -92,10 +92,12 @@ function Footer() {
                 <button type="button" className={styles.inlineSelect}>
                   United Kingdom | English
                 </button>
+                <SlArrowUp style={{cursor:"pointer"}} />
                 <span className={styles.label}>Currency</span>
                 <button type="button" className={styles.inlineSelect}>
-                  $ USD
+                  $ USD 
                 </button>
+                <SlArrowUp style={{cursor:"pointer"}} />
               </div>
             </div>
     </footer>

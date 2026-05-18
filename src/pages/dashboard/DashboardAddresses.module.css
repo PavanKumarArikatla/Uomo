@@ -16,8 +16,8 @@
 
 .head {
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
+  justify-content: space-between;        
+  gap: 0.72rem;
   align-items: center;
   margin-bottom: 0.8rem;
 }
