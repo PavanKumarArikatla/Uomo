@@ -59,8 +59,7 @@ function Footer() {
 
       <div className={styles.subscribeBlock}>
         <p className={styles.title}><b>SUBSCRIBE</b></p>
-        <p>Be the first to get latest news about trends,</p>
-        <p>promotions and more!</p>
+        <p>Be the first to get latest news about trends,promotions and more!</p>
         <form className="flex items-center justify-around gap-2 bg-white h-14 w-80">
           <input
             type="text"
