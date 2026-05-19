@@ -46,6 +46,7 @@ export default function MiniCart(){
 
                         <NavLink to="/cart"><GreyButton onClick={closePanel}>VIEW CART</GreyButton></NavLink>
                         <NavLink to="/cart"><BlackButton onClick={closePanel}>CHECKOUT</BlackButton></NavLink>
+                        
                     </div>
                 </div>
             </div>

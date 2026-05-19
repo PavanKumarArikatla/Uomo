@@ -2,10 +2,10 @@
   display: grid;
   grid-template-columns: 1.7fr 1fr 1fr 1fr 1.2fr;
   column-gap: 0.8rem;
-  width: 100%;
+  width: calc(100% - 10rem);
   max-width: 1700px;
-  margin: 0 auto;
   padding: clamp(1rem, 4vw, 4rem);
+  margin-left: 5rem;
 }
 
 .footer div {
@@ -47,7 +47,7 @@
 .bottomRow {
   max-width: 1220px;
   margin: 0 auto;
-  padding: 18px 0;
+  padding: 14px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -55,7 +55,7 @@
 }
 
 .copy {
-  margin-left: 0;
+  margin-left: 8%;
   font-size: 0.72rem;
   color: #626262;
 }    
@@ -81,7 +81,15 @@
 }
 
 .paymentRow {
+  display: flex;
   align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.paymentRow img {
+  display: block;
+  object-fit: contain;
 }
 
 .discover {
@@ -91,7 +99,7 @@
 }
 
 .skrill {
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: #8b1d7a;
 }
@@ -109,9 +117,9 @@
 }
 
 .hrLine {
-  width: 90%;
-  margin-left: 8%;
-  border-color: #aca8a8a4;
+  width: 88%;
+  margin-left: 10%;
+  border-color:  #aca8a8be;
 }
 
 @media (max-width: 1200px) {

@@ -78,7 +78,7 @@ function Footer() {
           <img src="/mastercard.png" alt="Mastercard" className="w-10 h-6" />
           <img src="/paypal.png" alt="PayPal" className="w-10 h-10" />
           <span className={styles.skrill}>Skrill</span>
-          <img src="/visa.png" alt="Visa" className="w-10 h-6" />
+          <img src="/visa.png" alt="Visa" className="w-10 h-6 object-contain" />
         </div>
       </div>
       </div>
